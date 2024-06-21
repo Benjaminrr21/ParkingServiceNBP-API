@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "au1645IfmYDDX+yhyTRikWTakNSrCwMz0K7Vb6vBWlQ=",
+  "Source": "ParkEasyNBP.API",
+  "BasePath": "_content/ParkEasyNBP.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
