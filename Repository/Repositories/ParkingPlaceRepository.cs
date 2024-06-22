@@ -22,5 +22,12 @@ namespace Repository.Repositories
         {
             return await dbContext.ParkingPlaces.ToListAsync();
         }
+
+        public async Task<ParkingPlace> Create(ParkingPlace parkingPlace)
+        {
+            await dbContext.AddAsync(parkingPlace);
+            await dbContext.SaveChangesAsync();
+            return parkingPlace;
+        }
     }
 }

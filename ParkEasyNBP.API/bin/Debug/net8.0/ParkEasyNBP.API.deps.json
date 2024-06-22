@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "ParkEasyNBP.API/1.0.0": {
         "dependencies": {
+          "AutoMapper": "13.0.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",

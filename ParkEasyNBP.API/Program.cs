@@ -2,10 +2,12 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using ParkEasyNBP.Application.Mapping;
 using ParkEasyNBP.Application.Services;
 using ParkEasyNBP.Domain.Interfaces;
 using ParkEasyNBP.Domain.Models;
 using ParkEasyNBP.Infrastructure.SqlServer;
+using Repository;
 using Repository.Repositories;
 using System.Text;
 
@@ -19,12 +21,18 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //Konfiguracija SQL servera
+
 builder.Services.AddDbContext<ParkDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ParkEasyContext")));
 builder.Services.AddScoped<IParkingPlaceRepository, ParkingPlaceRepository>();
+builder.Services.AddScoped<IZoneRepository, ZoneRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ParkingPlaceService>();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 //JWT
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()

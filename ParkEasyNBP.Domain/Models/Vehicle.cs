@@ -12,6 +12,7 @@ namespace ParkEasyNBP.Domain.Models
         public string Mark { get; set; }
         public string Name { get; set; }
         public string RegNumber { get; set; }
+        public IEnumerable<Penalty> Penalties { get; set; }
 
     }
 }

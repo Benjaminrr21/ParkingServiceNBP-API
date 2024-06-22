@@ -278,6 +278,31 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                     b.ToTable("ParkingPlaces");
                 });
 
+            modelBuilder.Entity("ParkEasyNBP.Domain.Models.Penalty", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("VehicleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VehicleId");
+
+                    b.ToTable("Penalties");
+                });
+
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.PublicGarage", b =>
                 {
                     b.Property<int>("Id")
@@ -312,6 +337,63 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                     b.HasIndex("ZoneId");
 
                     b.ToTable("PublicGarage");
+                });
+
+            modelBuilder.Entity("ParkEasyNBP.Domain.Models.RefreshToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Expires")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("Revoked")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("RefreshTokens");
+                });
+
+            modelBuilder.Entity("ParkEasyNBP.Domain.Models.Vehicle", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Mark")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Vehicle");
                 });
 
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.Zone", b =>
@@ -404,6 +486,17 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                     b.Navigation("PublicGarage");
                 });
 
+            modelBuilder.Entity("ParkEasyNBP.Domain.Models.Penalty", b =>
+                {
+                    b.HasOne("ParkEasyNBP.Domain.Models.Vehicle", "Vehicle")
+                        .WithMany("Penalties")
+                        .HasForeignKey("VehicleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Vehicle");
+                });
+
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.PublicGarage", b =>
                 {
                     b.HasOne("ParkEasyNBP.Domain.Models.Zone", "Zone")
@@ -415,9 +508,30 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                     b.Navigation("Zone");
                 });
 
+            modelBuilder.Entity("ParkEasyNBP.Domain.Models.RefreshToken", b =>
+                {
+                    b.HasOne("ParkEasyNBP.Domain.Models.ApplicationUser", "User")
+                        .WithMany("RefreshTokens")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ParkEasyNBP.Domain.Models.ApplicationUser", b =>
+                {
+                    b.Navigation("RefreshTokens");
+                });
+
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.PublicGarage", b =>
                 {
                     b.Navigation("ParkingPlaces");
+                });
+
+            modelBuilder.Entity("ParkEasyNBP.Domain.Models.Vehicle", b =>
+                {
+                    b.Navigation("Penalties");
                 });
 
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.Zone", b =>

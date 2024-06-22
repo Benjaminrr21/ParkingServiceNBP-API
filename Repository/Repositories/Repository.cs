@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
+    //Genericki repozitorijum
     public class Repository<T> : IRepository<T> where T : class
     {
         private readonly ParkDbContext dbContext;
@@ -26,6 +27,7 @@ namespace Repository.Repositories
 
         public async Task<T> Delete(int id)
         {
+            //nalazimo objekat
             var entity = await dbContext.Set<T>().FindAsync(id);
             if (entity != null)
             {
@@ -47,7 +49,14 @@ namespace Repository.Repositories
 
         public async Task<T> Update(int id, T entity)
         {
-            throw new NotImplementedException();
+            var existingEntity = await dbContext.Set<T>().FindAsync(id);
+            if (existingEntity != null)
+            {
+                dbContext.Entry(existingEntity).CurrentValues.SetValues(entity);
+                await dbContext.SaveChangesAsync();
+                return existingEntity;
+            }
+            return null; // Ili bacite izuzetak ili obradite ovo drugačije prema vašem scenariju
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ParkEasyNBP.Domain.Interfaces
 {
+    //Genericki interfejs
     public interface IRepository<T> where T : class
     {
         Task<IEnumerable<T>> GetAll();

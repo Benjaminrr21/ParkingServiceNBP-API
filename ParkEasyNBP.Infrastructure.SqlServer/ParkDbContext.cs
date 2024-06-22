@@ -21,6 +21,9 @@ namespace ParkEasyNBP.Infrastructure.SqlServer
        /* public DbSet<Controllor> Controllors { get; set; }*/
         public DbSet<ParkingPlace> ParkingPlaces { get; set;}
         public DbSet<Zone> Zones { get; set; }
+        public DbSet<Penalty> Penalties { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

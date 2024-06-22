@@ -17,5 +17,8 @@ namespace ParkEasyNBP.Domain.Models
         public string Address { get; set; }
         public Zone? Zone { get; set; }
         public int? ZoneId { get; set; }
+        public ICollection<RefreshToken> RefreshTokens { get; set; }
+      
+
     }
 }
