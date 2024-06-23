@@ -57,7 +57,7 @@ namespace Repository.Repositories
                 await dbContext.SaveChangesAsync();
                 return existingEntity;
             }
-            return null; // Ili bacite izuzetak ili obradite ovo drugačije prema vašem scenariju
+            return null; 
         }
     }
 }
