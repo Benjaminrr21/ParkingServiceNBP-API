@@ -14,6 +14,11 @@ namespace ParkEasyNBP.Application.Mapping
         public MappingProfile() {
             CreateMap<ParkingPlaceCreateDTO, ParkingPlace>();
             CreateMap<ZoneCreateDTO, Zone>();
+
+            CreateMap<Zone,ZonesDTO>();
+            CreateMap<ParkingPlace,ParkingPlaceGetDTO>();
+            CreateMap<PublicGarage,PublicGarageGetDTO>();
+            CreateMap<ParkingPlaceUpdateDTO, ParkingPlace>();
         }
     }
 }

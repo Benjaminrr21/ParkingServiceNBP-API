@@ -10,8 +10,8 @@ namespace ParkEasyNBP.Domain.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }   
-        public ICollection<ParkingPlace> ParkingPlaces { get; set; }
-        public ICollection<PublicGarage> PublicGarages { get; set; }
+        public virtual ICollection<ParkingPlace> ParkingPlaces { get; set; } = new List<ParkingPlace>();
+        public ICollection<PublicGarage> PublicGarages { get; set; } = new List<PublicGarage>();
 
 
     }

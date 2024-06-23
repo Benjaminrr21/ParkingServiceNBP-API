@@ -266,7 +266,7 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ZoneId")
+                    b.Property<int>("ZoneId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -479,11 +479,15 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                         .WithMany("ParkingPlaces")
                         .HasForeignKey("PublicGarageId");
 
-                    b.HasOne("ParkEasyNBP.Domain.Models.Zone", null)
+                    b.HasOne("ParkEasyNBP.Domain.Models.Zone", "Zone")
                         .WithMany("ParkingPlaces")
-                        .HasForeignKey("ZoneId");
+                        .HasForeignKey("ZoneId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("PublicGarage");
+
+                    b.Navigation("Zone");
                 });
 
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.Penalty", b =>
