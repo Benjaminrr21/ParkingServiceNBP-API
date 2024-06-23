@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\Repository\\Repository.csproj": {}
+    "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Repository\\Repository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj": {
+    "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj",
         "projectName": "ParkEasyNBP.Domain",
-        "projectPath": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj",
-        "packagesPath": "C:\\Users\\Dina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Domain\\obj\\",
+        "projectPath": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj",
+        "packagesPath": "C:\\Users\\korisnik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,11 +34,26 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNet.Identity.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -50,21 +65,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Infrastructure.SqlServer\\ParkEasyNBP.Infrastructure.SqlServer.csproj": {
+    "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\ParkEasyNBP.Infrastructure.SqlServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Infrastructure.SqlServer\\ParkEasyNBP.Infrastructure.SqlServer.csproj",
+        "projectUniqueName": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\ParkEasyNBP.Infrastructure.SqlServer.csproj",
         "projectName": "ParkEasyNBP.Infrastructure.SqlServer",
-        "projectPath": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Infrastructure.SqlServer\\ParkEasyNBP.Infrastructure.SqlServer.csproj",
-        "packagesPath": "C:\\Users\\Dina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Infrastructure.SqlServer\\obj\\",
+        "projectPath": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\ParkEasyNBP.Infrastructure.SqlServer.csproj",
+        "packagesPath": "C:\\Users\\korisnik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,8 +98,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj": {
-                "projectPath": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj"
+              "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj": {
+                "projectPath": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj"
               }
             }
           }
@@ -88,11 +108,40 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -104,21 +153,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\Repository\\Repository.csproj": {
+    "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\Dina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\Repository\\obj\\",
+        "projectPath": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\korisnik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -132,11 +186,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj": {
-                "projectPath": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj"
+              "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj": {
+                "projectPath": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj"
               },
-              "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Infrastructure.SqlServer\\ParkEasyNBP.Infrastructure.SqlServer.csproj": {
-                "projectPath": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Infrastructure.SqlServer\\ParkEasyNBP.Infrastructure.SqlServer.csproj"
+              "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\ParkEasyNBP.Infrastructure.SqlServer.csproj": {
+                "projectPath": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\ParkEasyNBP.Infrastructure.SqlServer.csproj"
               }
             }
           }
@@ -145,6 +199,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -161,7 +220,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
