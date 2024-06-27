@@ -18,10 +18,10 @@ namespace ParkEasyNBP.API.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly UserManager<ApplicationUser> userManager; // Promenite ovde
+        private readonly UserManager<ApplicationUser> userManager; 
         private readonly RoleManager<IdentityRole> roleManager;
 
-        public AuthController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager) // Promenite ovde
+        public AuthController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
@@ -46,11 +46,11 @@ namespace ParkEasyNBP.API.Controllers
                 return BadRequest(ModelState);
             try
             {
-                ApplicationUser user = new ApplicationUser // Promenite ovde
+                ApplicationUser user = new ApplicationUser 
                 {
                     UserName = model.Username,
                     Email = model.Email,
-                    FirstName = model.FirstName, // Ako imate dodatna svojstva
+                    FirstName = model.FirstName, 
                     LastName = model.LastName,
                     Address = model.Address,
                     Phone = model.Phone
@@ -82,11 +82,11 @@ namespace ParkEasyNBP.API.Controllers
                 return BadRequest(ModelState);
             try
             {
-                ApplicationUser user = new ApplicationUser // Promenite ovde
+                ApplicationUser user = new ApplicationUser 
                 {
                     UserName = model.Username,
                     Email = model.Email,
-                    FirstName = model.FirstName, // Ako imate dodatna svojstva
+                    FirstName = model.FirstName, 
                     LastName = model.LastName,
                     Address = model.Address,
                     Phone = model.Phone

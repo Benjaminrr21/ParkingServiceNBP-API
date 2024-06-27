@@ -14,7 +14,7 @@ namespace Repository.Repositories
     public class VehicleRepository : Repository<Vehicle>, IVehicleRepository
     {
         private readonly ParkDbContext context;
-        public VehicleRepository(ParkDbContext context)
+        public VehicleRepository(ParkDbContext context):base(context)
         {
             this.context = context;
         }
