@@ -1,10 +1,10 @@
-﻿using ParkEasyNBP.Domain.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using ParkEasyNBP.Domain.Interfaces;
 using ParkEasyNBP.Domain.Models;
 using ParkEasyNBP.Infrastructure.SqlServer;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+//using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +20,11 @@ namespace Repository.Repositories
             this.dbContext = dbContext;
         }
 
-        public async Task<List<Zone>> GetAll()
+        public async Task<IEnumerable<Zone>> GetAll()
         {
-            return await dbContext.Zones.ToListAsync();
+            return await dbContext.Zones.Include(z => z.ParkingPlaces).Include(z=>z.PublicGarages).ToListAsync();
         }
-        public async Task<Zone?> Get(int id)
+        /*public async Task<Zone?> Get(int id)
         {
             return await dbContext.Zones.FindAsync(id);
         }
@@ -54,7 +54,7 @@ namespace Repository.Repositories
                 return existingEntity;
             }
             return null; 
-        }
+        }*/
 
     }
 }

@@ -18,16 +18,36 @@ namespace Repository.Repositories
         {
             this.dbContext = dbContext;
         }
-        public async Task<IEnumerable<ParkingPlace>> GetAll()
+       /* public async Task<ParkingPlace> Update(int id, ParkingPlace entity)
         {
-            return await dbContext.ParkingPlaces.ToListAsync();
-        }
+            var existingEntity = await dbContext.Set<ParkingPlace>()
+                //.Include(pp => pp.Zone) // Include related entities if necessary
+                .FirstOrDefaultAsync(pp => pp.Id == id);
 
-        public async Task<ParkingPlace> Create(ParkingPlace parkingPlace)
-        {
-            await dbContext.AddAsync(parkingPlace);
-            await dbContext.SaveChangesAsync();
-            return parkingPlace;
-        }
+            if (existingEntity != null)
+            {
+                dbContext.Entry(existingEntity).CurrentValues.SetValues(entity);
+
+                // Ensure the Id remains unchanged
+                existingEntity.Id = id;
+                // If there are any properties that should not be updated, handle them here
+
+                await dbContext.SaveChangesAsync();
+                return existingEntity;
+            }
+            return null; // Handle this according to your scenario
+        }*/
+
+        /* public async Task<IEnumerable<ParkingPlace>> GetAll()
+         {
+             return await dbContext.ParkingPlaces.ToListAsync();
+         }
+
+         public async Task<ParkingPlace> Create(ParkingPlace parkingPlace)
+         {
+             await dbContext.AddAsync(parkingPlace);
+             await dbContext.SaveChangesAsync();
+             return parkingPlace;
+         }*/
     }
 }

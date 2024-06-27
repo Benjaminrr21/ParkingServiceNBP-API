@@ -15,5 +15,6 @@ namespace ParkEasyNBP.Application.DTOs
         public string Address { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public int VehicleId { get; set; }
     }
 }

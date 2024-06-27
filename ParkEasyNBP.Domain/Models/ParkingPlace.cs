@@ -11,6 +11,8 @@ namespace ParkEasyNBP.Domain.Models
         public int Id { get; set; }
         public string Status { get; set; }
         public string Street { get; set; }
+        public int ZoneId { get; set; } // Može biti null
+        public virtual Zone Zone { get; set; }
         public int? PublicGarageId { get; set; } // Može biti null
         public PublicGarage PublicGarage { get; set; }
 

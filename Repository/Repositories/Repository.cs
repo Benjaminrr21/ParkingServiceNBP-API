@@ -52,7 +52,9 @@ namespace Repository.Repositories
             var existingEntity = await dbContext.Set<T>().FindAsync(id);
             if (existingEntity != null)
             {
+               
                 dbContext.Entry(existingEntity).CurrentValues.SetValues(entity);
+                
                 await dbContext.SaveChangesAsync();
                 return existingEntity;
             }

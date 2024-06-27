@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using ParkEasyNBP.API.Middlewares;
 using ParkEasyNBP.Application.Mapping;
 using ParkEasyNBP.Application.Services;
 using ParkEasyNBP.Domain.Interfaces;
@@ -28,6 +29,7 @@ builder.Services.AddScoped<IZoneRepository, ZoneRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ParkingPlaceService>();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
+builder.Services.AddScoped<IPenaltyRepository, PenaltyRepository>();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
@@ -81,6 +83,8 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+//app.UseCustomMiddleware();
+app.UseMyMiddleware();
 app.MapControllers();
 
 app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());

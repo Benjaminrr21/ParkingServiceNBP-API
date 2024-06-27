@@ -25,7 +25,11 @@ namespace ParkEasyNBP.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllZones()
         {
-            return Ok(await service.GetAll());
+
+            var list = await service.GetAll();
+            var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
+            return Ok(list2);
+            
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
