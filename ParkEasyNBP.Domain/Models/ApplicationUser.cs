@@ -15,10 +15,11 @@ namespace ParkEasyNBP.Domain.Models
         public string LastName { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
-        public Zone? Zone { get; set; }
-        public int? ZoneId { get; set; }
+        public int VehicleId { get; set; }
+        public Vehicle Vehicle { get; set; }
         public ICollection<RefreshToken> RefreshTokens { get; set; }
-      
+       
+
 
     }
 }

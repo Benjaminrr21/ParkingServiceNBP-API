@@ -21,7 +21,7 @@ namespace Repository.Repositories
 
         public async Task<IEnumerable<ApplicationUser>> GetAll()
         {
-            var users = await userManager.Users.ToListAsync();
+            var users = await dbContext.Users.ToListAsync();
             var usersList = new List<ApplicationUser>();
 
             foreach (var user in users)
@@ -33,6 +33,7 @@ namespace Repository.Repositories
                 }
             }
 
+            //return users;
             return usersList;
         }
 

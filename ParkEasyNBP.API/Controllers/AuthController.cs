@@ -53,7 +53,8 @@ namespace ParkEasyNBP.API.Controllers
                     FirstName = model.FirstName, // Ako imate dodatna svojstva
                     LastName = model.LastName,
                     Address = model.Address,
-                    Phone = model.Phone
+                    Phone = model.Phone,
+                    VehicleId = model.VehicleId
                 };
 
                 var result = await userManager.CreateAsync(user, model.Password);

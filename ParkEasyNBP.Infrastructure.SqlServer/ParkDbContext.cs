@@ -22,6 +22,9 @@ namespace ParkEasyNBP.Infrastructure.SqlServer
         public DbSet<ParkingPlace> ParkingPlaces { get; set;}
         public DbSet<Zone> Zones { get; set; }
         public DbSet<Penalty> Penalties { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<SubscriptionCard> SubscriptionCards { get; set; }
+        public DbSet<OneOffCard> OneOffCards { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
 
 
