@@ -17,6 +17,6 @@ namespace ParkEasyNBP.Domain.Models
         public DateTime? Revoked { get; set; }
         public bool IsActive => Revoked == null && !IsExpired;
 
-        public ApplicationUser User { get; set; }
+       // public ApplicationUser User { get; set; }
     }
 }

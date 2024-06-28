@@ -12,6 +12,6 @@ namespace ParkEasyNBP.Application.DTOs
         public string Mark { get; set; }
         public string Name { get; set; }
         public string RegNumber { get; set; }
-        public OwnerDTO Owner { get; set; }
+        public string UserId { get; set; }
     }
 }

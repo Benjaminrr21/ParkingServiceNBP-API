@@ -30,6 +30,7 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ParkingPlaceService>();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 builder.Services.AddScoped<IPenaltyRepository, PenaltyRepository>();
+builder.Services.AddScoped<IControlRepository, ControlRepository>();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 

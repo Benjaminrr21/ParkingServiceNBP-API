@@ -21,38 +21,25 @@ namespace Repository.Repositories
 
         public async Task<IEnumerable<ApplicationUser>> GetAll()
         {
-            var users = await dbContext.Users.ToListAsync();
-            var usersList = new List<ApplicationUser>();
-
-            foreach (var user in users)
-            {
-                var roles = await userManager.GetRolesAsync(user);
-                if (roles.Contains("User"))
-                {
-                    usersList.Add(user);
-                }
-            }
-
-            //return users;
-            return usersList;
+            return await dbContext.Users.Where(s => s.Role == "User").ToListAsync();
         }
+        
 
         public async Task<IEnumerable<ApplicationUser>> GetAllControllors()
         {
-          
-                var users = await userManager.Users.ToListAsync();
-                var usersList = new List<ApplicationUser>();
 
-                foreach (var user in users)
-                {
-                    var roles = await userManager.GetRolesAsync(user);
-                    if (roles.Contains("Controllor"))
-                    {
-                        usersList.Add(user);
-                    }
-                }
-
-                return usersList;
+            return await dbContext.Users.Where(s => s.Role == "Controllor").ToListAsync();
         }
+
+
+        public async Task<ApplicationUser?> GetById(string id)
+        {
+            //return await dbContext.Users.FirstOrDefaultAsync(s => s.Id.ToString() == id);
+            var user =  await dbContext.Users.FirstOrDefaultAsync(s => s.Id== id);
+            return user;
+
+        }
+
+   
     }
 }

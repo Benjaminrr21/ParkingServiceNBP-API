@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkEasyNBP.API", "ParkEasy
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkEasyNBP.Domain", "ParkEasyNBP.Domain\ParkEasyNBP.Domain.csproj", "{D17F5D06-8412-48A1-8F72-8D1E5D85263B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkEasyNBP.Infrastructure.SqlServer", "ParkEasyNBP.Infrastructure.SqlServer\ParkEasyNBP.Infrastructure.SqlServer.csproj", "{E6EAAED5-79CF-4C3B-9521-30EDE586FA0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkEasyNBP.Infrastructure.SqlServer", "ParkEasyNBP.Infrastructure.SqlServer\ParkEasyNBP.Infrastructure.SqlServer.csproj", "{E6EAAED5-79CF-4C3B-9521-30EDE586FA0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkEasyNBP.Application", "ParkEasyNBP.Application\ParkEasyNBP.Application.csproj", "{9D6531D3-588D-4023-BCA3-F6CE6D592859}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkEasyNBP.Application", "ParkEasyNBP.Application\ParkEasyNBP.Application.csproj", "{9D6531D3-588D-4023-BCA3-F6CE6D592859}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{BD7D05AF-E46F-4040-8E7B-A6E76D8A9A9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{BD7D05AF-E46F-4040-8E7B-A6E76D8A9A9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.MongoDB", "Infrastructure.MongoDB\Infrastructure.MongoDB.csproj", "{D226A16C-60E2-4C3F-B325-1DAE7AB35B17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{BD7D05AF-E46F-4040-8E7B-A6E76D8A9A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD7D05AF-E46F-4040-8E7B-A6E76D8A9A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD7D05AF-E46F-4040-8E7B-A6E76D8A9A9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D226A16C-60E2-4C3F-B325-1DAE7AB35B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D226A16C-60E2-4C3F-B325-1DAE7AB35B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D226A16C-60E2-4C3F-B325-1DAE7AB35B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D226A16C-60E2-4C3F-B325-1DAE7AB35B17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

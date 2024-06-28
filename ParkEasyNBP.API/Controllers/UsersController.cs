@@ -27,12 +27,17 @@ namespace ParkEasyNBP.API.Controllers
         [HttpGet("get-all-users")]
         public async Task<IActionResult> GetAllUsers()
         {
-            return Ok(mapper.Map<IEnumerable<OwnerDTO>>(await service.GetAll()));
+            return Ok(await service.GetAll());
         }
         [HttpGet("get-all-controllors")]
         public async Task<IActionResult> GetAllControllors()
         {
             return Ok(await service.GetAllControllors());
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById([FromRoute]string id)
+        {
+            return Ok(await service.GetById(id));
         }
     }
 }

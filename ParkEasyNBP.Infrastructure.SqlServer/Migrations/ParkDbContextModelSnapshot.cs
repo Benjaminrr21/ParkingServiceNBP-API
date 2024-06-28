@@ -171,11 +171,6 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(21)
-                        .HasColumnType("nvarchar(21)");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -218,6 +213,10 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -228,7 +227,7 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<int>("VehicleId")
+                    b.Property<int?>("VehicleId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -241,11 +240,44 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
+                    b.HasIndex("VehicleId")
+                        .IsUnique()
+                        .HasFilter("[VehicleId] IS NOT NULL");
+
                     b.ToTable("AspNetUsers", (string)null);
+                });
 
-                    b.HasDiscriminator<string>("Discriminator").HasValue("ApplicationUser");
+            modelBuilder.Entity("ParkEasyNBP.Domain.Models.Control", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.UseTphMappingStrategy();
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ControllorId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsPenalty")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("VehicleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("VehicleId");
+
+                    b.ToTable("Controls");
                 });
 
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.OneOffCard", b =>
@@ -301,12 +333,17 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("VehicleId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ZoneId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("PublicGarageId");
+
+                    b.HasIndex("VehicleId");
 
                     b.HasIndex("ZoneId");
 
@@ -333,7 +370,7 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                     b.Property<string>("Reason")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("VehicleId")
+                    b.Property<int?>("VehicleId")
                         .HasColumnType("int");
 
                     b.Property<string>("Why")
@@ -391,6 +428,9 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
@@ -406,11 +446,11 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("ApplicationUserId");
 
                     b.ToTable("RefreshTokens");
                 });
@@ -482,20 +522,6 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                     b.ToTable("Zones");
                 });
 
-            modelBuilder.Entity("ParkEasyNBP.Domain.Models.User", b =>
-                {
-                    b.HasBaseType("ParkEasyNBP.Domain.Models.ApplicationUser");
-
-                    b.Property<string>("Namee")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasIndex("VehicleId")
-                        .IsUnique();
-
-                    b.HasDiscriminator().HasValue("User");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -547,6 +573,28 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ParkEasyNBP.Domain.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("ParkEasyNBP.Domain.Models.Vehicle", null)
+                        .WithOne("User")
+                        .HasForeignKey("ParkEasyNBP.Domain.Models.ApplicationUser", "VehicleId");
+                });
+
+            modelBuilder.Entity("ParkEasyNBP.Domain.Models.Control", b =>
+                {
+                    b.HasOne("ParkEasyNBP.Domain.Models.ApplicationUser", null)
+                        .WithMany("Controls")
+                        .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("ParkEasyNBP.Domain.Models.Vehicle", "Vehicle")
+                        .WithMany("Controls")
+                        .HasForeignKey("VehicleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Vehicle");
+                });
+
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.OneOffCard", b =>
                 {
                     b.HasOne("ParkEasyNBP.Domain.Models.Vehicle", "Vehicle")
@@ -564,6 +612,10 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                         .WithMany("ParkingPlaces")
                         .HasForeignKey("PublicGarageId");
 
+                    b.HasOne("ParkEasyNBP.Domain.Models.Vehicle", "Vehicle")
+                        .WithMany()
+                        .HasForeignKey("VehicleId");
+
                     b.HasOne("ParkEasyNBP.Domain.Models.Zone", "Zone")
                         .WithMany("ParkingPlaces")
                         .HasForeignKey("ZoneId")
@@ -572,18 +624,16 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
 
                     b.Navigation("PublicGarage");
 
+                    b.Navigation("Vehicle");
+
                     b.Navigation("Zone");
                 });
 
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.Penalty", b =>
                 {
-                    b.HasOne("ParkEasyNBP.Domain.Models.Vehicle", "Vehicle")
+                    b.HasOne("ParkEasyNBP.Domain.Models.Vehicle", null)
                         .WithMany("Penalties")
-                        .HasForeignKey("VehicleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Vehicle");
+                        .HasForeignKey("VehicleId");
                 });
 
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.PublicGarage", b =>
@@ -599,13 +649,9 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
 
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.RefreshToken", b =>
                 {
-                    b.HasOne("ParkEasyNBP.Domain.Models.ApplicationUser", "User")
+                    b.HasOne("ParkEasyNBP.Domain.Models.ApplicationUser", null)
                         .WithMany("RefreshTokens")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
+                        .HasForeignKey("ApplicationUserId");
                 });
 
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.SubscriptionCard", b =>
@@ -619,19 +665,10 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                     b.Navigation("Vehicle");
                 });
 
-            modelBuilder.Entity("ParkEasyNBP.Domain.Models.User", b =>
-                {
-                    b.HasOne("ParkEasyNBP.Domain.Models.Vehicle", "Vehicle")
-                        .WithOne("User")
-                        .HasForeignKey("ParkEasyNBP.Domain.Models.User", "VehicleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Vehicle");
-                });
-
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.ApplicationUser", b =>
                 {
+                    b.Navigation("Controls");
+
                     b.Navigation("RefreshTokens");
                 });
 
@@ -642,6 +679,8 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
 
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.Vehicle", b =>
                 {
+                    b.Navigation("Controls");
+
                     b.Navigation("OneOffCards");
 
                     b.Navigation("Penalties");

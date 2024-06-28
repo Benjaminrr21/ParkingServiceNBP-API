@@ -23,13 +23,24 @@ namespace Repository.Repositories
         }
         public async Task<IEnumerable<Vehicle>> GetAll()
         {
+            ///throw new NotImplementedException();
             return await context.Vehicles.Include(z => z.Penalties).Include(z => z.OneOffCards).Include(z=>z.SubscriptionCards).ToListAsync();
 
         }
         public async Task<Vehicle> Get(int id)
         {
+            //throw new NotImplementedException();
+
             var v = await context.Vehicles.Include(v => v.Penalties).FirstOrDefaultAsync(v => v.Id == id);
-            return v; 
+            return v;
+        }
+
+        public async Task<Vehicle> VehicleOfOwner(string id)
+        {
+            throw new NotImplementedException();
+
+            //return await context.Vehicles.FirstOrDefaultAsync(v => v.UserId == id);
+           
         }
     }
 }

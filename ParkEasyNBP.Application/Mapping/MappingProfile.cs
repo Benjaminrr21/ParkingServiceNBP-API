@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ParkEasyNBP.Application.DTOs;
 using ParkEasyNBP.Application.DTOs.CardsDTO;
+using ParkEasyNBP.Application.DTOs.ControlDTO;
 using ParkEasyNBP.Application.DTOs.Penalties;
 using ParkEasyNBP.Domain.Models;
 using System;
@@ -21,6 +22,7 @@ namespace ParkEasyNBP.Application.Mapping
             CreateMap<VehicleUpdateDTO,Vehicle>();
             CreateMap<Vehicle,VehicleWithInfosDTO>();
             CreateMap<Vehicle,VehicleOfCardDTO>();
+            CreateMap<Vehicle,VehicleControlDTO>();
 
             CreateMap<NewPenaltyDTO,Penalty>();
             CreateMap<Penalty,PenaltyOfVehicleDTO>();
@@ -36,7 +38,13 @@ namespace ParkEasyNBP.Application.Mapping
             CreateMap<AddNewOOCard, OneOffCard>();
             CreateMap<OneOffCard, OOCardOfVehicle>();
 
+            CreateMap<Control, ControlDTO>();
+            CreateMap<NewControlDTO, Control>();
+
             CreateMap<ApplicationUser, OwnerDTO>();
+            CreateMap<ApplicationUser, ControllorDTO>();
+
+            CreateMap<ApplicationUser, serDTO>();
         }
     }
 }

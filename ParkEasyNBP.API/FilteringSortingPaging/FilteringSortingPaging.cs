@@ -1,11 +1,11 @@
-﻿using ParkEasyNBP.Domain.Models;
+﻿using ParkEasyNBP.Domain.Interfaces;
 using System.Linq.Expressions;
 
 namespace ParkEasyNBP.API.FilteringSortingPaging
 {
     public static class FilteringSortingPaging
     {
-        public static IQueryable<T> ApplyFiltering<T>(this IQueryable<T> query, IQueryObject queryObject, Dictionary<string, Expression<Func<T, object>>> columnMaps)
+        /*public static IQueryable<T> ApplyFiltering<T>(this IQueryable<T> query, IQueryObject queryObject, Dictionary<string, Expression<Func<T, object>>> columnMaps)
         {
             if (queryObject.Filters != null)
             {
@@ -29,7 +29,7 @@ namespace ParkEasyNBP.API.FilteringSortingPaging
             }
 
             return query;
-        }
+        }*/
 
         public static IQueryable<T> ApplySorting<T>(this IQueryable<T> query,
            IQueryObject queryObject, Dictionary<string, Expression<Func<T, object>>> columnMaps)

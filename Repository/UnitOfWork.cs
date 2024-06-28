@@ -14,7 +14,9 @@ namespace Repository
         private readonly ParkDbContext context;
 
         public IParkingPlaceRepository ParkingPlaceRepository {  get; private set; }
-        public IVehicleRepository VehicleRepository { get; private set; }
+        /// <summary>
+        /// public IVehicleRepository VehicleRepository { get; private set; }
+        /// </summary>
 
         public IUserRepository UserRepository { get; private set; }
 
@@ -26,7 +28,7 @@ namespace Repository
         {
             this.context = context;
             ParkingPlaceRepository = new ParkingPlaceRepository(context);
-            VehicleRepository = new VehicleRepository(context);
+           // VehicleRepository = new VehicleRepository(context);
             SubscriptionCardRepository = new SubscriptionCardRepository(context);
             OneOffCardRepository = new OneOffCardRepository(context);
             //UserRepository = new UserRepository(context);

@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ParkEasyNBP.API.Mediator.Query;
 using ParkEasyNBP.Application.DTOs;
 using ParkEasyNBP.Domain.Interfaces;
 using ParkEasyNBP.Domain.Models;
+using ParkEasyNBP.API.FilteringSortingPaging;
+using System.Linq.Expressions;
 
 namespace ParkEasyNBP.API.Controllers
 {
@@ -22,10 +25,40 @@ namespace ParkEasyNBP.API.Controllers
             this.mapper = mapper;
         }
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetParkingPlaces([FromQuery]ParkingPlaceQueryObject queryObject)
         {
-            return Ok(await unitOfWork.ParkingPlaceRepository.GetAll());
+            Dictionary<string, Expression<Func<ParkingPlace, object>>> columnMaps = new Dictionary<string, Expression<Func<ParkingPlace, object>>>
+            {
+
+                /*["Status"] = p => p.Status,
+                ["Street"] = p => p.Street,*/
+                ["PID"] = p => p.Id
+            };
+
+            var parkingSpaces = await service.GetAll();
+
+            if (!string.IsNullOrEmpty(queryObject.Status))
+                parkingSpaces = parkingSpaces.Where(p => p.Status == queryObject.Status).AsQueryable();
+
+            parkingSpaces = parkingSpaces.AsQueryable().ApplySorting(queryObject, columnMaps);
+            parkingSpaces = parkingSpaces.AsQueryable().ApplyPaging(queryObject);
+
+            var result = new ResultQuery<ParkingPlaceGetDTO>
+            {
+                Total = parkingSpaces.Count(),
+                Items = parkingSpaces.Select(p => new ParkingPlaceGetDTO
+                {
+                    Id = p.Id,
+                    Street = p.Street,
+                    ZoneId = p.ZoneId,
+                    Status = p.Status,
+                    //Id = p.Id
+                }).ToList()
+            };
+
+            return Ok(parkingSpaces);
         }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById([FromRoute]int id)
         {
@@ -72,6 +105,18 @@ namespace ParkEasyNBP.API.Controllers
             }
 
             return Ok(updatedZone);
+        }
+
+        [HttpPut("reserve/{vid}/{pid}")]
+        public async Task<IActionResult> Reserve([FromRoute]int vid, [FromRoute]int pid)
+        {
+            
+            return Ok(await service.ReservePlace(vid, pid));
+        }
+        [HttpPut("free/{vid}/{pid}")]
+        public async Task<IActionResult> Free([FromRoute] int vid, [FromRoute] int pid)
+        {
+            return Ok(await service.FreePlace(vid, pid));
         }
     }
 }

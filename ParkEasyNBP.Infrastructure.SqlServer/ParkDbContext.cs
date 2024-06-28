@@ -25,6 +25,7 @@ namespace ParkEasyNBP.Infrastructure.SqlServer
         public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<SubscriptionCard> SubscriptionCards { get; set; }
         public DbSet<OneOffCard> OneOffCards { get; set; }
+        public DbSet<Control> Controls { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
 
 
@@ -33,6 +34,8 @@ namespace ParkEasyNBP.Infrastructure.SqlServer
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<ApplicationUser>().ToTable("AspNetUsers");
+            /*modelBuilder.Entity<ApplicationUser>().HasKey(u => u.UserId);
+            modelBuilder.Entity<ApplicationUser>().Property(u => u.UserId).ValueGeneratedOnAdd();*/
 
             /*modelBuilder.Entity<User>().ToTable("Users");
             modelBuilder.Entity<Controllor>().ToTable("Controllors");*/

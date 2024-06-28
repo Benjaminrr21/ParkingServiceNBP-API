@@ -9,8 +9,10 @@ namespace ParkEasyNBP.Domain.Models
     public class ParkingPlace
     {
         public int Id { get; set; }
-        public string Status { get; set; }
+        public string Status { get; set; } = "Free";
         public string Street { get; set; }
+        public int? VehicleId {  get; set; }
+        public Vehicle Vehicle { get; set; }
         public int ZoneId { get; set; } // Može biti null
         public virtual Zone Zone { get; set; }
         public int? PublicGarageId { get; set; } // Može biti null

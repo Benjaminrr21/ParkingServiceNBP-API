@@ -1,4 +1,5 @@
-﻿using ParkEasyNBP.Domain.Models;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using ParkEasyNBP.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace ParkEasyNBP.Domain.Interfaces
     public interface IUserRepository : IRepository<ApplicationUser>
     {
         Task<IEnumerable<ApplicationUser>> GetAllControllors();
+        Task<ApplicationUser?> GetById(string id);
     }
 }

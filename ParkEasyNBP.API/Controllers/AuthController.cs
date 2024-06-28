@@ -11,6 +11,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Security.Cryptography;
+using Microsoft.Data.SqlClient;
 
 namespace ParkEasyNBP.API.Controllers
 {
@@ -44,36 +45,78 @@ namespace ParkEasyNBP.API.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
+
             try
             {
-                ApplicationUser user = new ApplicationUser // Promenite ovde
+                // Logovanje započinjanja registracije
+                Console.WriteLine("Započeta registracija korisnika.");
+
+                ApplicationUser user = new ApplicationUser
                 {
+                    Id = Guid.NewGuid().ToString(),
                     UserName = model.Username,
                     Email = model.Email,
-                    FirstName = model.FirstName, // Ako imate dodatna svojstva
+                    FirstName = model.FirstName,
                     LastName = model.LastName,
                     Address = model.Address,
                     Phone = model.Phone,
-                    VehicleId = model.VehicleId
+                    Role = "User"
                 };
+
+                // Logovanje korisničkih podataka
+                Console.WriteLine($"Kreiranje korisnika sa ID: {user.Id}, Username: {user.UserName}");
 
                 var result = await userManager.CreateAsync(user, model.Password);
                 if (!result.Succeeded)
-                    return BadRequest(result.Errors.FirstOrDefault());
+                {
+                    var errors = string.Join(", ", result.Errors.Select(e => e.Description));
+                    return BadRequest(new { Message = errors });
+                }
 
+                // Proverite da li uloga "User" postoji
                 if (!await roleManager.RoleExistsAsync("User"))
                 {
-                    await roleManager.CreateAsync(new IdentityRole("User"));
+                    var roleResult = await roleManager.CreateAsync(new IdentityRole("User"));
+                    if (!roleResult.Succeeded)
+                    {
+                        var roleErrors = string.Join(", ", roleResult.Errors.Select(e => e.Description));
+                        return BadRequest(new { Message = roleErrors });
+                    }
                 }
-                await userManager.AddToRoleAsync(user, "User");
 
-                return Ok("Uspesna registracija!");
+                // Logovanje dodeljivanja uloge korisniku
+                Console.WriteLine($"Dodeljivanje uloge 'User' korisniku sa ID: {user.Id}");
+
+              /*  var addToRoleResult = await userManager.AddToRoleAsync(user, "User");
+                if (!addToRoleResult.Succeeded)
+                {
+                    var roleErrors = string.Join(", ", addToRoleResult.Errors.Select(e => e.Description));
+                    return BadRequest(new { Message = roleErrors });
+                }*/
+
+                return Ok(user);
+            }
+            catch (DbUpdateException dbEx)
+            {
+                var sqlEx = dbEx.InnerException as SqlException;
+                if (sqlEx != null)
+                {
+                    // Specifične SQL greške
+                    Console.WriteLine($"SQL Error: {sqlEx.Message}, ErrorCode: {sqlEx.Number}");
+                    return BadRequest(new { Message = sqlEx.Message, ErrorCode = sqlEx.Number });
+                }
+                Console.WriteLine($"DbUpdateException: {dbEx.Message}");
+                return BadRequest(new { Message = dbEx.Message });
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                Console.WriteLine($"Exception: {ex.Message}");
+                return BadRequest(new { Message = ex.Message });
             }
         }
+
+
+
 
         [HttpPost]
         [Route("register-controller")]
@@ -85,13 +128,14 @@ namespace ParkEasyNBP.API.Controllers
             {
                 ApplicationUser user = new ApplicationUser // Promenite ovde
                 {
+                    Id = Guid.NewGuid().ToString(),
                     UserName = model.Username,
                     Email = model.Email,
                     FirstName = model.FirstName, // Ako imate dodatna svojstva
                     LastName = model.LastName,
                     Address = model.Address,
-                    Phone = model.Phone
-                    
+                    Phone = model.Phone,
+                    Role = "Controllor"
                 };
 
                 var result = await userManager.CreateAsync(user, model.Password);
@@ -102,9 +146,9 @@ namespace ParkEasyNBP.API.Controllers
                 {
                     await roleManager.CreateAsync(new IdentityRole("Controllor"));
                 }
-                await userManager.AddToRoleAsync(user, "Controllor");
+               // await userManager.AddToRoleAsync(user, "Controllor");
 
-                return Ok("Uspesna registracija!");
+                return Ok(user);
             }
             catch (Exception ex)
             {

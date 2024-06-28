@@ -10,6 +10,10 @@ namespace ParkEasyNBP.Domain.Models
     {
         public int Id { get; set; }
         public DateTime Time { get; set; }
-        public int RegNumberOfVehicle { get; set; }
+        public bool IsPenalty { get; set; }
+        public int VehicleId { get; set; }
+        public Vehicle Vehicle { get; set; }
+        public string ControllorId { get; set; }
+      //  public ApplicationUser Controllor { get; set; }
     }
 }

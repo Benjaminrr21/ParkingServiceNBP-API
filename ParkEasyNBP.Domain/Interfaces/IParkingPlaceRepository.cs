@@ -9,5 +9,7 @@ namespace ParkEasyNBP.Domain.Interfaces
 {
     public interface IParkingPlaceRepository : IRepository<ParkingPlace>
     {
+        Task<ParkingPlace> ReservePlace(int vid, int pid);
+        Task<ParkingPlace> FreePlace(int vid, int pid);
     }
 }
