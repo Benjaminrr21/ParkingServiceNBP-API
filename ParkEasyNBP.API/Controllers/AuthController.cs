@@ -48,23 +48,15 @@ namespace ParkEasyNBP.API.Controllers
 
             try
             {
-<<<<<<< HEAD
                 // Logovanje započinjanja registracije
                 Console.WriteLine("Započeta registracija korisnika.");
 
-                ApplicationUser user = new ApplicationUser
-=======
                 ApplicationUser user = new ApplicationUser 
->>>>>>> b20cafc2f0ac1d1ab20dc7fb123df4a7a2c15dc1
                 {
                     Id = Guid.NewGuid().ToString(),
                     UserName = model.Username,
                     Email = model.Email,
-<<<<<<< HEAD
                     FirstName = model.FirstName,
-=======
-                    FirstName = model.FirstName, 
->>>>>>> b20cafc2f0ac1d1ab20dc7fb123df4a7a2c15dc1
                     LastName = model.LastName,
                     Address = model.Address,
                     Phone = model.Phone,
