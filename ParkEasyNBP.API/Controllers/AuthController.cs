@@ -19,10 +19,10 @@ namespace ParkEasyNBP.API.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly UserManager<ApplicationUser> userManager; // Promenite ovde
+        private readonly UserManager<ApplicationUser> userManager; 
         private readonly RoleManager<IdentityRole> roleManager;
 
-        public AuthController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager) // Promenite ovde
+        public AuthController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
@@ -48,15 +48,23 @@ namespace ParkEasyNBP.API.Controllers
 
             try
             {
+<<<<<<< HEAD
                 // Logovanje započinjanja registracije
                 Console.WriteLine("Započeta registracija korisnika.");
 
                 ApplicationUser user = new ApplicationUser
+=======
+                ApplicationUser user = new ApplicationUser 
+>>>>>>> b20cafc2f0ac1d1ab20dc7fb123df4a7a2c15dc1
                 {
                     Id = Guid.NewGuid().ToString(),
                     UserName = model.Username,
                     Email = model.Email,
+<<<<<<< HEAD
                     FirstName = model.FirstName,
+=======
+                    FirstName = model.FirstName, 
+>>>>>>> b20cafc2f0ac1d1ab20dc7fb123df4a7a2c15dc1
                     LastName = model.LastName,
                     Address = model.Address,
                     Phone = model.Phone,
@@ -126,12 +134,12 @@ namespace ParkEasyNBP.API.Controllers
                 return BadRequest(ModelState);
             try
             {
-                ApplicationUser user = new ApplicationUser // Promenite ovde
+                ApplicationUser user = new ApplicationUser 
                 {
                     Id = Guid.NewGuid().ToString(),
                     UserName = model.Username,
                     Email = model.Email,
-                    FirstName = model.FirstName, // Ako imate dodatna svojstva
+                    FirstName = model.FirstName, 
                     LastName = model.LastName,
                     Address = model.Address,
                     Phone = model.Phone,

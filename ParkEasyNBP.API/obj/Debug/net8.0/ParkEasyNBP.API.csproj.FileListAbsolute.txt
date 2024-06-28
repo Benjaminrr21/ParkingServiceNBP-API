@@ -150,3 +150,14 @@ C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasy
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\EntityFramework.dll
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Microsoft.AspNet.Identity.Core.dll
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.csproj.AssemblyReference.cache
+C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.AssemblyInfoInputs.cache
+C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.AssemblyInfo.cs
+C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.csproj.CoreCompileInputs.cache
+C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.sourcelink.json
+C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.dll
+C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\refint\ParkEasyNBP.API.dll
+C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.pdb
+C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.MvcApplicationPartsAssemblyInfo.cs
