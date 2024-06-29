@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\Infrastructure.MongoDB\\Infrastructure.MongoDB.csproj": {}
+    "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Infrastructure.MongoDB\\Infrastructure.MongoDB.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\Infrastructure.MongoDB\\Infrastructure.MongoDB.csproj": {
+    "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Infrastructure.MongoDB\\Infrastructure.MongoDB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\Infrastructure.MongoDB\\Infrastructure.MongoDB.csproj",
+        "projectUniqueName": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Infrastructure.MongoDB\\Infrastructure.MongoDB.csproj",
         "projectName": "Infrastructure.MongoDB",
-        "projectPath": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\Infrastructure.MongoDB\\Infrastructure.MongoDB.csproj",
-        "packagesPath": "C:\\Users\\Dina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\Infrastructure.MongoDB\\obj\\",
+        "projectPath": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Infrastructure.MongoDB\\Infrastructure.MongoDB.csproj",
+        "packagesPath": "C:\\Users\\korisnik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Infrastructure.MongoDB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

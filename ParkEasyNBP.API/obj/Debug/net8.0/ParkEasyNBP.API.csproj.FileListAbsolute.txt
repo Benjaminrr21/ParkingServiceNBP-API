@@ -161,6 +161,7 @@ C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\ne
 C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\refint\ParkEasyNBP.API.dll
 C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.pdb
 C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.MvcApplicationPartsAssemblyInfo.cs
+<<<<<<< HEAD
 C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\bin\Debug\net8.0\appsettings.json
 C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\bin\Debug\net8.0\ParkEasyNBP.API.exe
@@ -310,3 +311,27 @@ C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\ne
 C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.genruntimeconfig.cache
 C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ref\ParkEasyNBP.API.dll
 C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+=======
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\MediatR.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\MediatR.Contracts.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\DnsClient.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Snappier.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\ParkEasyNBP.Infrastructure.MongoDB.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\ParkEasyNBP.Infrastructure.MongoDB.pdb
+>>>>>>> 41bca3407fa8d61fd9081a06f73d4c31d280a861

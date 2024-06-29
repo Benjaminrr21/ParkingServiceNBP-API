@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Infrastructure.MongoDB\ParkEasyNBP.Infrastructure.MongoDB.csproj" />
     <ProjectReference Include="..\ParkEasyNBP.Application\ParkEasyNBP.Application.csproj" />
     <ProjectReference Include="..\ParkEasyNBP.Domain\ParkEasyNBP.Domain.csproj" />
     <ProjectReference Include="..\ParkEasyNBP.Infrastructure.SqlServer\ParkEasyNBP.Infrastructure.SqlServer.csproj" />
