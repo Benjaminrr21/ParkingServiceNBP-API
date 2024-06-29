@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkEasyNBP.Application", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{BD7D05AF-E46F-4040-8E7B-A6E76D8A9A9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.MongoDB", "Infrastructure.MongoDB\Infrastructure.MongoDB.csproj", "{D226A16C-60E2-4C3F-B325-1DAE7AB35B17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkEasyNBP.Infrastructure.MongoDB", "Infrastructure.MongoDB\ParkEasyNBP.Infrastructure.MongoDB.csproj", "{D226A16C-60E2-4C3F-B325-1DAE7AB35B17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

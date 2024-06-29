@@ -17,7 +17,7 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
+                .HasAnnotation("ProductVersion", "8.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -428,9 +428,6 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ApplicationUserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
@@ -445,12 +442,11 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ApplicationUserId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("RefreshTokens");
                 });
@@ -649,9 +645,11 @@ namespace ParkEasyNBP.Infrastructure.SqlServer.Migrations
 
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.RefreshToken", b =>
                 {
-                    b.HasOne("ParkEasyNBP.Domain.Models.ApplicationUser", null)
+                    b.HasOne("ParkEasyNBP.Domain.Models.ApplicationUser", "User")
                         .WithMany("RefreshTokens")
-                        .HasForeignKey("ApplicationUserId");
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ParkEasyNBP.Domain.Models.SubscriptionCard", b =>

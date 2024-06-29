@@ -4,6 +4,7 @@ using ParkEasyNBP.Application.DTOs.CardsDTO;
 using ParkEasyNBP.Application.DTOs.ControlDTO;
 using ParkEasyNBP.Application.DTOs.Penalties;
 using ParkEasyNBP.Domain.Models;
+using ParkEasyNBP.Domain.ModelsMongoDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,8 @@ namespace ParkEasyNBP.Application.Mapping
             CreateMap<ApplicationUser, ControllorDTO>();
 
             CreateMap<ApplicationUser, serDTO>();
+
+            CreateMap<ZoneMongoDTO, ZoneMongoDB>();
         }
     }
 }

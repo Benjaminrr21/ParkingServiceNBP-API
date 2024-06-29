@@ -12,6 +12,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Security.Cryptography;
 using Microsoft.Data.SqlClient;
+using AutoMapper;
 
 namespace ParkEasyNBP.API.Controllers
 {
@@ -21,11 +22,13 @@ namespace ParkEasyNBP.API.Controllers
     {
         private readonly UserManager<ApplicationUser> userManager; 
         private readonly RoleManager<IdentityRole> roleManager;
+        private readonly IMapper mapper;
 
-        public AuthController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
+        public AuthController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager,IMapper mapper)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
+            this.mapper = mapper;
         }
 
         private string GenerateRefreshToken()
@@ -199,6 +202,7 @@ namespace ParkEasyNBP.API.Controllers
                 var refreshToken = GenerateRefreshToken();
                 user.RefreshTokens.Add(new RefreshToken
                 {
+                    
                     Token = refreshToken,
                     Expires = DateTime.UtcNow.AddDays(7),
                     Created = DateTime.UtcNow
@@ -208,6 +212,7 @@ namespace ParkEasyNBP.API.Controllers
                 return Ok(
                     new
                     {
+                        user = mapper.Map<serDTO>(user),
                         token = tokenKey,
                         refreshToken,
                         expiration = token.ValidTo

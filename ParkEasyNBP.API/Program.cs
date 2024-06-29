@@ -7,6 +7,7 @@ using ParkEasyNBP.Application.Mapping;
 using ParkEasyNBP.Application.Services;
 using ParkEasyNBP.Domain.Interfaces;
 using ParkEasyNBP.Domain.Models;
+using ParkEasyNBP.Infrastructure.MongoDB;
 using ParkEasyNBP.Infrastructure.SqlServer;
 using Repository;
 using Repository.Repositories;
@@ -31,6 +32,8 @@ builder.Services.AddScoped<ParkingPlaceService>();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 builder.Services.AddScoped<IPenaltyRepository, PenaltyRepository>();
 builder.Services.AddScoped<IControlRepository, ControlRepository>();
+
+builder.Services.AddScoped<MongoService>();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
