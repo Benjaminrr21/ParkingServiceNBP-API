@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ParkEasyNBP.Infrastructure.SqlServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da3a44903b11cb3c6f8614331ed2a3cf84f60fea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2b2a4dcbb4c88310fc70193607d646b8971105d")]
 [assembly: System.Reflection.AssemblyProductAttribute("ParkEasyNBP.Infrastructure.SqlServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ParkEasyNBP.Infrastructure.SqlServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

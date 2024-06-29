@@ -328,8 +328,7 @@
               "RelativeToolTip": "ParkEasyNBP.API\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-28T14:32:28.364Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-28T14:32:28.364Z"
             },
             {
               "$type": "Document",
@@ -353,8 +352,7 @@
               "RelativeToolTip": "ParkEasyNBP.API\\Controllers\\AuthController.cs",
               "ViewState": "AQIAACwAAAAAAAAAAAAEwDwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T16:49:39.465Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-24T16:49:39.465Z"
             },
             {
               "$type": "Document",
@@ -364,7 +362,7 @@
               "RelativeDocumentMoniker": "ParkEasyNBP.API\\Mediator\\Query\\ParkingPlaceQueryObject.cs",
               "ToolTip": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.API\\Mediator\\Query\\ParkingPlaceQueryObject.cs",
               "RelativeToolTip": "ParkEasyNBP.API\\Mediator\\Query\\ParkingPlaceQueryObject.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAABAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAYAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-27T19:41:01.653Z",
               "EditorCaption": ""

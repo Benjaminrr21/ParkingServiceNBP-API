@@ -17,11 +17,15 @@ namespace Repository.Repositories
     public class VehicleRepository : Repository<Vehicle>, IVehicleRepository
     {
         private readonly ParkDbContext context;
+<<<<<<< HEAD
  
         
 
         public VehicleRepository(ParkDbContext context) : base(context)
  
+=======
+        public VehicleRepository(ParkDbContext context) : base(context)
+>>>>>>> 9165cc8d63a6d777f7f7a129e2811edfaeb71094
         {
             this.context = context;
         }
