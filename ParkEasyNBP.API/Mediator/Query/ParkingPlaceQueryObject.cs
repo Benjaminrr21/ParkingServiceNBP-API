@@ -4,7 +4,7 @@ namespace ParkEasyNBP.API.Mediator.Query
 {
     public class ParkingPlaceQueryObject : IQueryObject
     {
-        public string Status { get; set; } // "Free" ili "Occupied"
+        public string Status { get; set; } 
         public string Street { get; set; }
         public int Id { get; set; }
         public bool IsSortAscending { get; set; }
