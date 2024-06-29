@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|c:\\users\\korisnik\\desktop\\iii godina\\napredne baze podataka\\parkeasynbp\\parkeasynbp.api\\mediator\\query\\parkingplacequeryobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|solutionrelative:parkeasynbp.api\\mediator\\query\\parkingplacequeryobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|c:\\users\\korisnik\\desktop\\iii godina\\napredne baze podataka\\parkeasynbp\\parkeasynbp.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|solutionrelative:parkeasynbp.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|c:\\users\\korisnik\\desktop\\iii godina\\napredne baze podataka\\parkeasynbp\\parkeasynbp.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|solutionrelative:parkeasynbp.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BD7D05AF-E46F-4040-8E7B-A6E76D8A9A9A}|Repository\\Repository.csproj|c:\\users\\korisnik\\desktop\\iii godina\\napredne baze podataka\\parkeasynbp\\repository\\repositories\\vehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD7D05AF-E46F-4040-8E7B-A6E76D8A9A9A}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\vehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|c:\\users\\korisnik\\desktop\\iii godina\\napredne baze podataka\\parkeasynbp\\parkeasynbp.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|solutionrelative:parkeasynbp.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D226A16C-60E2-4C3F-B325-1DAE7AB35B17}|Infrastructure.MongoDB\\Infrastructure.MongoDB.csproj|c:\\users\\korisnik\\desktop\\iii godina\\napredne baze podataka\\parkeasynbp\\infrastructure.mongodb\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -175,10 +179,6 @@
       "RelativeMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|solutionrelative:parkeasynbp.api\\filteringsortingpaging\\filteringsortingpaging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|c:\\users\\korisnik\\desktop\\iii godina\\napredne baze podataka\\parkeasynbp\\parkeasynbp.api\\mediator\\query\\parkingplacequeryobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|solutionrelative:parkeasynbp.api\\mediator\\query\\parkingplacequeryobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D17F5D06-8412-48A1-8F72-8D1E5D85263B}|ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj|c:\\users\\korisnik\\desktop\\iii godina\\napredne baze podataka\\parkeasynbp\\parkeasynbp.domain\\interfaces\\iqueryobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D17F5D06-8412-48A1-8F72-8D1E5D85263B}|ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj|solutionrelative:parkeasynbp.domain\\interfaces\\iqueryobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -284,20 +284,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "VehicleRepository.cs",
-              "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Repository\\Repositories\\VehicleRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repositories\\VehicleRepository.cs",
-              "ToolTip": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Repository\\Repositories\\VehicleRepository.cs",
-              "RelativeToolTip": "Repository\\Repositories\\VehicleRepository.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAArwBoAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T15:06:59.551Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Vehicle.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\Models\\Vehicle.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Domain\\Models\\Vehicle.cs",
@@ -309,7 +296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "NewVehicleDTO.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Application\\DTOs\\NewVehicleDTO.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Application\\DTOs\\NewVehicleDTO.cs",
@@ -321,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "SubscriptionCard.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\Models\\SubscriptionCard.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Domain\\Models\\SubscriptionCard.cs",
@@ -333,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.API\\appsettings.json",
               "RelativeDocumentMoniker": "ParkEasyNBP.API\\appsettings.json",
@@ -346,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\Models\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Domain\\Models\\ApplicationUser.cs",
@@ -354,25 +341,49 @@
               "RelativeToolTip": "ParkEasyNBP.Domain\\Models\\ApplicationUser.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAAYwA4AAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T15:05:52.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-24T15:05:52.54Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.API\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.API\\Controllers\\AuthController.cs",
               "RelativeToolTip": "ParkEasyNBP.API\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAIAzwDwAAAAAAAAA",
+              "ViewState": "AQIAACwAAAAAAAAAAAAEwDwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-24T16:49:39.465Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
+              "Title": "ParkingPlaceQueryObject.cs",
+              "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.API\\Mediator\\Query\\ParkingPlaceQueryObject.cs",
+              "RelativeDocumentMoniker": "ParkEasyNBP.API\\Mediator\\Query\\ParkingPlaceQueryObject.cs",
+              "ToolTip": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.API\\Mediator\\Query\\ParkingPlaceQueryObject.cs",
+              "RelativeToolTip": "ParkEasyNBP.API\\Mediator\\Query\\ParkingPlaceQueryObject.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-27T19:41:01.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VehicleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Repository\\Repositories\\VehicleRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Repositories\\VehicleRepository.cs",
+              "ToolTip": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Repository\\Repositories\\VehicleRepository.cs",
+              "RelativeToolTip": "Repository\\Repositories\\VehicleRepository.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAArwBoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T15:06:59.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "VehicleController.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.API\\Controllers\\VehicleController.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.API\\Controllers\\VehicleController.cs",
@@ -384,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Infrastructure.MongoDB\\Class1.cs",
               "RelativeDocumentMoniker": "Infrastructure.MongoDB\\Class1.cs",
@@ -408,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "OneOffCard.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\Models\\OneOffCard.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Domain\\Models\\OneOffCard.cs",
@@ -420,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Control.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\Models\\Control.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Domain\\Models\\Control.cs",
@@ -432,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "20240628173238_proba.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240628173238_proba.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240628173238_proba.cs",
@@ -468,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "20240628154004_new2.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240628154004_new2.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240628154004_new2.cs",
@@ -480,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "20240619143838_initial-migrate.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240619143838_initial-migrate.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240619143838_initial-migrate.cs",
@@ -492,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "20240628153919_new.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240628153919_new.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240628153919_new.cs",
@@ -504,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.API\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.API\\Controllers\\UsersController.cs",
@@ -516,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "IVehicleRepository.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\Interfaces\\IVehicleRepository.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Domain\\Interfaces\\IVehicleRepository.cs",
@@ -528,7 +539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.API\\Program.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.API\\Program.cs",
@@ -540,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "20240628165046_newveh.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240628165046_newveh.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240628165046_newveh.cs",
@@ -551,7 +562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Penalty.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\Models\\Penalty.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Domain\\Models\\Penalty.cs",
@@ -563,7 +574,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\Interfaces\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Domain\\Interfaces\\IUnitOfWork.cs",
@@ -575,7 +586,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Repository\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "Repository\\UnitOfWork.cs",
@@ -587,7 +598,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "ParkDbContext.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\ParkDbContext.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Infrastructure.SqlServer\\ParkDbContext.cs",
@@ -599,7 +610,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Repository\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Repositories\\UserRepository.cs",
@@ -611,7 +622,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "20240628152001_init3.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240628152001_init3.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240628152001_init3.cs",
@@ -622,7 +633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "RefreshToken.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\Models\\RefreshToken.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Domain\\Models\\RefreshToken.cs",
@@ -634,7 +645,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Domain\\Interfaces\\IUserRepository.cs",
@@ -646,7 +657,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Application\\Mapping\\MappingProfile.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Application\\Mapping\\MappingProfile.cs",
@@ -658,7 +669,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "serDTO.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Application\\DTOs\\serDTO.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Application\\DTOs\\serDTO.cs",
@@ -670,7 +681,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "ControlController.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.API\\Controllers\\ControlController.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.API\\Controllers\\ControlController.cs",
@@ -682,7 +693,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "CredentialModel.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Application\\DTOs\\CredentialModel.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Application\\DTOs\\CredentialModel.cs",
@@ -694,7 +705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "ControlDTO.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Application\\DTOs\\ControlDTO\\ControlDTO.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Application\\DTOs\\ControlDTO\\ControlDTO.cs",
@@ -706,7 +717,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "ParkEasyNBP.Domain.csproj",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj",
               "RelativeDocumentMoniker": "ParkEasyNBP.Domain\\ParkEasyNBP.Domain.csproj",
@@ -718,7 +729,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "VehicleControlDTO.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Application\\DTOs\\VehicleControlDTO.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Application\\DTOs\\VehicleControlDTO.cs",
@@ -730,7 +741,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "SubscriptionCardRepository.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Repository\\Repositories\\SubscriptionCardRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Repositories\\SubscriptionCardRepository.cs",
@@ -742,7 +753,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "OwnerDTO.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Application\\DTOs\\OwnerDTO.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Application\\DTOs\\OwnerDTO.cs",
@@ -754,7 +765,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "ControllorDTO.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Application\\DTOs\\ControlDTO\\ControllorDTO.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Application\\DTOs\\ControlDTO\\ControllorDTO.cs",
@@ -766,7 +777,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "NewControlDTO.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Application\\DTOs\\ControlDTO\\NewControlDTO.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Application\\DTOs\\ControlDTO\\NewControlDTO.cs",
@@ -778,7 +789,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "ControlRepository.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\Repository\\Repositories\\ControlRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Repositories\\ControlRepository.cs",
@@ -790,7 +801,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "IControlRepository.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\Interfaces\\IControlRepository.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Domain\\Interfaces\\IControlRepository.cs",
@@ -802,7 +813,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "20240627224940_ccc.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240627224940_ccc.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240627224940_ccc.cs",
@@ -813,7 +824,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "20240627224248_control.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240627224248_control.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240627224248_control.cs",
@@ -848,7 +859,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "FilteringSortingPaging.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.API\\FilteringSortingPaging\\FilteringSortingPaging.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.API\\FilteringSortingPaging\\FilteringSortingPaging.cs",
@@ -857,18 +868,6 @@
               "ViewState": "AQIAACAAAAAAAAAAAAAAwDAAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-26T20:09:50.924Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "ParkingPlaceQueryObject.cs",
-              "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.API\\Mediator\\Query\\ParkingPlaceQueryObject.cs",
-              "RelativeDocumentMoniker": "ParkEasyNBP.API\\Mediator\\Query\\ParkingPlaceQueryObject.cs",
-              "ToolTip": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.API\\Mediator\\Query\\ParkingPlaceQueryObject.cs",
-              "RelativeToolTip": "ParkEasyNBP.API\\Mediator\\Query\\ParkingPlaceQueryObject.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T19:41:01.653Z"
             },
             {
               "$type": "Document",
