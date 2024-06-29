@@ -1,10 +1,14 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using ParkEasyNBP.API.FilteringSortingPaging;
+using ParkEasyNBP.API.Mediator.Query;
 using ParkEasyNBP.Application.DTOs;
 using ParkEasyNBP.Domain.Interfaces;
 using ParkEasyNBP.Domain.Models;
 using Repository.Repositories;
+using System.Linq.Expressions;
 //using System.Security.Policy;
 
 namespace ParkEasyNBP.API.Controllers
@@ -23,11 +27,20 @@ namespace ParkEasyNBP.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllZones()
+        public async Task<IActionResult> GetAllZones([FromQuery]ZoneQueryObject qo)
         {
 
             var list = await service.GetAll();
             var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
+
+            Dictionary<string, Expression<Func<ZonesDTO, object>>> columnMaps = new Dictionary<string, Expression<Func<ZonesDTO, object>>>
+            {
+                ["Name"] = c => c.Name
+            };
+            if (!qo.Name.IsNullOrEmpty())
+                list2 = list2.Where(c => c.Name == qo.Name).AsQueryable();
+
+            list2 = list2.AsQueryable();/*ApplySorting<ZonesDTO>(qo, columnMaps).ApplyPaging(qo);*/
             return Ok(list2);
             
         }

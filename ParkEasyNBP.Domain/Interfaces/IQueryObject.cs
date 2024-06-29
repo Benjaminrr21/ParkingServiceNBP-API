@@ -12,6 +12,7 @@ namespace ParkEasyNBP.Domain.Interfaces
         public string SortBy { get; set; }
         public int Page { get; set; }
         public int PageSize { get; set; }
+
         //public Dictionary<string, object> Filters { get; set; } // Dodata kolekcija filtera
 
     }

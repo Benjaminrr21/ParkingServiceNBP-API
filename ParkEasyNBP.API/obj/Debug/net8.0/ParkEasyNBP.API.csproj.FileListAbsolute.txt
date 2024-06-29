@@ -161,3 +161,10 @@ C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\ne
 C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\refint\ParkEasyNBP.API.dll
 C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.pdb
 C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\MediatR.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\MediatR.Contracts.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll

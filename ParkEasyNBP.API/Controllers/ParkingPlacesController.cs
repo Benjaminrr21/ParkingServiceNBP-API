@@ -32,13 +32,13 @@ namespace ParkEasyNBP.API.Controllers
 
                 /*["Status"] = p => p.Status,
                 ["Street"] = p => p.Street,*/
-                ["PID"] = p => p.Id
+                //["PID"] = p => p.Id
             };
 
             var parkingSpaces = await service.GetAll();
 
-            if (!string.IsNullOrEmpty(queryObject.Status))
-                parkingSpaces = parkingSpaces.Where(p => p.Status == queryObject.Status).AsQueryable();
+           /* if (!string.IsNullOrEmpty(queryObject.Status))
+                parkingSpaces = parkingSpaces.Where(p => p.Status == queryObject.Status).AsQueryable();*/
 
             parkingSpaces = parkingSpaces.AsQueryable().ApplySorting(queryObject, columnMaps);
             parkingSpaces = parkingSpaces.AsQueryable().ApplyPaging(queryObject);
