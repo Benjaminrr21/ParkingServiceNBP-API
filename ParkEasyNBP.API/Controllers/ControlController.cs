@@ -12,11 +12,13 @@ namespace ParkEasyNBP.API.Controllers
     {
         private readonly IControlRepository control;
         private readonly IMapper mapper;
+        private readonly IUnitOfWork unitOfWork;
 
-        public ControlController(IControlRepository control, IMapper mapper)
+        public ControlController(IUnitOfWork unitOfWork, IControlRepository control, IMapper mapper)
         {
             this.control = control;
             this.mapper = mapper;
+            this.unitOfWork = unitOfWork;
         }
 
         [HttpPost]

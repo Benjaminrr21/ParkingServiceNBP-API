@@ -1,8 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\",
+  "WorkspaceRootPath": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240630121539_vehiclepenalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ParkEasyNBP.Infrastructure.SqlServer\\Migrations\\20240630121539_vehiclepenalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -364,6 +365,70 @@
     {
       "AbsoluteMoniker": "D:0:0:{E6EAAED5-79CF-4C3B-9521-30EDE586FA0D}|ParkEasyNBP.Infrastructure.SqlServer\\ParkEasyNBP.Infrastructure.SqlServer.csproj|c:\\users\\korisnik\\desktop\\iii godina\\napredne baze podataka\\parkeasynbp\\parkeasynbp.infrastructure.sqlserver\\migrations\\20240629130624_refreshtokenuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E6EAAED5-79CF-4C3B-9521-30EDE586FA0D}|ParkEasyNBP.Infrastructure.SqlServer\\ParkEasyNBP.Infrastructure.SqlServer.csproj|solutionrelative:parkeasynbp.infrastructure.sqlserver\\migrations\\20240629130624_refreshtokenuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\parkeasynbp.api\\controllers\\zonecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|solutionrelative:parkeasynbp.api\\controllers\\zonecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\parkeasynbp.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|solutionrelative:parkeasynbp.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\parkeasynbp.api\\controllers\\penaltycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|solutionrelative:parkeasynbp.api\\controllers\\penaltycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\parkeasynbp.api\\controllers\\controlcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|solutionrelative:parkeasynbp.api\\controllers\\controlcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD7D05AF-E46F-4040-8E7B-A6E76D8A9A9A}|Repository\\Repository.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\repository\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD7D05AF-E46F-4040-8E7B-A6E76D8A9A9A}|Repository\\Repository.csproj|solutionrelative:repository\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\parkeasynbp.application\\parkeasynbp.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|solutionrelative:parkeasynbp.application\\parkeasynbp.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\parkeasynbp.application\\requests\\zones\\deletezonecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|solutionrelative:parkeasynbp.application\\requests\\zones\\deletezonecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\parkeasynbp.application\\handlers\\zones\\deletezonecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|solutionrelative:parkeasynbp.application\\handlers\\zones\\deletezonecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\parkeasynbp.application\\handlers\\zones\\addzonecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|solutionrelative:parkeasynbp.application\\handlers\\zones\\addzonecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\parkeasynbp.application\\handlers\\zones\\updatezonecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|solutionrelative:parkeasynbp.application\\handlers\\zones\\updatezonecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\parkeasynbp.application\\handlers\\zones\\getzonebyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|solutionrelative:parkeasynbp.application\\handlers\\zones\\getzonebyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\parkeasynbp.application\\handlers\\zones\\getallzonesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|solutionrelative:parkeasynbp.application\\handlers\\zones\\getallzonesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\parkeasynbp.application\\requests\\zones\\updatezonecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|solutionrelative:parkeasynbp.application\\requests\\zones\\updatezonecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\parkeasynbp.application\\requests\\zones\\getzonebyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|solutionrelative:parkeasynbp.application\\requests\\zones\\getzonebyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\parkeasynbp.application\\requests\\zones\\addzonecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D6531D3-588D-4023-BCA3-F6CE6D592859}|ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj|solutionrelative:parkeasynbp.application\\requests\\zones\\addzonecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|c:\\users\\dina\\desktop\\nbp-api\\parkingservicenbp-api\\parkeasynbp.api\\mediator\\query\\parkingplacequeryobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C984CF-8CA6-433A-AFE7-E62C2B6E9947}|ParkEasyNBP.API\\ParkEasyNBP.API.csproj|solutionrelative:parkeasynbp.api\\mediator\\query\\parkingplacequeryobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 295adccbd681c9bd1ab392c52e6b7e6b3e5465cc
     }
   ],
   "DocumentGroupContainers": [
@@ -373,8 +438,51 @@
       "DocumentGroups": [
         {
           "DockedWidth": 163,
+<<<<<<< HEAD
           "SelectedChildIndex": -1,
+=======
+          "SelectedChildIndex": 8,
+>>>>>>> 295adccbd681c9bd1ab392c52e6b7e6b3e5465cc
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.API\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "ParkEasyNBP.API\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.API\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "ParkEasyNBP.API\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T09:43:33.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PenaltyController.cs",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.API\\Controllers\\PenaltyController.cs",
+              "RelativeDocumentMoniker": "ParkEasyNBP.API\\Controllers\\PenaltyController.cs",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.API\\Controllers\\PenaltyController.cs",
+              "RelativeToolTip": "ParkEasyNBP.API\\Controllers\\PenaltyController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T09:42:37.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ControlController.cs",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.API\\Controllers\\ControlController.cs",
+              "RelativeDocumentMoniker": "ParkEasyNBP.API\\Controllers\\ControlController.cs",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.API\\Controllers\\ControlController.cs",
+              "RelativeToolTip": "ParkEasyNBP.API\\Controllers\\ControlController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T09:30:17.481Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
@@ -386,6 +494,7 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+<<<<<<< HEAD
             }
           ]
         },
@@ -404,11 +513,26 @@
               "ViewState": "AQIAAAoAAAAAAAAAAAAzwAwAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T12:15:39.375Z",
+=======
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\Repository\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Repository\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\Repository\\UnitOfWork.cs",
+              "RelativeToolTip": "Repository\\UnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T09:02:43.836Z",
+>>>>>>> 295adccbd681c9bd1ab392c52e6b7e6b3e5465cc
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+<<<<<<< HEAD
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Domain\\Models\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Domain\\Models\\ApplicationUser.cs",
@@ -495,11 +619,34 @@
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-28T17:31:15.136Z",
+=======
+              "Title": "DeleteZoneCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Handlers\\Zones\\DeleteZoneCommandHandler.cs",
+              "RelativeDocumentMoniker": "ParkEasyNBP.Application\\Handlers\\Zones\\DeleteZoneCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Handlers\\Zones\\DeleteZoneCommandHandler.cs",
+              "RelativeToolTip": "ParkEasyNBP.Application\\Handlers\\Zones\\DeleteZoneCommandHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T15:20:31.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ZoneController.cs",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.API\\Controllers\\ZoneController.cs",
+              "RelativeDocumentMoniker": "ParkEasyNBP.API\\Controllers\\ZoneController.cs",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.API\\Controllers\\ZoneController.cs",
+              "RelativeToolTip": "ParkEasyNBP.API\\Controllers\\ZoneController.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAAwCMAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T11:25:11.246Z",
+>>>>>>> 295adccbd681c9bd1ab392c52e6b7e6b3e5465cc
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+<<<<<<< HEAD
               "Title": "VehicleWithInfosDTO.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\III GODINA\\NAPREDNE BAZE PODATAKA\\ParkEasyNBP\\ParkEasyNBP.Application\\DTOs\\VehicleWithInfosDTO.cs",
               "RelativeDocumentMoniker": "ParkEasyNBP.Application\\DTOs\\VehicleWithInfosDTO.cs",
@@ -1524,6 +1671,124 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-24T14:19:51.088Z"
+=======
+              "Title": "AddZoneCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Handlers\\Zones\\AddZoneCommandHandler.cs",
+              "RelativeDocumentMoniker": "ParkEasyNBP.Application\\Handlers\\Zones\\AddZoneCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Handlers\\Zones\\AddZoneCommandHandler.cs",
+              "RelativeToolTip": "ParkEasyNBP.Application\\Handlers\\Zones\\AddZoneCommandHandler.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T15:19:47.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DeleteZoneCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Requests\\Zones\\DeleteZoneCommand.cs",
+              "RelativeDocumentMoniker": "ParkEasyNBP.Application\\Requests\\Zones\\DeleteZoneCommand.cs",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Requests\\Zones\\DeleteZoneCommand.cs",
+              "RelativeToolTip": "ParkEasyNBP.Application\\Requests\\Zones\\DeleteZoneCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T15:13:53.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ParkEasyNBP.Application.csproj",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj",
+              "RelativeDocumentMoniker": "ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj",
+              "RelativeToolTip": "ParkEasyNBP.Application\\ParkEasyNBP.Application.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-29T15:15:49.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UpdateZoneCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Handlers\\Zones\\UpdateZoneCommandHandler.cs",
+              "RelativeDocumentMoniker": "ParkEasyNBP.Application\\Handlers\\Zones\\UpdateZoneCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Handlers\\Zones\\UpdateZoneCommandHandler.cs",
+              "RelativeToolTip": "ParkEasyNBP.Application\\Handlers\\Zones\\UpdateZoneCommandHandler.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T15:21:01.311Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GetZoneByIdQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Handlers\\Zones\\GetZoneByIdQueryHandler.cs",
+              "RelativeDocumentMoniker": "ParkEasyNBP.Application\\Handlers\\Zones\\GetZoneByIdQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Handlers\\Zones\\GetZoneByIdQueryHandler.cs",
+              "RelativeToolTip": "ParkEasyNBP.Application\\Handlers\\Zones\\GetZoneByIdQueryHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T18:42:24.951Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GetAllZonesQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Handlers\\Zones\\GetAllZonesQueryHandler.cs",
+              "RelativeDocumentMoniker": "ParkEasyNBP.Application\\Handlers\\Zones\\GetAllZonesQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Handlers\\Zones\\GetAllZonesQueryHandler.cs",
+              "RelativeToolTip": "ParkEasyNBP.Application\\Handlers\\Zones\\GetAllZonesQueryHandler.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T18:41:41.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UpdateZoneCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Requests\\Zones\\UpdateZoneCommand.cs",
+              "RelativeDocumentMoniker": "ParkEasyNBP.Application\\Requests\\Zones\\UpdateZoneCommand.cs",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Requests\\Zones\\UpdateZoneCommand.cs",
+              "RelativeToolTip": "ParkEasyNBP.Application\\Requests\\Zones\\UpdateZoneCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T15:14:25.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "GetZoneByIdQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Requests\\Zones\\GetZoneByIdQuery.cs",
+              "RelativeDocumentMoniker": "ParkEasyNBP.Application\\Requests\\Zones\\GetZoneByIdQuery.cs",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Requests\\Zones\\GetZoneByIdQuery.cs",
+              "RelativeToolTip": "ParkEasyNBP.Application\\Requests\\Zones\\GetZoneByIdQuery.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T15:11:27.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AddZoneCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Requests\\Zones\\AddZoneCommand.cs",
+              "RelativeDocumentMoniker": "ParkEasyNBP.Application\\Requests\\Zones\\AddZoneCommand.cs",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.Application\\Requests\\Zones\\AddZoneCommand.cs",
+              "RelativeToolTip": "ParkEasyNBP.Application\\Requests\\Zones\\AddZoneCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T15:13:33.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ParkingPlaceQueryObject.cs",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.API\\Mediator\\Query\\ParkingPlaceQueryObject.cs",
+              "RelativeDocumentMoniker": "ParkEasyNBP.API\\Mediator\\Query\\ParkingPlaceQueryObject.cs",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\NBP-API\\ParkingServiceNBP-API\\ParkEasyNBP.API\\Mediator\\Query\\ParkingPlaceQueryObject.cs",
+              "RelativeToolTip": "ParkEasyNBP.API\\Mediator\\Query\\ParkingPlaceQueryObject.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T11:38:53.118Z"
+>>>>>>> 295adccbd681c9bd1ab392c52e6b7e6b3e5465cc
             }
           ]
         }

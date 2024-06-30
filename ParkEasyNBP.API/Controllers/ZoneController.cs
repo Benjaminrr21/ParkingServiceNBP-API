@@ -24,13 +24,30 @@ namespace ParkEasyNBP.API.Controllers
         private readonly IZoneRepository service;
         private readonly IMapper mapper;
         private readonly IMediator _mediator;
+<<<<<<< HEAD
         private readonly MongoService mongoService;
 
         public ZoneController(IZoneRepository service, IMapper mapper, IMediator mediator, MongoService mongoService)
+=======
+        private readonly IUnitOfWork unitOfWork;
+
+        public ZoneController(IUnitOfWork unitOfWork, IZoneRepository service, IMapper mapper, IMediator mediator)
+>>>>>>> 295adccbd681c9bd1ab392c52e6b7e6b3e5465cc
         {
             this.service = service;
             this.mapper = mapper;
             _mediator = mediator;
+<<<<<<< HEAD
+=======
+            this.unitOfWork = unitOfWork;   
+=======
+        private readonly MongoService mongoService;
+
+        public ZoneController(IZoneRepository service, IMapper mapper, MongoService mongoService)
+        {
+            this.service = service;
+            this.mapper = mapper;
+>>>>>>> 295adccbd681c9bd1ab392c52e6b7e6b3e5465cc
             this.mongoService = mongoService;
         }
 
