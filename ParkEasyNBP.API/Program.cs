@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
+using Neo4jClient;
 using ParkEasyNBP.API.Middlewares;
 using ParkEasyNBP.Application.Mapping;
 using ParkEasyNBP.Application.Services;
@@ -10,8 +11,10 @@ using ParkEasyNBP.Domain.Interfaces;
 using ParkEasyNBP.Domain.Models;
 using ParkEasyNBP.Domain.ModelsMongoDB;
 using ParkEasyNBP.Infrastructure.MongoDB;
+using ParkEasyNBP.Infrastructure.Neo4j.Services;
 using ParkEasyNBP.Infrastructure.SqlServer;
 using Repository;
+using Repository.Neo4jRepositories;
 using Repository.Repositories;
 using System.Text;
 
@@ -24,11 +27,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+
+
 //Konfiguracija SQL servera
 
 builder.Services.AddDbContext<ParkDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ParkEasyContext")));
 builder.Services.AddScoped<IParkingPlaceRepository, ParkingPlaceRepository>();
-builder.Services.AddScoped<IZoneRepository, ZoneRepository>();
+//builder.Services.AddScoped<IZoneRepository, ZoneRepository>();
+builder.Services.AddScoped<IZoneRepository, ZoneGraphRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ParkingPlaceService>();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
@@ -53,6 +60,17 @@ builder.Services.AddScoped<ZoneService>();*/
 //builder.Services.AddScoped<IZoneService, ZoneService>();
 builder.Services.AddScoped<MongoService>();
 builder.Services.AddScoped<ParkingPlaceServiceMongoDB>();
+
+
+//Konfiguracija NEO4J baze
+//var client = new GraphClient(new Uri("http://93f260b7.databases.neo4j.io:7687"), "neo4j", "LSH_QeDZwjMxAKBgnltZijCmFoGEL5ghJszj-peGjZ4");
+var client = new BoltGraphClient(new Uri("bolt+s://93f260b7.databases.neo4j.io:7687"), "neo4j", "LSH_QeDZwjMxAKBgnltZijCmFoGEL5ghJszj-peGjZ4");
+//client.ConnectAsync().Wait();
+await client.ConnectAsync();
+builder.Services.AddSingleton<IGraphClient>(client);
+
+builder.Services.AddSingleton<ZonesService>();
+
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 

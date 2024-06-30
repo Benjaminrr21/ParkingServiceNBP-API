@@ -17,11 +17,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Neo4jClient" Version="5.1.15" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Infrastructure.MongoDB\ParkEasyNBP.Infrastructure.MongoDB.csproj" />
+    <ProjectReference Include="..\Infrastructure.Neo4j\ParkEasyNBP.Infrastructure.Neo4j.csproj" />
     <ProjectReference Include="..\ParkEasyNBP.Application\ParkEasyNBP.Application.csproj" />
     <ProjectReference Include="..\ParkEasyNBP.Domain\ParkEasyNBP.Domain.csproj" />
     <ProjectReference Include="..\ParkEasyNBP.Infrastructure.SqlServer\ParkEasyNBP.Infrastructure.SqlServer.csproj" />

@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkEasyNBP.Infrastructure.MongoDB", "Infrastructure.MongoDB\ParkEasyNBP.Infrastructure.MongoDB.csproj", "{D226A16C-60E2-4C3F-B325-1DAE7AB35B17}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkEasyNBP.Infrastructure.Neo4j", "Infrastructure.Neo4j\ParkEasyNBP.Infrastructure.Neo4j.csproj", "{83511EF4-424B-4FBD-8BB9-0B014F0542BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{D226A16C-60E2-4C3F-B325-1DAE7AB35B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D226A16C-60E2-4C3F-B325-1DAE7AB35B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D226A16C-60E2-4C3F-B325-1DAE7AB35B17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83511EF4-424B-4FBD-8BB9-0B014F0542BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83511EF4-424B-4FBD-8BB9-0B014F0542BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83511EF4-424B-4FBD-8BB9-0B014F0542BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83511EF4-424B-4FBD-8BB9-0B014F0542BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

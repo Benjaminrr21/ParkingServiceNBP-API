@@ -16,3 +16,5 @@ C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\Reposito
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\Repository\obj\Debug\net8.0\refint\Repository.dll
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\Repository\obj\Debug\net8.0\Repository.pdb
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\Repository\obj\Debug\net8.0\ref\Repository.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\Repository\bin\Debug\net8.0\ParkEasyNBP.Infrastructure.Neo4j.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\Repository\bin\Debug\net8.0\ParkEasyNBP.Infrastructure.Neo4j.pdb

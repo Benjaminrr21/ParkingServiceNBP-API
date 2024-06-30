@@ -10,7 +10,7 @@ namespace ParkEasyNBP.Domain.Interfaces
     {
         IParkingPlaceRepository ParkingPlaceRepository { get; }
         //IVehicleRepository VehicleRepository { get; }
-        IUserRepository UserRepository { get; }
+        //IUserRepository UserRepository { get; }
         ISubscriptionCardRepository SubscriptionCardRepository { get; }
         IOneOffCardRepository OneOffCardRepository { get; }
 

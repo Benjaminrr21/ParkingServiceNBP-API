@@ -14,6 +14,8 @@ using System.Linq.Expressions;
 //using System.Security.Policy;
 using MediatR;
 using ParkEasyNBP.Application.Requests.Zones;
+using Repository.Neo4jRepositories;
+using ParkEasyNBP.Infrastructure.Neo4j.Services;
 
 namespace ParkEasyNBP.API.Controllers
 {
@@ -21,34 +23,23 @@ namespace ParkEasyNBP.API.Controllers
     [ApiController]
     public class ZoneController : ControllerBase
     {
-        private readonly IZoneRepository service;
+        private readonly IZoneRepository zonesGraph;
+       // private readonly IZoneRepository service;
         private readonly IMapper mapper;
         private readonly IMediator _mediator;
-<<<<<<< HEAD
         private readonly MongoService mongoService;
-
-        public ZoneController(IZoneRepository service, IMapper mapper, IMediator mediator, MongoService mongoService)
-=======
         private readonly IUnitOfWork unitOfWork;
 
-        public ZoneController(IUnitOfWork unitOfWork, IZoneRepository service, IMapper mapper, IMediator mediator)
->>>>>>> 295adccbd681c9bd1ab392c52e6b7e6b3e5465cc
-        {
-            this.service = service;
-            this.mapper = mapper;
-            _mediator = mediator;
-<<<<<<< HEAD
-=======
-            this.unitOfWork = unitOfWork;   
-=======
-        private readonly MongoService mongoService;
 
-        public ZoneController(IZoneRepository service, IMapper mapper, MongoService mongoService)
+
+        public ZoneController( IZoneRepository service, IMapper mapper, MongoService mongoService, IMediator mediator, IUnitOfWork unitOfWork)
         {
-            this.service = service;
+            this.zonesGraph = service;
+           // this.service = service;
             this.mapper = mapper;
->>>>>>> 295adccbd681c9bd1ab392c52e6b7e6b3e5465cc
             this.mongoService = mongoService;
+            _mediator = mediator;
+            this.unitOfWork = unitOfWork;
         }
 
 
@@ -60,7 +51,8 @@ namespace ParkEasyNBP.API.Controllers
             var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
             return Ok(list2);*/
             //var list = await _mediator.Send(new GetAllZonesQuery());
-            return Ok(mongoService.GetAll());
+            // return Ok(mongoService.GetAll());
+            return Ok(await zonesGraph.GetAll());
 
           /*  var list = await service.GetAll();
             var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
@@ -93,9 +85,11 @@ namespace ParkEasyNBP.API.Controllers
             return Ok(zone);
         }
         [HttpPost]
-        public async Task<IActionResult> AddZone([FromBody] ZonesDTO zone)
+        public async Task<IActionResult> AddZone([FromBody] ZoneCreateDTO zone)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            var z = mapper.Map<Zone>(zone);
+            return Ok(await zonesGraph.Create(z));
             /*var zona = mapper.Map<Domain.Models.Zone>(zone);
             await service.Create(zona);
             return Ok(zona);*/

@@ -173,3 +173,8 @@ C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasy
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.pdb
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\obj\Debug\net8.0\ParkEasyNBP.API.genruntimeconfig.cache
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\obj\Debug\net8.0\ref\ParkEasyNBP.API.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Neo4j.Driver.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Neo4jClient.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\ParkEasyNBP.Infrastructure.Neo4j.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.API\bin\Debug\net8.0\ParkEasyNBP.Infrastructure.Neo4j.pdb
