@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ParkEasyNBP.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e9b6c1f042498159a364174919efa06407aa54c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41bca3407fa8d61fd9081a06f73d4c31d280a861")]
 [assembly: System.Reflection.AssemblyProductAttribute("ParkEasyNBP.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ParkEasyNBP.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
