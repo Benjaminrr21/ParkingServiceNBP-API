@@ -16,12 +16,14 @@ namespace ParkEasyNBP.API.Controllers
         private readonly IUserRepository service;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IMapper mapper;
+        private readonly IUnitOfWork unitOfWork;
 
-        public UsersController(IUserRepository service, UserManager<ApplicationUser> userManager,IMapper mapper)
+        public UsersController(IUnitOfWork unitOfWork, IUserRepository service, UserManager<ApplicationUser> userManager,IMapper mapper)
         {
             this.service = service;
             _userManager = userManager;
             this.mapper = mapper;
+            this.unitOfWork = unitOfWork;
         }
 
         [HttpGet("get-all-users")]

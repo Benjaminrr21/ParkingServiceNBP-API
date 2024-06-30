@@ -5,6 +5,7 @@ using ParkEasyNBP.Application.DTOs;
 using ParkEasyNBP.Application.DTOs.Penalties;
 using ParkEasyNBP.Domain.Interfaces;
 using ParkEasyNBP.Domain.Models;
+using Repository;
 
 namespace ParkEasyNBP.API.Controllers
 {
@@ -14,11 +15,13 @@ namespace ParkEasyNBP.API.Controllers
     {
         private readonly IPenaltyRepository repository;
         private readonly IMapper mapper;
+        private readonly UnitOfWork unitOfWork;
 
-        public PenaltyController(IPenaltyRepository repository, IMapper mapper)
+        public PenaltyController(UnitOfWork unitOfWork, IPenaltyRepository repository, IMapper mapper)
         {
             this.repository = repository;
             this.mapper = mapper;
+            this.unitOfWork = unitOfWork; 
         }
 
         [HttpGet]
