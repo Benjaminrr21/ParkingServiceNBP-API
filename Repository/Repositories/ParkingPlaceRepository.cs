@@ -35,24 +35,33 @@ namespace Repository.Repositories
             await dbContext.SaveChangesAsync();
             return pp;
         }
+
+        public async Task<ParkingPlace> AddPlaceWithGarage(ParkingPlace p)
+        {
+           
+                await dbContext.AddAsync(p);
+                await dbContext.SaveChangesAsync();
+                return p;
+            
+        }
         /* public async Task<ParkingPlace> Update(int id, ParkingPlace entity)
 {
-    var existingEntity = await dbContext.Set<ParkingPlace>()
-        //.Include(pp => pp.Zone) // Include related entities if necessary
-        .FirstOrDefaultAsync(pp => pp.Id == id);
+var existingEntity = await dbContext.Set<ParkingPlace>()
+//.Include(pp => pp.Zone) // Include related entities if necessary
+.FirstOrDefaultAsync(pp => pp.Id == id);
 
-    if (existingEntity != null)
-    {
-        dbContext.Entry(existingEntity).CurrentValues.SetValues(entity);
+if (existingEntity != null)
+{
+dbContext.Entry(existingEntity).CurrentValues.SetValues(entity);
 
-        // Ensure the Id remains unchanged
-        existingEntity.Id = id;
-        // If there are any properties that should not be updated, handle them here
+// Ensure the Id remains unchanged
+existingEntity.Id = id;
+// If there are any properties that should not be updated, handle them here
 
-        await dbContext.SaveChangesAsync();
-        return existingEntity;
-    }
-    return null; // Handle this according to your scenario
+await dbContext.SaveChangesAsync();
+return existingEntity;
+}
+return null; // Handle this according to your scenario
 }*/
 
         /* public async Task<IEnumerable<ParkingPlace>> GetAll()

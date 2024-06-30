@@ -15,6 +15,7 @@ namespace ParkEasyNBP.Application.DTOs
         public string Mark { get; set; }
         public string Name { get; set; }
         public string RegNumber { get; set; }
+        public serDTO User { get; set; }
         public ICollection<PenaltyOfVehicleDTO> Penalties { get; set; } = new List<PenaltyOfVehicleDTO>();
         public ICollection<OOCardOfVehicle> OneOffCards { get; set; }
         public ICollection<SCardOfVehicle> SubscriptionCards { get; set; }

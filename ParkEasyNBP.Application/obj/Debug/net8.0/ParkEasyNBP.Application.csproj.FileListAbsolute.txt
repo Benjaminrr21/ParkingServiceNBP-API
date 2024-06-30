@@ -1,36 +1,18 @@
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\bin\Debug\net8.0\ParkEasyNBP.Application.deps.json
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\bin\Debug\net8.0\ParkEasyNBP.Application.dll
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\bin\Debug\net8.0\ParkEasyNBP.Application.pdb
-C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.AssemblyInfoInputs.cache
-C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.AssemblyInfo.cs
-C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.csproj.CoreCompileInputs.cache
-C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.sourcelink.json
-C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.dll
-C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\refint\ParkEasyNBP.Application.dll
-C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.pdb
-C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ref\ParkEasyNBP.Application.dll
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\bin\Debug\net8.0\ParkEasyNBP.Domain.dll
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\bin\Debug\net8.0\ParkEasyNBP.Infrastructure.SqlServer.dll
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\bin\Debug\net8.0\ParkEasyNBP.Domain.pdb
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\bin\Debug\net8.0\ParkEasyNBP.Infrastructure.SqlServer.pdb
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.csproj.AssemblyReference.cache
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.AssemblyInfoInputs.cache
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.AssemblyInfo.cs
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.csproj.CoreCompileInputs.cache
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.sourcelink.json
 C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasy.9B10191F.Up2Date
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.csproj.AssemblyReference.cache
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.AssemblyInfoInputs.cache
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.AssemblyInfo.cs
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.csproj.CoreCompileInputs.cache
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.sourcelink.json
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.dll
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\obj\Debug\net8.0\refint\ParkEasyNBP.Application.dll
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.pdb
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\bin\Debug\net8.0\ParkEasyNBP.Application.deps.json
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\bin\Debug\net8.0\ParkEasyNBP.Application.dll
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\bin\Debug\net8.0\ParkEasyNBP.Application.pdb
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\bin\Debug\net8.0\ParkEasyNBP.Domain.dll
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\bin\Debug\net8.0\ParkEasyNBP.Infrastructure.SqlServer.dll
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\bin\Debug\net8.0\ParkEasyNBP.Domain.pdb
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\bin\Debug\net8.0\ParkEasyNBP.Infrastructure.SqlServer.pdb
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasy.9B10191F.Up2Date
-C:\Users\Dina\Desktop\NBP-API\ParkingServiceNBP-API\ParkEasyNBP.Application\obj\Debug\net8.0\ref\ParkEasyNBP.Application.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\refint\ParkEasyNBP.Application.dll
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ParkEasyNBP.Application.pdb
+C:\Users\korisnik\Desktop\III GODINA\NAPREDNE BAZE PODATAKA\ParkEasyNBP\ParkEasyNBP.Application\obj\Debug\net8.0\ref\ParkEasyNBP.Application.dll

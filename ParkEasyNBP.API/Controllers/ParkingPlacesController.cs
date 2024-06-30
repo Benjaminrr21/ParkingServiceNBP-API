@@ -7,6 +7,11 @@ using ParkEasyNBP.Domain.Interfaces;
 using ParkEasyNBP.Domain.Models;
 using ParkEasyNBP.API.FilteringSortingPaging;
 using System.Linq.Expressions;
+using ParkEasyNBP.Infrastructure.MongoDB;
+using ParkEasyNBP.Application.DTOs.MongoDB_DTOs;
+using ParkEasyNBP.Domain.ModelsMongoDB;
+using ParkEasyNBP.API.Mediator.Command;
+using MediatR;
 
 namespace ParkEasyNBP.API.Controllers
 {
@@ -15,17 +20,21 @@ namespace ParkEasyNBP.API.Controllers
     public class ParkingPlacesController : ControllerBase
     {
         private readonly IUnitOfWork unitOfWork;
+        private readonly IMediator mediator;
         private readonly IParkingPlaceRepository service;
         private readonly IMapper mapper;
+        private readonly ParkingPlaceServiceMongoDB serviceMongoDB;
 
-        public ParkingPlacesController(IUnitOfWork unitOfWork, IParkingPlaceRepository service, IMapper mapper)
+        public ParkingPlacesController(IUnitOfWork unitOfWork,IMediator mediator, IParkingPlaceRepository service, IMapper mapper, ParkingPlaceServiceMongoDB serviceMongoDB)
         {
             this.unitOfWork = unitOfWork;
+            this.mediator = mediator;
             this.service = service;
             this.mapper = mapper;
+            this.serviceMongoDB = serviceMongoDB;
         }
         [HttpGet]
-        public async Task<IActionResult> GetParkingPlaces([FromQuery]ParkingPlaceQueryObject queryObject)
+        public async Task<IActionResult> GetParkingPlaces(/*[FromQuery]ParkingPlaceQueryObject queryObject*/)
         {
             Dictionary<string, Expression<Func<ParkingPlace, object>>> columnMaps = new Dictionary<string, Expression<Func<ParkingPlace, object>>>
             {
@@ -35,12 +44,12 @@ namespace ParkEasyNBP.API.Controllers
                 //["PID"] = p => p.Id
             };
 
-            var parkingSpaces = await service.GetAll();
+            //var parkingSpaces = await service.GetAll();
 
            /* if (!string.IsNullOrEmpty(queryObject.Status))
                 parkingSpaces = parkingSpaces.Where(p => p.Status == queryObject.Status).AsQueryable();*/
 
-            parkingSpaces = parkingSpaces.AsQueryable().ApplySorting(queryObject, columnMaps);
+          /*  parkingSpaces = parkingSpaces.AsQueryable().ApplySorting(queryObject, columnMaps);
             parkingSpaces = parkingSpaces.AsQueryable().ApplyPaging(queryObject);
 
             var result = new ResultQuery<ParkingPlaceGetDTO>
@@ -54,9 +63,9 @@ namespace ParkEasyNBP.API.Controllers
                     Status = p.Status,
                     //Id = p.Id
                 }).ToList()
-            };
+            };*/
 
-            return Ok(parkingSpaces);
+            return Ok(await service.GetAll());
         }
 
         [HttpGet("{id}")]
@@ -70,12 +79,29 @@ namespace ParkEasyNBP.API.Controllers
             return NotFound("Nije pronadjeno parking mesto.");
         }
         [HttpPost]
-        public async Task<IActionResult> AddParkingPlace(ParkingPlaceCreateDTO parkingPlace)
+        public async Task<IActionResult> AddParkingPlace([FromBody] CreateParkingPlaceCommand parkingplace)
         {
-            var pp = mapper.Map<ParkingPlace>(parkingPlace);
-            await unitOfWork.ParkingPlaceRepository.Create(pp);
-            return Ok(pp);
+            var res = await mediator.Send(parkingplace);
+            if (!res.IsSuccess)
+            {
+                return BadRequest(res.Errors);
+            }
+            return Ok(res.Data);
+            //var pp = mapper.Map<ParkingPlaceMongoDB>(CreatePa);
+            //await unitOfWork.ParkingPlaceRepository.Create(pp);
+            //return Ok(await serviceMongoDB.Create(pp));
         }
+        [HttpPost("with-garage")]
+        public async Task<IActionResult> AddParkingPlaceWithGarage([FromBody] ParkingPlaceCreateDTO parkingplace)
+        {
+            return Ok(await service.AddPlaceWithGarage(mapper.Map<ParkingPlace>(parkingplace)));
+        }
+        /* public async Task<IActionResult> AddParkingPlace(ParkingPlaceCreateDTO parkingPlace)
+         {
+             var pp = mapper.Map<ParkingPlace>(parkingPlace);
+             await unitOfWork.ParkingPlaceRepository.Create(pp);
+             return Ok(pp);
+         }*/
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {

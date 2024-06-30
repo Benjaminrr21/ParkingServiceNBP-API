@@ -2,6 +2,7 @@
 using ParkEasyNBP.Application.DTOs;
 using ParkEasyNBP.Application.DTOs.CardsDTO;
 using ParkEasyNBP.Application.DTOs.ControlDTO;
+using ParkEasyNBP.Application.DTOs.MongoDB_DTOs;
 using ParkEasyNBP.Application.DTOs.Penalties;
 using ParkEasyNBP.Domain.Models;
 using ParkEasyNBP.Domain.ModelsMongoDB;
@@ -32,6 +33,7 @@ namespace ParkEasyNBP.Application.Mapping
             CreateMap<ParkingPlace,ParkingPlaceGetDTO>();
             CreateMap<PublicGarage,PublicGarageGetDTO>();
             CreateMap<ParkingPlaceUpdateDTO, ParkingPlace>();
+            CreateMap<ParkingPlaceCreateSimple, ParkingPlace>();
 
             CreateMap<SubscriptionCard, SCardOfVehicle>();
             CreateMap<NewSCard, SubscriptionCard>();
@@ -48,6 +50,7 @@ namespace ParkEasyNBP.Application.Mapping
             CreateMap<ApplicationUser, serDTO>();
 
             CreateMap<ZoneMongoDTO, ZoneMongoDB>();
+            CreateMap<NewParkingPlaceMongoDTO, ParkingPlaceMongoDB>();
         }
     }
 }

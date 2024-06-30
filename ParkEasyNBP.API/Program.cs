@@ -1,12 +1,14 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using MongoDB.Driver;
 using ParkEasyNBP.API.Middlewares;
 using ParkEasyNBP.Application.Mapping;
 using ParkEasyNBP.Application.Services;
 using ParkEasyNBP.Domain.Interfaces;
 using ParkEasyNBP.Domain.Models;
+using ParkEasyNBP.Domain.ModelsMongoDB;
 using ParkEasyNBP.Infrastructure.MongoDB;
 using ParkEasyNBP.Infrastructure.SqlServer;
 using Repository;
@@ -33,7 +35,24 @@ builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 builder.Services.AddScoped<IPenaltyRepository, PenaltyRepository>();
 builder.Services.AddScoped<IControlRepository, ControlRepository>();
 
+/*builder.Services.AddSingleton<IMongoClient, MongoClient>(sp =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("MongoDb");
+    return new MongoClient(connectionString);
+});
+
+builder.Services.AddSingleton(sp =>
+{
+    var client = sp.GetRequiredService<IMongoClient>();
+    return client.GetDatabase("ParkEasyProject");
+});*/
+
+// Registrujte generički repozitorijum
+/*builder.Services.AddScoped(typeof(MongoRepository<>));
+builder.Services.AddScoped<ZoneService>();*/
+//builder.Services.AddScoped<IZoneService, ZoneService>();
 builder.Services.AddScoped<MongoService>();
+builder.Services.AddScoped<ParkingPlaceServiceMongoDB>();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 

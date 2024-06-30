@@ -12,6 +12,7 @@ namespace ParkEasyNBP.Domain.Models
         public string Mark { get; set; }
         public string Name { get; set; }
         public string RegNumber { get; set; }
+        public string UserId { get; set; }
         public ApplicationUser User { get; set; }
         public ICollection<Penalty> Penalties { get; set; } = new List<Penalty>();
         public ICollection<OneOffCard> OneOffCards { get; set; }

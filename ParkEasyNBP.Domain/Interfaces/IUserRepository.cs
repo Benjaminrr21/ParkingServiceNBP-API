@@ -12,5 +12,6 @@ namespace ParkEasyNBP.Domain.Interfaces
     {
         Task<IEnumerable<ApplicationUser>> GetAllControllors();
         Task<ApplicationUser?> GetById(string id);
+        Task<Vehicle> GetMyVehicle(string id); 
     }
 }

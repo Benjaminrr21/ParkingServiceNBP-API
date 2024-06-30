@@ -9,12 +9,8 @@
       "ParkEasyNBP.Domain/1.0.0": {
         "dependencies": {
           "Microsoft.AspNet.Identity.EntityFramework": "2.2.4",
-<<<<<<< HEAD
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.6"
-=======
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.6",
           "MongoDB.Driver": "2.27.0"
->>>>>>> 41bca3407fa8d61fd9081a06f73d4c31d280a861
         },
         "runtime": {
           "ParkEasyNBP.Domain.dll": {}

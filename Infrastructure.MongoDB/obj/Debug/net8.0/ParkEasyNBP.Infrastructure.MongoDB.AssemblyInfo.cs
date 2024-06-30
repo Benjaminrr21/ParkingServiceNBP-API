@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ParkEasyNBP.Infrastructure.MongoDB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41bca3407fa8d61fd9081a06f73d4c31d280a861")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea84d07a37ed9c6dda44fdb533415d7e67f97bca")]
 [assembly: System.Reflection.AssemblyProductAttribute("ParkEasyNBP.Infrastructure.MongoDB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ParkEasyNBP.Infrastructure.MongoDB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

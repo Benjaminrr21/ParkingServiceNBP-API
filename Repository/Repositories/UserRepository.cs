@@ -40,6 +40,10 @@ namespace Repository.Repositories
 
         }
 
-   
+        public async Task<Vehicle> GetMyVehicle(string id)
+        {
+            var owner = await dbContext.Users.FindAsync(id);
+            return await dbContext.Vehicles.FirstOrDefaultAsync(v => v.UserId== id);
+        }
     }
 }

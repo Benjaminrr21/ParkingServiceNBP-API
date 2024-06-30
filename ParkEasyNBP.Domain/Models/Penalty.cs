@@ -15,8 +15,8 @@ namespace ParkEasyNBP.Domain.Models
         public string? Reason { get; set; }
         public DateTime DateTime { get; set; }
 
-       /* public int VehicleId { get; set; }
-        public Vehicle Vehicle { get; set; }*/
+        public int VehicleId { get; set; }
+        public Vehicle Vehicle { get; set; }
 
 
     }

@@ -29,7 +29,7 @@ namespace Repository.Repositories
         public async Task<IEnumerable<Vehicle>> GetAll()
         {
             ///throw new NotImplementedException();
-            return await context.Vehicles.Include(z => z.Penalties).Include(z => z.OneOffCards).Include(z=>z.SubscriptionCards).ToListAsync();
+            return await context.Vehicles.Include(z => z.Penalties).Include(v => v.User).Include(z => z.OneOffCards).Include(z=>z.SubscriptionCards).ToListAsync();
 
         }
         public async Task<Vehicle> Get(int id)

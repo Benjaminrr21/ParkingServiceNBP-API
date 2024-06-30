@@ -23,37 +23,28 @@ namespace ParkEasyNBP.API.Controllers
     {
         private readonly IZoneRepository service;
         private readonly IMapper mapper;
-<<<<<<< HEAD
         private readonly IMediator _mediator;
+        private readonly MongoService mongoService;
 
-        public ZoneController(IZoneRepository service, IMapper mapper, IMediator mediator)
+        public ZoneController(IZoneRepository service, IMapper mapper, IMediator mediator, MongoService mongoService)
         {
             this.service = service;
             this.mapper = mapper;
             _mediator = mediator;
-=======
-        private readonly MongoService mongoService;
-
-        public ZoneController(IZoneRepository service, IMapper mapper, MongoService mongoService)
-        {
-            this.service = service;
-            this.mapper = mapper;
             this.mongoService = mongoService;
->>>>>>> 41bca3407fa8d61fd9081a06f73d4c31d280a861
         }
+
 
         [HttpGet]
         public async Task<IActionResult> GetAllZones(/*[FromQuery]ZoneQueryObject qo*/)
         {
 
-<<<<<<< HEAD
             /*var list = await service.GetAll();
             var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
             return Ok(list2);*/
-            var list = await _mediator.Send(new GetAllZonesQuery());
-            return Ok(list);
+            //var list = await _mediator.Send(new GetAllZonesQuery());
+            return Ok(mongoService.GetAll());
 
-=======
           /*  var list = await service.GetAll();
             var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
 
@@ -65,9 +56,8 @@ namespace ParkEasyNBP.API.Controllers
                 list2 = list2.Where(c => c.Name == qo.Name).AsQueryable();*/
 
             //list2 = list2.AsQueryable();/*ApplySorting<ZonesDTO>(qo, columnMaps).ApplyPaging(qo);*/
-            return Ok(mongoService.GetAll());
+            //return Ok(mongoService.GetAll());
             
->>>>>>> 41bca3407fa8d61fd9081a06f73d4c31d280a861
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
@@ -86,21 +76,19 @@ namespace ParkEasyNBP.API.Controllers
             return Ok(zone);
         }
         [HttpPost]
-        public async Task<IActionResult> AddZone([FromBody] ZoneMongoDTO zone)
+        public async Task<IActionResult> AddZone([FromBody] ZonesDTO zone)
         {
-<<<<<<< HEAD
+            throw new NotImplementedException();
             /*var zona = mapper.Map<Domain.Models.Zone>(zone);
             await service.Create(zona);
             return Ok(zona);*/
-            var createdZone = await _mediator.Send(new AddZoneCommand(zone));
-            return Ok(createdZone);
-=======
+           // var createdZone = await _mediator.Send(new AddZoneCommand(zone));
+            //return Ok(createdZone);
             /*  var zona = mapper.Map<Domain.Models.Zone>(zone);
               await service.Create(zona);*/
-            var zona = await mongoService.Create(mapper.Map<ZoneMongoDB>(zone));
+            //var zona = await mongoService.Create(mapper.Map<ZoneMongoDB>(zone));
           
-            return Ok(zona);
->>>>>>> 41bca3407fa8d61fd9081a06f73d4c31d280a861
+            //return Ok(zona);
         }
         
         [HttpDelete("{id}")]
