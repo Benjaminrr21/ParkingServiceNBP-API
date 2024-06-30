@@ -1,4 +1,5 @@
 ﻿using ParkEasyNBP.Domain.Interfaces;
+using ParkEasyNBP.Domain.Models;
 using ParkEasyNBP.Infrastructure.SqlServer;
 using Repository.Repositories;
 using System;
@@ -12,26 +13,28 @@ namespace Repository
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ParkDbContext context;
+        //private readonly UserManager<ApplicationUser> userManager;
 
+        public IControlRepository ControlRepository { get; private set; }
+        public IOneOffCardRepository OneOffCardRepository { get; private set; }
         public IParkingPlaceRepository ParkingPlaceRepository {  get; private set; }
-        /// <summary>
-        /// public IVehicleRepository VehicleRepository { get; private set; }
-        /// </summary>
-
-        public IUserRepository UserRepository { get; private set; }
-
-        public ISubscriptionCardRepository SubscriptionCardRepository {  get; private set; }
-
-        public IOneOffCardRepository OneOffCardRepository {  get; private set; }
+        public IPenaltyRepository PenaltyRepository { get; private set; }
+        public ISubscriptionCardRepository SubscriptionCardRepository { get; private set; }
+        //public IUserRepository UserRepository { get; private set; }
+        public IVehicleRepository VehicleRepository { get; private set; }
+        public IZoneRepository ZoneRepository { get; private set; }
 
         public UnitOfWork(ParkDbContext context)
         {
             this.context = context;
-            ParkingPlaceRepository = new ParkingPlaceRepository(context);
-           // VehicleRepository = new VehicleRepository(context);
-            SubscriptionCardRepository = new SubscriptionCardRepository(context);
+            ControlRepository = new ControlRepository(context);
             OneOffCardRepository = new OneOffCardRepository(context);
+            ParkingPlaceRepository = new ParkingPlaceRepository(context);
+            PenaltyRepository = new PenaltyRepository(context);
+            SubscriptionCardRepository = new SubscriptionCardRepository(context);
             //UserRepository = new UserRepository(context);
+            VehicleRepository = new VehicleRepository(context);
+            ZoneRepository = new ZoneRepository(context);
         }
 
         public async Task CompleteAsync()
