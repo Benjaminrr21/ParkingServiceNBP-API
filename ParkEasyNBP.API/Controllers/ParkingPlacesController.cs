@@ -20,18 +20,18 @@ namespace ParkEasyNBP.API.Controllers
     public class ParkingPlacesController : ControllerBase
     {
         private readonly IUnitOfWork unitOfWork;
+        private readonly IMongoRepository<MongoParkingPlace> mongo;
         private readonly IMediator mediator;
         private readonly IParkingPlaceRepository service;
         private readonly IMapper mapper;
-        private readonly ParkingPlaceServiceMongoDB serviceMongoDB;
 
-        public ParkingPlacesController(IUnitOfWork unitOfWork,IMediator mediator, IParkingPlaceRepository service, IMapper mapper, ParkingPlaceServiceMongoDB serviceMongoDB)
+        public ParkingPlacesController(IUnitOfWork unitOfWork, IMongoRepository<MongoParkingPlace> mongo, IMediator mediator, IParkingPlaceRepository service, IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
+            this.mongo = mongo;
             this.mediator = mediator;
             this.service = service;
             this.mapper = mapper;
-            this.serviceMongoDB = serviceMongoDB;
         }
         [HttpGet]
         public async Task<IActionResult> GetParkingPlaces(/*[FromQuery]ParkingPlaceQueryObject queryObject*/)
@@ -79,14 +79,16 @@ namespace ParkEasyNBP.API.Controllers
             return NotFound("Nije pronadjeno parking mesto.");
         }
         [HttpPost]
-        public async Task<IActionResult> AddParkingPlace([FromBody] CreateParkingPlaceCommand parkingplace)
+        public async Task<IActionResult> AddParkingPlace([FromBody] /*CreateParkingPlaceCommand*/ MongoParkingPlace parkingplace)
         {
-            var res = await mediator.Send(parkingplace);
+            //MONGO
+            return Ok(await mongo.Create(parkingplace));
+            /*var res = await mediator.Send(parkingplace);
             if (!res.IsSuccess)
             {
                 return BadRequest(res.Errors);
             }
-            return Ok(res.Data);
+            return Ok(res.Data);*/
             //var pp = mapper.Map<ParkingPlaceMongoDB>(CreatePa);
             //await unitOfWork.ParkingPlaceRepository.Create(pp);
             //return Ok(await serviceMongoDB.Create(pp));

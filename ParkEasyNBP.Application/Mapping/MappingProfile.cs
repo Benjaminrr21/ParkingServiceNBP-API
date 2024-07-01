@@ -49,8 +49,9 @@ namespace ParkEasyNBP.Application.Mapping
 
             CreateMap<ApplicationUser, serDTO>();
 
-            CreateMap<ZoneMongoDTO, ZoneMongoDB>();
-            CreateMap<NewParkingPlaceMongoDTO, ParkingPlaceMongoDB>();
+            CreateMap<ZoneMongoDTO, MongoZone>();
+            CreateMap<NewParkingPlaceMongoDTO, MongoParkingPlace>();
+            CreateMap<NewVehicleMongo, MongoVehicle>();
         }
     }
 }

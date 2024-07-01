@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ParkEasyNBP.Domain.ModelsMongoDB
 {
-    public class ParkingPlaceMongoDB
+    public class MongoParkingPlace
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

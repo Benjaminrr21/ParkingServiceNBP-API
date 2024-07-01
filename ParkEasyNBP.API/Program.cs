@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using Neo4jClient;
@@ -30,8 +31,7 @@ builder.Services.AddSwaggerGen();
 
 
 
-//Konfiguracija SQL servera
-
+//SQL server
 builder.Services.AddDbContext<ParkDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ParkEasyContext")));
 builder.Services.AddScoped<IParkingPlaceRepository, ParkingPlaceRepository>();
 //builder.Services.AddScoped<IZoneRepository, ZoneRepository>();
@@ -41,48 +41,41 @@ builder.Services.AddScoped<ParkingPlaceService>();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 builder.Services.AddScoped<IPenaltyRepository, PenaltyRepository>();
 builder.Services.AddScoped<IControlRepository, ControlRepository>();
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
-/*builder.Services.AddSingleton<IMongoClient, MongoClient>(sp =>
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+  //dodavanje MediatR-a
+builder.Services.AddMediatR(cfg =>
 {
-    var connectionString = builder.Configuration.GetConnectionString("MongoDb");
-    return new MongoClient(connectionString);
+    cfg.RegisterServicesFromAssemblyContaining<Program>();
+    cfg.Lifetime = ServiceLifetime.Scoped;
 });
 
-builder.Services.AddSingleton(sp =>
+
+
+//MONGO DB
+builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("MongoDbSettings"));
+
+  // Registracija MongoDB klijenta
+builder.Services.AddSingleton<IMongoClient, MongoClient>(sp =>
 {
-    var client = sp.GetRequiredService<IMongoClient>();
-    return client.GetDatabase("ParkEasyProject");
-});*/
-
-// Registrujte generički repozitorijum
-/*builder.Services.AddScoped(typeof(MongoRepository<>));
-builder.Services.AddScoped<ZoneService>();*/
-//builder.Services.AddScoped<IZoneService, ZoneService>();
-builder.Services.AddScoped<MongoService>();
-builder.Services.AddScoped<ParkingPlaceServiceMongoDB>();
+    var settings = sp.GetRequiredService<IOptions<MongoDBSettings>>().Value;
+    return new MongoClient(settings.ConnectionString);
+});
+builder.Services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
 
 
-//Konfiguracija NEO4J baze
+//Neo4J
 //var client = new GraphClient(new Uri("http://93f260b7.databases.neo4j.io:7687"), "neo4j", "LSH_QeDZwjMxAKBgnltZijCmFoGEL5ghJszj-peGjZ4");
 var client = new BoltGraphClient(new Uri("bolt+s://93f260b7.databases.neo4j.io:7687"), "neo4j", "LSH_QeDZwjMxAKBgnltZijCmFoGEL5ghJszj-peGjZ4");
-//client.ConnectAsync().Wait();
 await client.ConnectAsync();
 builder.Services.AddSingleton<IGraphClient>(client);
 
 builder.Services.AddSingleton<ZonesService>();
 
 
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-builder.Services.AddAutoMapper(typeof(MappingProfile));
-//dodavanje MediatR-a
-builder.Services.AddMediatR(cfg =>
-{
-    cfg.RegisterServicesFromAssemblyContaining<Program>();
-    cfg.Lifetime = ServiceLifetime.Scoped;
-});
 //JWT
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ParkDbContext>()
@@ -136,3 +129,21 @@ app.MapControllers();
 app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
 app.Run();
+/*builder.Services.AddSingleton<IMongoClient, MongoClient>(sp =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("MongoDb");
+    return new MongoClient(connectionString);
+});
+
+builder.Services.AddSingleton(sp =>
+{
+    var client = sp.GetRequiredService<IMongoClient>();
+    return client.GetDatabase("ParkEasyProject");
+});*/
+
+// Registrujte generički repozitorijum
+/*builder.Services.AddScoped(typeof(MongoRepository<>));
+builder.Services.AddScoped<ZoneService>();*/
+//builder.Services.AddScoped<IZoneService, ZoneService>();
+/*builder.Services.AddScoped<MongoService>();
+builder.Services.AddScoped<ParkingPlaceServiceMongoDB>();*/

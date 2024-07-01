@@ -10,25 +10,25 @@ using System.Threading.Tasks;
 
 namespace ParkEasyNBP.Infrastructure.MongoDB
 {
-    public class ParkingPlaceServiceMongoDB : IMongoRepository<ParkingPlaceMongoDB>
+    public class ParkingPlaceServiceMongoDB  //IMongoRepository<ParkingPlaceMongoDB>
     {
-        private IMongoCollection<ParkingPlaceMongoDB> parkingPlaces;
+        private IMongoCollection<MongoParkingPlace> parkingPlaces;
 
         public ParkingPlaceServiceMongoDB()
         {
             MongoClient client = new MongoClient("mongodb://localhost:27017");
             IMongoDatabase db = client.GetDatabase("ParkEasyProject");
             //parkingPlaces = db.GetCollection<ParkingPlaceMongoDB>("Zones");
-            parkingPlaces = db.GetCollection<ParkingPlaceMongoDB>("Parking places");
+            parkingPlaces = db.GetCollection<MongoParkingPlace>("Parking places");
         }
 
-        public async Task<ParkingPlaceMongoDB> Create(ParkingPlaceMongoDB zone)
+        public async Task<MongoParkingPlace> Create(MongoParkingPlace zone)
         {
             await parkingPlaces.InsertOneAsync(zone);
             return zone;
         }
 
-        public async Task<List<ParkingPlaceMongoDB>> GetAll()
+        public async Task<List<MongoParkingPlace>> GetAll()
         {
             var f = new BsonDocument();
             return parkingPlaces.Find(f).ToList();

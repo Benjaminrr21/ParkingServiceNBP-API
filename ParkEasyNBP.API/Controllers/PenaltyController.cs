@@ -5,6 +5,8 @@ using ParkEasyNBP.Application.DTOs;
 using ParkEasyNBP.Application.DTOs.Penalties;
 using ParkEasyNBP.Domain.Interfaces;
 using ParkEasyNBP.Domain.Models;
+using ParkEasyNBP.Domain.ModelsMongoDB;
+using ParkEasyNBP.Infrastructure.MongoDB;
 using Repository;
 
 namespace ParkEasyNBP.API.Controllers
@@ -15,12 +17,14 @@ namespace ParkEasyNBP.API.Controllers
     {
         private readonly IPenaltyRepository repository;
         private readonly IMapper mapper;
+        private readonly IMongoRepository<MongoPenalty> mongo;
         private readonly UnitOfWork unitOfWork;
 
-        public PenaltyController(UnitOfWork unitOfWork, IPenaltyRepository repository, IMapper mapper)
+        public PenaltyController(UnitOfWork unitOfWork, IPenaltyRepository repository, IMapper mapper,IMongoRepository<MongoPenalty> mongo)
         {
             this.repository = repository;
             this.mapper = mapper;
+            this.mongo = mongo;
             this.unitOfWork = unitOfWork; 
         }
 

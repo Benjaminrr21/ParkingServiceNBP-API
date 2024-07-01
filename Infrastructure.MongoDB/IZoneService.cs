@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ParkEasyNBP.Infrastructure.MongoDB
 {
-    public interface IZoneService  : IMongoRepository<ZoneMongoDB>
+    public interface IZoneService  : IMongoRepository<MongoZone>
     {
 
     }

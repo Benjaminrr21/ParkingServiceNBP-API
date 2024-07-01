@@ -12,24 +12,24 @@ namespace ParkEasyNBP.Infrastructure.MongoDB
 {
     public class MongoService 
     {
-         private IMongoCollection<ZoneMongoDB> zones;
-         private IMongoCollection<ParkingPlaceMongoDB> parkingPlaces;
+         private IMongoCollection<MongoZone> zones;
+         private IMongoCollection<MongoParkingPlace> parkingPlaces;
 
          public MongoService()
          {
 
              MongoClient client = new MongoClient("mongodb://localhost:27017");
              IMongoDatabase db = client.GetDatabase("ParkEasyProject");
-             zones = db.GetCollection<ZoneMongoDB>("Zones");
-             parkingPlaces = db.GetCollection<ParkingPlaceMongoDB>("Parking places");
+             zones = db.GetCollection<MongoZone>("Zones");
+             parkingPlaces = db.GetCollection<MongoParkingPlace>("Parking places");
          }
-         public async Task<ZoneMongoDB> Create(ZoneMongoDB zone)
+         public async Task<MongoZone> Create(MongoZone zone)
          {
              await zones.InsertOneAsync(zone);
              return zone;
          }
 
-         public async Task<List<ZoneMongoDB>> GetAll()
+         public async Task<List<MongoZone>> GetAll()
          {
              var f = new BsonDocument();
              return zones.Find(f).ToList();

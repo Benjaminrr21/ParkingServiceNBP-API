@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using ParkEasyNBP.Application.DTOs.CardsDTO;
 using ParkEasyNBP.Domain.Interfaces;
 using ParkEasyNBP.Domain.Models;
+using ParkEasyNBP.Domain.ModelsMongoDB;
+using ParkEasyNBP.Infrastructure.MongoDB;
 
 namespace ParkEasyNBP.API.Controllers
 {
@@ -13,11 +15,13 @@ namespace ParkEasyNBP.API.Controllers
     {
         private readonly IUnitOfWork uow;
         private readonly IMapper mapper;
+        private readonly IMongoRepository<MongoOneOffCard> mongo;
 
-        public OneOffCardController(IUnitOfWork uow, IMapper mapper)
+        public OneOffCardController(IUnitOfWork uow, IMapper mapper,IMongoRepository<MongoOneOffCard> mongo)
         {
             this.uow = uow;
             this.mapper = mapper;
+            this.mongo = mongo;
         }
 
         [HttpGet]

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ParkEasyNBP.Infrastructure.MongoDB
 {
-    public class ZoneService : MongoRepository<ZoneMongoDB>, IZoneService
+    public class ZoneService 
     {
         /* private readonly MongoRepository<ZoneMongoDB> _repository;
 
@@ -26,8 +26,6 @@ namespace ParkEasyNBP.Infrastructure.MongoDB
          {
              return await _repository.GetAll();
          }*/
-        public ZoneService(IMongoDatabase database, string collectionName) : base(database, collectionName)
-        {
-        }
+        
     }
 }

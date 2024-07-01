@@ -23,21 +23,19 @@ namespace ParkEasyNBP.API.Controllers
     [ApiController]
     public class ZoneController : ControllerBase
     {
-        private readonly IZoneRepository zonesGraph;
+        private readonly IMongoRepository<MongoZone> mongo;
        // private readonly IZoneRepository service;
         private readonly IMapper mapper;
         private readonly IMediator _mediator;
-        private readonly MongoService mongoService;
         private readonly IUnitOfWork unitOfWork;
 
 
 
-        public ZoneController( IZoneRepository service, IMapper mapper, MongoService mongoService, IMediator mediator, IUnitOfWork unitOfWork)
+        public ZoneController( IMongoRepository<MongoZone> mongo, IMapper mapper, IMediator mediator, IUnitOfWork unitOfWork)
         {
-            this.zonesGraph = service;
+            this.mongo = mongo;
            // this.service = service;
             this.mapper = mapper;
-            this.mongoService = mongoService;
             _mediator = mediator;
             this.unitOfWork = unitOfWork;
         }
