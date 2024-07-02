@@ -12,5 +12,6 @@ namespace ParkEasyNBP.Domain.Interfaces
         Task<ParkingPlace> ReservePlace(int vid, int pid);
         Task<ParkingPlace> FreePlace(int vid, int pid);
         Task<ParkingPlace> AddPlaceWithGarage(ParkingPlace p);
+   
     }
 }

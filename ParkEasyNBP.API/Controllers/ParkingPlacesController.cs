@@ -12,6 +12,8 @@ using ParkEasyNBP.Application.DTOs.MongoDB_DTOs;
 using ParkEasyNBP.Domain.ModelsMongoDB;
 using ParkEasyNBP.API.Mediator.Command;
 using MediatR;
+using ParkEasyNBP.Domain.Models.Results;
+using ParkEasyNBP.Domain.Exceptions;
 
 namespace ParkEasyNBP.API.Controllers
 {
@@ -69,14 +71,14 @@ namespace ParkEasyNBP.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById([FromRoute]int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var obj = await service.Get(id);
-            if (obj != null)
-            {
-                return Ok(obj);
-            }
-            return NotFound("Nije pronadjeno parking mesto.");
+
+            //MEDIATOR
+            var res = await mediator.Send(new ParkingPlaceIdQuery(id));
+            if (!res.IsSuccess)
+                return BadRequest(res.Errors);
+            return Ok(res);
         }
         [HttpPost]
         public async Task<IActionResult> AddParkingPlace([FromBody] /*CreateParkingPlaceCommand*/ MongoParkingPlace parkingplace)
@@ -105,20 +107,21 @@ namespace ParkEasyNBP.API.Controllers
              return Ok(pp);
          }*/
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromRoute] int id)
+        public async Task<IActionResult> Delete([FromBody]DeleteParkingPlaceCommand command)
         {
-            var obj = await service.Delete(id);
-            if (obj != null)
-            {
-                return Ok("Uspesno brisanje.");
-            }
-            return BadRequest("Nepostojece parking mesto.");
+            var obj = await mediator.Send(command);
+            if(!obj.IsSuccess) 
+                return BadRequest(obj.Errors);
+            return Ok(obj.Data);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdatePlace([FromRoute]int id, [FromBody]ParkingPlaceUpdateDTO place)
+        public async Task<IActionResult> UpdatePlace(/*[FromRoute]int id, [FromBody]ParkingPlaceUpdateDTO place*/[FromBody]UpdateParkingPlaceCommand cmd)
         {
-            var p = mapper.Map<ParkingPlace>(place);
+            var p = await mediator.Send(cmd);
+            if(!p.IsSuccess) return BadRequest(p.Errors);
+            return Ok(p.Data);
+         /*   var p = mapper.Map<ParkingPlace>(place);
             p.Id = id;
 
             if (p == null || p.Id != id)
@@ -132,14 +135,27 @@ namespace ParkEasyNBP.API.Controllers
                 return NotFound();
             }
 
-            return Ok(updatedZone);
+            return Ok(updatedZone);*/
         }
 
         [HttpPut("reserve/{vid}/{pid}")]
         public async Task<IActionResult> Reserve([FromRoute]int vid, [FromRoute]int pid)
         {
-            
-            return Ok(await service.ReservePlace(vid, pid));
+
+            var res = await service.ReservePlace(vid, pid);
+            if (res != null)
+            {
+                return Ok(await service.ReservePlace(vid, pid));
+            }
+
+            return BadRequest(new Result<ParkingPlace>
+            {
+                IsSuccess = false,
+                Errors = new List<string>
+                {
+                 new CantReserveWithouCardException().Message
+                }
+            }) ;
         }
         [HttpPut("free/{vid}/{pid}")]
         public async Task<IActionResult> Free([FromRoute] int vid, [FromRoute] int pid)

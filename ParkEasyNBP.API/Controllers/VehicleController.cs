@@ -29,10 +29,10 @@ namespace ParkEasyNBP.API.Controllers
         [HttpGet]
         public async Task<IActionResult> getAll()
         {
-            /* var list = await service.GetAll();
+             var list = await service.GetAll();
              var list2 = mapper.Map<IEnumerable<VehicleWithInfosDTO>>(list);
-             return Ok(list2);*/
-            return Ok(await mongorepo.GetAll());
+             return Ok(list2);
+            //return Ok(await mongorepo.GetAll());
 
             // return Ok(mapper.Map<IEnumerable<VehicleWithPaymentsDTO>>(await service.GetAll()));  
         }
@@ -42,14 +42,14 @@ namespace ParkEasyNBP.API.Controllers
             return Ok(mapper.Map<VehicleWithInfosDTO>(await service.Get(id)));
         }
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] /*NewVehicleDTO*/ NewVehicleMongo v)
+        public async Task<IActionResult> Add([FromBody] NewVehicleDTO /*NewVehicleMongo*/ v)
         {
             //SQL SERVER
-            /*
+            
             var vehicle = mapper.Map<Vehicle>(v);
             return Ok(await service.Create(vehicle));
-            */
-            return Ok(await mongorepo.Create(mapper.Map<MongoVehicle>(v)));
+            
+            //return Ok(await mongorepo.Create(mapper.Map<MongoVehicle>(v)));
         }
         [HttpPut("{id}")]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] VehicleUpdateDTO v)
@@ -84,6 +84,11 @@ namespace ParkEasyNBP.API.Controllers
         public async Task<IActionResult> getVehicleOfOwner([FromRoute]string id)
         {
             return Ok(await service.VehicleOfOwner(id));
+        }
+        [HttpGet("search")]
+        public async Task<IActionResult> Search(string regNumber)
+        {
+            return Ok(await service.Search(regNumber));
         }
     }
 

@@ -10,5 +10,6 @@ namespace ParkEasyNBP.Domain.Interfaces
     public interface IVehicleRepository : IRepository<Vehicle>
     {
         Task<Vehicle> VehicleOfOwner(string id);
+        Task<IEnumerable<Vehicle>> Search(string regNumber);
     }
 }

@@ -22,10 +22,16 @@ namespace Repository.Repositories
         public async Task<ParkingPlace> ReservePlace(int vid, int pid)
         {
             var pp = await dbContext.ParkingPlaces.FindAsync(pid);
-            pp.Status = "ZAUZETO";
-            pp.VehicleId = vid;
-            await dbContext.SaveChangesAsync();
-            return pp;
+            //var vehicle = await dbContext.Vehicles.FirstOrDefaultAsync(v => v.Id == vid);
+            var pcard = await dbContext.OneOffCards.FirstOrDefaultAsync(c => c.VehicleId == vid);
+            
+            //if (pcard.Period < DateTime.Now) return null;
+            
+                pp.Status = "ZAUZETO";
+                pp.VehicleId = vid;
+                await dbContext.SaveChangesAsync();
+                return pp;
+            
         }
         public async Task<ParkingPlace> FreePlace(int vid, int pid)
         {

@@ -34,8 +34,8 @@ builder.Services.AddSwaggerGen();
 //SQL server
 builder.Services.AddDbContext<ParkDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ParkEasyContext")));
 builder.Services.AddScoped<IParkingPlaceRepository, ParkingPlaceRepository>();
-//builder.Services.AddScoped<IZoneRepository, ZoneRepository>();
-builder.Services.AddScoped<IZoneRepository, ZoneGraphRepository>();
+builder.Services.AddScoped<IZoneRepository, ZoneRepository>();
+//builder.Services.AddScoped<IZoneRepository, ZoneGraphRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ParkingPlaceService>();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
@@ -73,7 +73,7 @@ var client = new BoltGraphClient(new Uri("bolt+s://93f260b7.databases.neo4j.io:7
 await client.ConnectAsync();
 builder.Services.AddSingleton<IGraphClient>(client);
 
-builder.Services.AddSingleton<ZonesService>();
+//builder.Services.AddSingleton<ZonesService>();
 
 
 //JWT
@@ -122,8 +122,8 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-//app.UseCustomMiddleware();
-app.UseMyMiddleware();
+app.UseCustomMiddleware();
+//app.UseMyMiddleware();
 app.MapControllers();
 
 app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());

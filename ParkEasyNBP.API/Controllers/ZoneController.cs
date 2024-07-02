@@ -16,6 +16,7 @@ using MediatR;
 using ParkEasyNBP.Application.Requests.Zones;
 using Repository.Neo4jRepositories;
 using ParkEasyNBP.Infrastructure.Neo4j.Services;
+using ParkEasyNBP.Domain.Exceptions;
 
 namespace ParkEasyNBP.API.Controllers
 {
@@ -24,17 +25,17 @@ namespace ParkEasyNBP.API.Controllers
     public class ZoneController : ControllerBase
     {
         private readonly IMongoRepository<MongoZone> mongo;
-       // private readonly IZoneRepository service;
+        private readonly IZoneRepository service;
         private readonly IMapper mapper;
         private readonly IMediator _mediator;
         private readonly IUnitOfWork unitOfWork;
 
 
 
-        public ZoneController( IMongoRepository<MongoZone> mongo, IMapper mapper, IMediator mediator, IUnitOfWork unitOfWork)
+        public ZoneController( IMongoRepository<MongoZone> mongo, IZoneRepository service, IMapper mapper, IMediator mediator, IUnitOfWork unitOfWork)
         {
             this.mongo = mongo;
-           // this.service = service;
+            this.service = service;
             this.mapper = mapper;
             _mediator = mediator;
             this.unitOfWork = unitOfWork;
@@ -50,44 +51,47 @@ namespace ParkEasyNBP.API.Controllers
             return Ok(list2);*/
             //var list = await _mediator.Send(new GetAllZonesQuery());
             // return Ok(mongoService.GetAll());
-            return Ok(await zonesGraph.GetAll());
+            //return Ok(await zonesGraph.GetAll());
 
-          /*  var list = await service.GetAll();
-            var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
+            /*  var list = await service.GetAll();
+              var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
 
-            Dictionary<string, Expression<Func<ZonesDTO, object>>> columnMaps = new Dictionary<string, Expression<Func<ZonesDTO, object>>>
-            {
-                ["Name"] = c => c.Name
-            };
-            if (!qo.Name.IsNullOrEmpty())
-                list2 = list2.Where(c => c.Name == qo.Name).AsQueryable();*/
+              Dictionary<string, Expression<Func<ZonesDTO, object>>> columnMaps = new Dictionary<string, Expression<Func<ZonesDTO, object>>>
+              {
+                  ["Name"] = c => c.Name
+              };
+              if (!qo.Name.IsNullOrEmpty())
+                  list2 = list2.Where(c => c.Name == qo.Name).AsQueryable();*/
 
             //list2 = list2.AsQueryable();/*ApplySorting<ZonesDTO>(qo, columnMaps).ApplyPaging(qo);*/
             //return Ok(mongoService.GetAll());
+            var list = await service.GetAll();
+            var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
+            return Ok(list2);
             
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
-            /*var obj = await service.Get(id);
+            var obj = await service.Get(id);
             if (obj == null)
             {
-                return NotFound("Nije pronadjena zona.");
+                throw new EntityNullException();
             }
-            return Ok(obj);*/
-            var zone = await _mediator.Send(new GetZoneByIdQuery(id));
+            return Ok(obj);
+            /*var zone = await _mediator.Send(new GetZoneByIdQuery(id));
             if (zone == null)
             {
                 return NotFound("Nije pronađena zona.");
             }
-            return Ok(zone);
+            return Ok(zone);*/
         }
         [HttpPost]
         public async Task<IActionResult> AddZone([FromBody] ZoneCreateDTO zone)
         {
             //throw new NotImplementedException();
             var z = mapper.Map<Zone>(zone);
-            return Ok(await zonesGraph.Create(z));
+            return Ok(/*await zonesGraph.Create(z)*/);
             /*var zona = mapper.Map<Domain.Models.Zone>(zone);
             await service.Create(zona);
             return Ok(zona);*/

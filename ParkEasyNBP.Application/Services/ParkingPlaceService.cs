@@ -22,9 +22,13 @@ namespace ParkEasyNBP.Application.Services
             this.mapper = mapper;
         }
 
-        public async Task<IEnumerable<ParkingPlace>> GetAll()
+        public async Task<IEnumerable<ParkingPlaceGetDTO>> GetAll()
         {
-            return await parkingPlaceRepository.GetAll();
+            return mapper.Map<IEnumerable<ParkingPlaceGetDTO>>(await parkingPlaceRepository.GetAll());
+        }
+        public async Task<ParkingPlaceGetDTO> Get(int id)
+        {
+            return mapper.Map<ParkingPlaceGetDTO>(await parkingPlaceRepository.Get(id));
         }
         public async Task<ParkingPlaceGetDTO> Create(ParkingPlaceCreateDTO p)
         {
@@ -32,6 +36,15 @@ namespace ParkEasyNBP.Application.Services
             await parkingPlaceRepository.Create(pp);
             return mapper.Map<ParkingPlaceGetDTO>(pp);
 
+        }
+        public async Task<ParkingPlaceGetDTO> Delete(int id)
+        {
+            var pp = mapper.Map<ParkingPlaceGetDTO>(await parkingPlaceRepository.Delete(id));
+            return pp;
+        }
+        public async Task<ParkingPlaceGetDTO> Update(int id, ParkingPlaceUpdateDTO p)
+        {
+            return mapper.Map<ParkingPlaceGetDTO>(await parkingPlaceRepository.Update(id, mapper.Map<ParkingPlace>(p)));
         }
         public async Task<ParkingPlaceGetDTO> CreateSimple(ParkingPlaceCreateSimple p)
         {

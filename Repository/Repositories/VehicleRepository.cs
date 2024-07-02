@@ -47,5 +47,10 @@ namespace Repository.Repositories
             //return await context.Vehicles.FirstOrDefaultAsync(v => v.UserId == id);
            
         }
+
+        public async Task<IEnumerable<Vehicle>> Search(string regNumber)
+        {
+            return await context.Vehicles.Where(v => v.RegNumber.Equals(regNumber)).ToListAsync();
+        }
     }
 }
