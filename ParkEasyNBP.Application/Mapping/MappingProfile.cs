@@ -17,6 +17,8 @@ namespace ParkEasyNBP.Application.Mapping
     public class MappingProfile : Profile
     {
         public MappingProfile() {
+            CreateMap<CredentialModel, ApplicationUser>();
+
             CreateMap<ParkingPlaceCreateDTO, ParkingPlace>();
             CreateMap<ZoneCreateDTO, Zone>();
 
@@ -25,6 +27,8 @@ namespace ParkEasyNBP.Application.Mapping
             CreateMap<Vehicle,VehicleWithInfosDTO>();
             CreateMap<Vehicle,VehicleOfCardDTO>();
             CreateMap<Vehicle,VehicleControlDTO>();
+
+            CreateMap<ControlDTO, Control>();
 
             CreateMap<NewPenaltyDTO,Penalty>();
             CreateMap<Penalty,PenaltyOfVehicleDTO>();

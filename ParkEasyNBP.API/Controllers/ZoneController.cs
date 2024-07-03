@@ -91,7 +91,7 @@ namespace ParkEasyNBP.API.Controllers
         {
             //throw new NotImplementedException();
             var z = mapper.Map<Zone>(zone);
-            return Ok(/*await zonesGraph.Create(z)*/);
+            return Ok(await unitOfWork.ZoneRepository.Create(z)/*await zonesGraph.Create(z)*/);
             /*var zona = mapper.Map<Domain.Models.Zone>(zone);
             await service.Create(zona);
             return Ok(zona);*/

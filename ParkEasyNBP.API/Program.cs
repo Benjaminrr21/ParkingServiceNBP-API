@@ -33,6 +33,7 @@ builder.Services.AddSwaggerGen();
 
 //SQL server
 builder.Services.AddDbContext<ParkDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ParkEasyContext")));
+
 builder.Services.AddScoped<IParkingPlaceRepository, ParkingPlaceRepository>();
 builder.Services.AddScoped<IZoneRepository, ZoneRepository>();
 //builder.Services.AddScoped<IZoneRepository, ZoneGraphRepository>();
@@ -42,7 +43,6 @@ builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 builder.Services.AddScoped<IPenaltyRepository, PenaltyRepository>();
 builder.Services.AddScoped<IControlRepository, ControlRepository>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));

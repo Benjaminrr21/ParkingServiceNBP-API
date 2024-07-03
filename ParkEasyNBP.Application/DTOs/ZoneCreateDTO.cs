@@ -9,5 +9,6 @@ namespace ParkEasyNBP.Application.DTOs
     public class ZoneCreateDTO
     {
         public string Name { get; set; }
+        public int NumberOfPlaces { get; set; }
     }
 }

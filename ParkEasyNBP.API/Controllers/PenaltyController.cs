@@ -18,9 +18,9 @@ namespace ParkEasyNBP.API.Controllers
         private readonly IPenaltyRepository repository;
         private readonly IMapper mapper;
         private readonly IMongoRepository<MongoPenalty> mongo;
-        private readonly UnitOfWork unitOfWork;
+        private readonly IUnitOfWork unitOfWork;
 
-        public PenaltyController(UnitOfWork unitOfWork, IPenaltyRepository repository, IMapper mapper,IMongoRepository<MongoPenalty> mongo)
+        public PenaltyController(IUnitOfWork unitOfWork, IPenaltyRepository repository, IMapper mapper,IMongoRepository<MongoPenalty> mongo)
         {
             this.repository = repository;
             this.mapper = mapper;

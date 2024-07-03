@@ -9,5 +9,6 @@ namespace ParkEasyNBP.Domain.Interfaces
 {
     public interface IControlRepository : IRepository<Control>
     {
+        Task<Control> Createe(Control control);
     }
 }

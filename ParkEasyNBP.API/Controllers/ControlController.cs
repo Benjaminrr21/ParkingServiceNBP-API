@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ParkEasyNBP.Application.DTOs.ControlDTO;
 using ParkEasyNBP.Domain.Interfaces;
+using ParkEasyNBP.Domain.Models;
 using ParkEasyNBP.Domain.ModelsMongoDB;
 using ParkEasyNBP.Infrastructure.MongoDB;
 
@@ -26,12 +27,12 @@ namespace ParkEasyNBP.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody]/*ControlDTO controlDTO*/ MongoControl control)
+        public async Task<IActionResult> Add([FromBody]ControlDTO controlDTO /*MongoControl control*/)
         {
             ///SQL
-            //return Ok(mapper.Map<IEnumerable<ControlDTO>>(await control.GetAll()));
+            return Ok(await control.Createe(mapper.Map<Control>(controlDTO)));
             //MONGODB
-            return Ok(mongo.Create(control));
+           // return Ok(mongo.Create(control));
         }
     }
 }

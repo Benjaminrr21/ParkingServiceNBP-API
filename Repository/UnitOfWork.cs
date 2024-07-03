@@ -27,7 +27,7 @@ namespace Repository
         public UnitOfWork(ParkDbContext context)
         {
             this.context = context;
-            ControlRepository = new ControlRepository(context);
+            ControlRepository = new ControlRepository(context,PenaltyRepository);
             OneOffCardRepository = new OneOffCardRepository(context);
             ParkingPlaceRepository = new ParkingPlaceRepository(context);
             PenaltyRepository = new PenaltyRepository(context);

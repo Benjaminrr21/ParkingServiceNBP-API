@@ -11,6 +11,7 @@ namespace ParkEasyNBP.Application.DTOs
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public int NumberOfFreePlaces { get; set; }
         public ICollection<ParkingPlaceGetDTO> ParkingPlaces { get; set; } = new List<ParkingPlaceGetDTO>();
         public ICollection<PublicGarageGetDTO> PublicGarages { get; set; } = new List<PublicGarageGetDTO>();
     }

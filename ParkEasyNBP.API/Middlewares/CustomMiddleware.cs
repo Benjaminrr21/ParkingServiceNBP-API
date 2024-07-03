@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
 using ParkEasyNBP.Domain.Models;
 using System.Net;
+using System.Net.Sockets;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace ParkEasyNBP.API.Middlewares
 {
@@ -10,42 +12,87 @@ namespace ParkEasyNBP.API.Middlewares
         private RequestDelegate _next;
         private readonly ILogger logger;
         private IWebHostEnvironment _env;
+        private Regex _emailRegex;
+        private Regex _regNumberRegex;
+        private Regex _ooCardRegex;
+        private Regex _sCardRegex;
+
         public CustomMiddleware(RequestDelegate next, ILogger<CustomMiddleware> logger, IWebHostEnvironment env)
         {
             _next = next;
             this.logger = logger;
             _env = env;
+            _emailRegex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.Compiled);
+            _regNumberRegex = new Regex(@"^[A-Z]{2}-\d{3}-[A-Z]{2}$");
+            _ooCardRegex = new Regex(@"^OC-\d{4}$");
+            _sCardRegex = new Regex(@"^SC-\d{4}$");
+
         }
         //glavna metoda - INVOKE , kako obradjuje zahtev
         //probamo da pustimo request da prodje u sledeci middleware
         public async Task Invoke(HttpContext context)
         {
-            if (context.Request.Path.StartsWithSegments("/api/Vehicles"))
+            if (context.Request.Path.StartsWithSegments("/api/Vehicle"))
             {
                 if (context.Request.Method == HttpMethods.Post)
                 {
                     context.Request.EnableBuffering(); // Omogućava ponovno čitanje tela zahteva
 
-                    var isValid = await ValidateTicket(context);
+                    var isValid = await ValidateRegNumber(context);
                     if (!isValid)
                     {
                         context.Response.StatusCode = StatusCodes.Status400BadRequest;
-                        await context.Response.WriteAsync("NEPRAVILAN UNOS.");
+                        await context.Response.WriteAsync("NEPRAVILAN REGISTARSKI BROJ.");
                         return;
                     }
                 }
             }
-            /* try
-             {
-                 await _next(context);
-             }
-             catch (Exception ex)
-             {
-                 HandleException(ex, context);
-             }*/
+            if (context.Request.Path.StartsWithSegments("/api/Auth/register"))
+            {
+                if(context.Request.Method == HttpMethods.Post)
+                {
+                   var isValid = await ValidateEmail(context);
+                    if (!isValid)
+                    {
+                        context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                        await context.Response.WriteAsync("NEPRAVILAN EMAIL.");
+                        return;
+                    }
+                }
+            }
+            if (context.Request.Path.StartsWithSegments("/api/OneOffCard"))
+            {
+                if (context.Request.Method == HttpMethods.Post)
+                {
+                    context.Request.EnableBuffering(); // Omogućava ponovno čitanje tela zahteva
+
+                    var isValid = await ValidateOCard(context);
+                    if (!isValid)
+                    {
+                        context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                        await context.Response.WriteAsync("NEPRAVILAN UNOS JEDNOKRATNE KARTE.");
+                        return;
+                    }
+                }
+            }
+            if (context.Request.Path.StartsWithSegments("/api/SubscriptionCard"))
+            {
+                if (context.Request.Method == HttpMethods.Post)
+                {
+                    context.Request.EnableBuffering(); // Omogućava ponovno čitanje tela zahteva
+
+                    var isValid = await ValidateSCard(context);
+                    if (!isValid)
+                    {
+                        context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                        await context.Response.WriteAsync("NEPRAVILAN UNOS PRETPLATNE KARTE.");
+                        return;
+                    }
+                }
+            }
             await _next(context);
         }
-        private async Task<bool> ValidateTicket(HttpContext context) 
+        private async Task<bool> ValidateRegNumber(HttpContext context) 
         {
             var body = await new StreamReader(context.Request.Body).ReadToEndAsync();
             context.Request.Body.Position = 0;
@@ -55,48 +102,52 @@ namespace ParkEasyNBP.API.Middlewares
 
 
 
-            if (string.IsNullOrEmpty(ticket.RegNumber))
+            if (string.IsNullOrEmpty(ticket.RegNumber) || !_regNumberRegex.IsMatch(ticket.RegNumber))
             {
                 return false;
             }
             return true;
         }
-
-        private void HandleException(Exception ex, HttpContext context)
+        private async Task<bool> ValidateEmail(HttpContext context)
         {
-            context.Response.ContentType = "application/json";
-            string errorMessage = (_env.IsDevelopment())/*!!!!!! bitno */ ? ex.Message : "Internal server error.";
-            switch (ex)
+            var body = await new StreamReader(context.Request.Body).ReadToEndAsync();
+            var user = JsonConvert.DeserializeObject<ApplicationUser>(body);
+            logger.LogInformation("Email validacija...");
+
+
+            if (string.IsNullOrEmpty(user.Email) || !_emailRegex.IsMatch(user.Email))
             {
-                /*case CourseEnrolmentException e:
-                    context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                    SerializaError(context, e, errorMessage);
-                    break;
-                case EntityNullCustomExeption ee:
-                    context.Response.StatusCode = (int)HttpStatusCode.NotFound;
-                    SerializaError(context, ee, errorMessage);
-                    break;
-                default:
-                    context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                    SerializaError(context, ex, errorMessage);
-                    break;*/
+                return false;
             }
+            return true;
         }
-
-        private void SerializaError(HttpContext context, Exception e, string errorMessage)
+        private async Task<bool> ValidateOCard(HttpContext context)
         {
-            /*Result<string> result = new Result<string>
+            var body = await new StreamReader(context.Request.Body).ReadToEndAsync();
+            context.Request.Body.Position = 0;
+            var card = JsonConvert.DeserializeObject<OneOffCard>(body);
+            logger.LogInformation("OCard validacija...");
+
+
+            if (string.IsNullOrEmpty(card.Code) || !_ooCardRegex.IsMatch(card.Code))
             {
-                IsSuccess = false,
-                Errors = new List<string> { errorMessage }
+                return false;
+            }
+            return true;
+        }
+        private async Task<bool> ValidateSCard(HttpContext context)
+        {
+            var body = await new StreamReader(context.Request.Body).ReadToEndAsync();
+            context.Request.Body.Position = 0;
+            var card = JsonConvert.DeserializeObject<SubscriptionCard>(body);
+            logger.LogInformation("SCard validacija...");
 
-            };*/
-            logger.LogError(e, errorMessage);
-           // var json = JsonSerializer.Serialize(result);
 
-            //context.Response.WriteAsync(json);
-
-
+            if (string.IsNullOrEmpty(card.Code) || !_sCardRegex.IsMatch(card.Code))
+            {
+                return false;
+            }
+            return true;
         }
     }
     //extension metoda za registraciju middleware-a
