@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <History>False|2024-07-03T14:57:01.6224843Z;False|2024-07-03T16:54:52.2967488+02:00;False|2024-07-03T16:51:48.5936375+02:00;False|2024-07-03T16:47:46.2023890+02:00;False|2024-07-03T16:38:19.9757312+02:00;False|2024-07-03T16:28:00.6495766+02:00;False|2024-07-03T15:49:04.5832378+02:00;False|2024-07-03T15:43:06.4790118+02:00;False|2024-07-03T15:35:57.5196703+02:00;False|2024-07-03T15:20:38.6840962+02:00;False|2024-07-03T15:19:54.1087696+02:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="MongoDb">
+      <Value>server=DESKTOP-OH548BG%3bdatabase=ParkEasyProject%3bintegrated security=yes%3bencrypt=false</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="ParkEasyNBP.Infrastructure.SqlServer.ParkDbContext">
+      <Value>server=DESKTOP-OH548BG%3bdatabase=ParkEasyProject%3bencrypt=false</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

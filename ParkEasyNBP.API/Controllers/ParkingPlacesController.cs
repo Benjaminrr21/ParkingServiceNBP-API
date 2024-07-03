@@ -81,16 +81,16 @@ namespace ParkEasyNBP.API.Controllers
             return Ok(res);
         }
         [HttpPost]
-        public async Task<IActionResult> AddParkingPlace([FromBody] /*CreateParkingPlaceCommand*/ MongoParkingPlace parkingplace)
+        public async Task<IActionResult> AddParkingPlace([FromBody] CreateParkingPlaceCommand parkingplace /*MongoParkingPlace parkingplace*/)
         {
             //MONGO
-            return Ok(await mongo.Create(parkingplace));
-            /*var res = await mediator.Send(parkingplace);
+            //return Ok(await mongo.Create(parkingplace));
+            var res = await mediator.Send(parkingplace);
             if (!res.IsSuccess)
             {
                 return BadRequest(res.Errors);
             }
-            return Ok(res.Data);*/
+            return Ok(res.Data);
             //var pp = mapper.Map<ParkingPlaceMongoDB>(CreatePa);
             //await unitOfWork.ParkingPlaceRepository.Create(pp);
             //return Ok(await serviceMongoDB.Create(pp));

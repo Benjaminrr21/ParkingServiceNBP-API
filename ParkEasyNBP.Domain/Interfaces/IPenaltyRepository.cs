@@ -10,5 +10,6 @@ namespace ParkEasyNBP.Domain.Interfaces
     public interface IPenaltyRepository : IRepository<Penalty>
     {
         Task<Penalty> RemovePenalty(int id, string reason);
+        Task<IEnumerable<Penalty>> GetPenaltiesOfVehicle(int vid);
     }
 }

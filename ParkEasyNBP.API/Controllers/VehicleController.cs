@@ -83,7 +83,7 @@ namespace ParkEasyNBP.API.Controllers
         [HttpGet("/vehicleof/{id}")]
         public async Task<IActionResult> getVehicleOfOwner([FromRoute]string id)
         {
-            return Ok(await service.VehicleOfOwner(id));
+            return Ok(mapper.Map<VehicleWithInfosDTO>(await service.VehicleOfOwner(id)));
         }
         [HttpGet("search")]
         public async Task<IActionResult> Search(string regNumber)

@@ -52,6 +52,11 @@ namespace ParkEasyNBP.API.Controllers
         {
             return Ok(await repository.Delete(id));
         }
+        [HttpGet("/myPenalties/{vid}")]
+        public async Task<IActionResult> GetMyPenalties([FromRoute] int vid)
+        {
+            return Ok(await repository.GetPenaltiesOfVehicle(vid));
+        }
 
     }
 }

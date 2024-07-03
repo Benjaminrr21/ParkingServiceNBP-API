@@ -78,7 +78,7 @@ namespace ParkEasyNBP.API.Controllers
             {
                 throw new EntityNullException();
             }
-            return Ok(obj);
+            return Ok(mapper.Map<ZonesDTO>(obj));
             /*var zone = await _mediator.Send(new GetZoneByIdQuery(id));
             if (zone == null)
             {
@@ -107,10 +107,10 @@ namespace ParkEasyNBP.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteZone([FromRoute]int id)
         {
-            /*var response = await service.Delete(id);
-            return Ok(response);*/
-            var response = await _mediator.Send(new DeleteZoneCommand(id));
+            var response = await service.Delete(id);
             return Ok(response);
+            /*var response = await _mediator.Send(new DeleteZoneCommand(id));
+            return Ok(response);*/
         }
 
         [HttpPut("{id}")]
@@ -124,19 +124,19 @@ namespace ParkEasyNBP.API.Controllers
                 return BadRequest();
             }
 
-            /*var updatedZone = await service.Update(id, zone);
+            var updatedZone = await service.Update(id, zone);
             if (updatedZone == null)
             {
                 return NotFound();
             }
 
-            return Ok(updatedZone);*/
-            var updatedZone = await _mediator.Send(new UpdateZoneCommand(id, zonee));
+            return Ok(updatedZone);
+          /*  var updatedZone = await _mediator.Send(new UpdateZoneCommand(id, zonee));
             if (updatedZone == null)
             {
                 return NotFound();
             }
-            return Ok(updatedZone);
+            return Ok(updatedZone);*/
         }
     }
 }

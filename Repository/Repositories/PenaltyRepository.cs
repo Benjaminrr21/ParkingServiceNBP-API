@@ -1,8 +1,10 @@
 ﻿using ParkEasyNBP.Domain.Interfaces;
 using ParkEasyNBP.Domain.Models;
 using ParkEasyNBP.Infrastructure.SqlServer;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+//using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +27,12 @@ namespace Repository.Repositories
             await dbContext.SaveChangesAsync();
             return p;
         }
+
+        public async Task<IEnumerable<Penalty>> GetPenaltiesOfVehicle(int vid)
+        {
+            return await dbContext.Penalties.Where(p => p.VehicleId == vid).ToListAsync();
+        }
+
         public async Task<Penalty> RemovePenalty(int id,string reason)
         {
             var p = await dbContext.Penalties.FindAsync(id);
