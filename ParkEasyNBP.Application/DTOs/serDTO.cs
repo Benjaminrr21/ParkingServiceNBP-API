@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ParkEasyNBP.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,6 @@ namespace ParkEasyNBP.Application.DTOs
         public string Phone { get; set; }
         public string Address { get; set; }
         public string Role { get; set; }
-
+        //public Vehicle Vehicle { get; set; }
     }
 }

@@ -56,6 +56,7 @@ namespace ParkEasyNBP.Application.Mapping
             CreateMap<ZoneMongoDTO, MongoZone>();
             CreateMap<NewParkingPlaceMongoDTO, MongoParkingPlace>();
             CreateMap<NewVehicleMongo, MongoVehicle>();
+            CreateMap<NewOOCardMongoDTO, MongoOneOffCard>();
         }
     }
 }

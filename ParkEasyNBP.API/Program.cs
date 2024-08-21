@@ -69,12 +69,26 @@ builder.Services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>)
 
 //Neo4J
 //var client = new GraphClient(new Uri("http://93f260b7.databases.neo4j.io:7687"), "neo4j", "LSH_QeDZwjMxAKBgnltZijCmFoGEL5ghJszj-peGjZ4");
-var client = new BoltGraphClient(new Uri("bolt+s://93f260b7.databases.neo4j.io:7687"), "neo4j", "LSH_QeDZwjMxAKBgnltZijCmFoGEL5ghJszj-peGjZ4");
-await client.ConnectAsync();
-builder.Services.AddSingleton<IGraphClient>(client);
+//var client = new BoltGraphClient(new Uri("bolt+s://93f260b7.databases.neo4j.io:7687"), "neo4j", "LSH_QeDZwjMxAKBgnltZijCmFoGEL5ghJszj-peGjZ4");
+//await client.ConnectAsync();
+//builder.Services.AddSingleton<IGraphClient>(client);
 
 //builder.Services.AddSingleton<ZonesService>();
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder => builder
+            .WithOrigins("http://angularhost2024-001-site1.dtempurl.com") // Postavi tačan origin
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
+});
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = null;
+        options.JsonSerializerOptions.WriteIndented = true;
+    });
 
 //JWT
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -106,27 +120,67 @@ builder.Services.AddAuthentication(
         };
     });
 
-builder.Services.AddCors();
+/*builder.Services.AddCors(options => options.AddPolicy(name: "Allow",
+    policy =>
+    {
+        policy.WithOrigins("http://angularhost2024-001-site1.dtempurl.com/").AllowAnyMethod().AllowAnyHeader();
+    }
+    ));*/
 
 
 var app = builder.Build();
+app.UseCors("AllowSpecificOrigin");
+
+
+/*app.Use(async (context, next) =>
+{
+    context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+    await next();
+});*/
 
 // Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
-    app.UseSwagger();
+if (app.Environment.IsDevelopment())
+{
+app.UseSwagger();
     app.UseSwaggerUI();
-//}
+}
+
+
+/*builder.Logging.ClearProviders();
+builder.Logging.AddConsole();*/
+
+
+
+/*app.Use(async (context, next) =>
+{
+    if (context.Request.Method == "OPTIONS")
+    {
+        context.Response.Headers.Add("Access-Control-Allow-Origin", "http://angularhost2024-001-site1.dtempurl.com");
+        context.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        context.Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        context.Response.StatusCode = 204;
+        return;
+    }
+    await next();
+});*/
+
+//app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+//app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().SetIsOriginAllowed(_ => true).AllowCredentials());
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
 
-app.UseCustomMiddleware();
+//app.UseAuthentication();
+app.UseRouting();
+
+//app.UseAuthentication();
+//app.UseAuthorization();
+
+//app.UseCustomMiddleware();
 //app.UseMyMiddleware();
 app.MapControllers();
 
-app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+
 
 app.Run();
 /*builder.Services.AddSingleton<IMongoClient, MongoClient>(sp =>

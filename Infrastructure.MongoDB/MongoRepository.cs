@@ -24,10 +24,11 @@ namespace ParkEasyNBP.Infrastructure.MongoDB
             return entity;
         }
 
-        public async Task Delete(string id)
+        public async Task<DeleteResult> Delete(string id)
         {
-            await collection.DeleteOneAsync(id);
-
+            var objectId = new ObjectId(id);
+            var filter = Builders<T>.Filter.Eq("_id", objectId);
+            return await collection.DeleteOneAsync(filter);
         }
 
         public async Task<IEnumerable<T>> GetAll()

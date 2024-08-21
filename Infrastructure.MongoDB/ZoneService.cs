@@ -1,4 +1,5 @@
 ﻿using MongoDB.Driver;
+using ParkEasyNBP.Domain.Models;
 using ParkEasyNBP.Domain.ModelsMongoDB;
 using System;
 using System.Collections.Generic;

@@ -44,7 +44,12 @@ namespace ParkEasyNBP.API.Controllers
         [HttpGet("/vehicleofuser/{id}")]
         public async Task<IActionResult> GetMyVehicle([FromRoute] string id)
         {
-            return Ok(mapper.Map<VehicleWithInfosDTO>(await service.GetMyVehicle(id)));
+            var vehicle = await service.GetMyVehicle(id);
+            if(vehicle == null)
+            {
+                return NotFound("Nije pronadjeno vozilo.");
+            }
+            return Ok(mapper.Map<VehicleWithInfosDTO>(vehicle));
         }
     }
 }

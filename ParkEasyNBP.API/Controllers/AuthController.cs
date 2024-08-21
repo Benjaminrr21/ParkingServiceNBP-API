@@ -60,16 +60,15 @@ namespace ParkEasyNBP.API.Controllers
                     UserName = model.Username,
                     Email = model.Email,
                     FirstName = model.FirstName,
-
                     LastName = model.LastName,
                     Address = model.Address,
                     Phone = model.Phone,
-                    Role = "User"
+                    Role = model.Role,
                 };
 
                 // Logovanje korisničkih podataka
                 Console.WriteLine($"Kreiranje korisnika sa ID: {user.Id}, Username: {user.UserName}");
-
+                //user.PasswordHash = userManager.PasswordHasher.HashPassword(user, model.Password);
                 var result = await userManager.CreateAsync(user, model.Password);
                 if (!result.Succeeded)
                 {
@@ -167,7 +166,6 @@ namespace ParkEasyNBP.API.Controllers
             var user = await userManager.FindByNameAsync(model.Username);
             if (user == null)
                 return NotFound();
-
             if (await userManager.CheckPasswordAsync(user, model.Password))
             {
                 // Generate JWT token
@@ -215,7 +213,8 @@ namespace ParkEasyNBP.API.Controllers
                         user = mapper.Map<serDTO>(user),
                         token = tokenKey,
                         refreshToken,
-                        expiration = token.ValidTo
+                        expiration = token.ValidTo,
+                        
                     });
             }
             return Unauthorized("Wrong username or password");

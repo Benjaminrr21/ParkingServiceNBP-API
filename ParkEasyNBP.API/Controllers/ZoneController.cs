@@ -45,6 +45,16 @@ namespace ParkEasyNBP.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllZones(/*[FromQuery]ZoneQueryObject qo*/)
         {
+            //SQL
+            var list = await service.GetAll();
+            //var list = await _mediator.Send(new GetAllZonesQuery());
+            var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
+            //MONGO
+            //var listMongo = await mongo.GetAll();
+
+            return Ok(list2);
+            //return Ok(listMongo);
+
 
             /*var list = await service.GetAll();
             var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
@@ -64,10 +74,10 @@ namespace ParkEasyNBP.API.Controllers
                   list2 = list2.Where(c => c.Name == qo.Name).AsQueryable();*/
 
             //list2 = list2.AsQueryable();/*ApplySorting<ZonesDTO>(qo, columnMaps).ApplyPaging(qo);*/
-            //return Ok(mongoService.GetAll());
-            var list = await service.GetAll();
-            var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
-            return Ok(list2);
+            //return Ok(await mongo.GetAll());
+           // var list = await service.GetAll();
+            //var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
+            //return Ok(list2);
             
         }
         [HttpGet("{id}")]

@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="benjamin00-001-site1" tags="IisApp">
+  <parameter name="IIS Web Application Name" description="" value="benjaminramovic-001-site1" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\korisnik\\Desktop\\III\ GODINA\\NAPREDNE\ BAZE\ PODATAKA\\ParkEasyNBP\\ParkEasyNBP\.API\\obj\\Release\\net8\.0\\PubTmp\\Out\\$" />
-  </parameter>
-  <parameter name="ParkEasyNBP.Infrastructure.SqlServer.ParkDbContext" description="" value="server=DESKTOP-OH548BG;database=ParkEasyProject;encrypt=false" tags="dbfullsql">
-    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\korisnik\\Desktop\\III\ GODINA\\NAPREDNE\ BAZE\ PODATAKA\\ParkEasyNBP\\ParkEasyNBP\.API\\obj\\Release\\net8\.0\\PubTmp\\EFSQLScripts\\ParkEasyNBP\.Infrastructure\.SqlServer\.ParkDbContext\.sql$" />
   </parameter>
 </parameters>

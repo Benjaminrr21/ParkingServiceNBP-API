@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +14,7 @@ namespace ParkEasyNBP.Infrastructure.MongoDB
         Task<T> GetById(string id);
         Task<T> Create(T entity);
         Task Update(string id, T entity);
-        Task Delete(string id);
+        Task<DeleteResult> Delete(string id);
 
 
     }

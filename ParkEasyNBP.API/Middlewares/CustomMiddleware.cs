@@ -49,7 +49,7 @@ namespace ParkEasyNBP.API.Middlewares
             }
             if (context.Request.Path.StartsWithSegments("/api/Auth/register"))
             {
-                if(context.Request.Method == HttpMethods.Post)
+               /* if(context.Request.Method == HttpMethods.Post)
                 {
                    var isValid = await ValidateEmail(context);
                     if (!isValid)
@@ -58,7 +58,7 @@ namespace ParkEasyNBP.API.Middlewares
                         await context.Response.WriteAsync("NEPRAVILAN EMAIL.");
                         return;
                     }
-                }
+                }*/
             }
             if (context.Request.Path.StartsWithSegments("/api/OneOffCard"))
             {
@@ -108,7 +108,7 @@ namespace ParkEasyNBP.API.Middlewares
             }
             return true;
         }
-        private async Task<bool> ValidateEmail(HttpContext context)
+      /*  private async Task<bool> ValidateEmail(HttpContext context)
         {
             var body = await new StreamReader(context.Request.Body).ReadToEndAsync();
             var user = JsonConvert.DeserializeObject<ApplicationUser>(body);
@@ -120,7 +120,7 @@ namespace ParkEasyNBP.API.Middlewares
                 return false;
             }
             return true;
-        }
+        }*/
         private async Task<bool> ValidateOCard(HttpContext context)
         {
             var body = await new StreamReader(context.Request.Body).ReadToEndAsync();

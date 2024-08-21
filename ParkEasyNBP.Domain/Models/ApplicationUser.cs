@@ -16,9 +16,16 @@ namespace ParkEasyNBP.Domain.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
+        public string Email {  get; set; }
         public string Address { get; set; }
+       /// <summary>
+       /// public string Username { get; set; }
+       /// </summary>
+        //public string Password { get; set; }
         public string Role { get; set; }
-        //public int? VehicleId { get; set; }
+        /// <summary>
+        /// public int? VehicleId { get; set; }
+        /// </summary>
         public Vehicle? Vehicle { get; set; }
         public ICollection<RefreshToken> RefreshTokens { get; set; }
         public ICollection<Control> Controls { get; set; }

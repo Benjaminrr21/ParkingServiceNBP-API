@@ -7,17 +7,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
-    <History>False|2024-07-03T14:57:01.6224843Z;False|2024-07-03T16:54:52.2967488+02:00;False|2024-07-03T16:51:48.5936375+02:00;False|2024-07-03T16:47:46.2023890+02:00;False|2024-07-03T16:38:19.9757312+02:00;False|2024-07-03T16:28:00.6495766+02:00;False|2024-07-03T15:49:04.5832378+02:00;False|2024-07-03T15:43:06.4790118+02:00;False|2024-07-03T15:35:57.5196703+02:00;False|2024-07-03T15:20:38.6840962+02:00;False|2024-07-03T15:19:54.1087696+02:00;</History>
+    <History>True|2024-07-03T17:02:45.2512805Z;False|2024-07-03T18:55:56.4836480+02:00;False|2024-07-03T18:54:16.7249507+02:00;False|2024-07-03T18:53:24.3707198+02:00;True|2024-07-03T18:34:14.6451139+02:00;True|2024-07-03T18:13:03.0343094+02:00;True|2024-07-03T18:06:25.4884317+02:00;True|2024-07-03T17:52:36.1040707+02:00;False|2024-07-03T17:22:47.1539212+02:00;False|2024-07-03T16:57:01.6224843+02:00;False|2024-07-03T16:54:52.2967488+02:00;False|2024-07-03T16:51:48.5936375+02:00;False|2024-07-03T16:47:46.2023890+02:00;False|2024-07-03T16:38:19.9757312+02:00;False|2024-07-03T16:28:00.6495766+02:00;False|2024-07-03T15:49:04.5832378+02:00;False|2024-07-03T15:43:06.4790118+02:00;False|2024-07-03T15:35:57.5196703+02:00;False|2024-07-03T15:20:38.6840962+02:00;False|2024-07-03T15:19:54.1087696+02:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
-    <DestinationConnectionStrings Include="MongoDb">
-      <Value>server=DESKTOP-OH548BG%3bdatabase=ParkEasyProject%3bintegrated security=yes%3bencrypt=false</Value>
+    <DestinationConnectionStrings Include="ParkEasyContext">
+      <Value>Data Source=SQL8004.site4now.net%3bInitial Catalog=db_aaa9f4_nbpdatabase%3bUser Id=db_aaa9f4_nbpdatabase_admin%3bPassword=nbpdatabase2024</Value>
     </DestinationConnectionStrings>
-  </ItemGroup>
-  <ItemGroup>
-    <EFMigrations Include="ParkEasyNBP.Infrastructure.SqlServer.ParkDbContext">
-      <Value>server=DESKTOP-OH548BG%3bdatabase=ParkEasyProject%3bencrypt=false</Value>
-    </EFMigrations>
   </ItemGroup>
 </Project>
