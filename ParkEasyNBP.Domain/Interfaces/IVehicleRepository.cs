@@ -11,5 +11,7 @@ namespace ParkEasyNBP.Domain.Interfaces
     {
         Task<Vehicle> VehicleOfOwner(string id);
         Task<IEnumerable<Vehicle>> Search(string regNumber);
+        
+
     }
 }

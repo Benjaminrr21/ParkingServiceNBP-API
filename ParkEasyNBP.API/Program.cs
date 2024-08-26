@@ -42,6 +42,7 @@ builder.Services.AddScoped<ParkingPlaceService>();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 builder.Services.AddScoped<IPenaltyRepository, PenaltyRepository>();
 builder.Services.AddScoped<IControlRepository, ControlRepository>();
+builder.Services.AddScoped<IOneOffCardRepository, OneOffCardRepository>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
@@ -78,10 +79,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
         builder => builder
-            .WithOrigins("http://angularhost2024-001-site1.dtempurl.com") // Postavi tačan origin
+            .AllowAnyOrigin() // Postavi tačan origin
             .AllowAnyMethod()
             .AllowAnyHeader()
-            .AllowCredentials());
+            );
 });
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
@@ -98,6 +99,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ParkDbContext>()
     .AddDefaultTokenProviders();*/
 builder.Services.AddScoped<ParkingPlaceService>();
+builder.Services.AddScoped<OneOffCardService>();
 builder.Services.AddAuthentication(
     options =>
     {
@@ -176,7 +178,7 @@ app.UseRouting();
 //app.UseAuthentication();
 //app.UseAuthorization();
 
-//app.UseCustomMiddleware();
+app.UseCustomMiddleware();
 //app.UseMyMiddleware();
 app.MapControllers();
 

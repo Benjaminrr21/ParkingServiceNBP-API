@@ -628,7 +628,10 @@
           "MongoDB.Driver": "2.27.0"
         },
         "runtime": {
-          "ParkEasyNBP.Domain.dll": {}
+          "ParkEasyNBP.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

@@ -88,7 +88,7 @@ namespace ParkEasyNBP.API.Controllers
         [HttpGet("search")]
         public async Task<IActionResult> Search(string regNumber)
         {
-            return Ok(await service.Search(regNumber));
+            return Ok(mapper.Map<IEnumerable<VehicleWithInfosDTO>>(await service.Search(regNumber)));
         }
     }
 

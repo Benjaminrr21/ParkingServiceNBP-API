@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("3ad9745f-9871-450b-8e4c-56de37537586")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ParkEasyNBP.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c39c1f1726199790c2f1d3f7a1240119ff1050f4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be0df8bfb680bbe32d281c5a6c6dccad6ca316f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("ParkEasyNBP.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ParkEasyNBP.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

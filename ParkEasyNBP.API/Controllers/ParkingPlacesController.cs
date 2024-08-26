@@ -107,12 +107,13 @@ namespace ParkEasyNBP.API.Controllers
              return Ok(pp);
          }*/
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromBody]DeleteParkingPlaceCommand command)
+        public async Task<IActionResult> Delete([FromRoute] int id/*[FromBody]DeleteParkingPlaceCommand command*/)
         {
-            var obj = await mediator.Send(command);
+            return Ok(await service.Delete(id));
+            /*var obj = await mediator.Send(command);
             if(!obj.IsSuccess) 
                 return BadRequest(obj.Errors);
-            return Ok(obj.Data);
+            return Ok(obj.Data);*/
         }
 
         [HttpPut("{id}")]

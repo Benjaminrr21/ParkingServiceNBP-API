@@ -1279,7 +1279,10 @@
           "MongoDB.Driver": "2.27.0"
         },
         "runtime": {
-          "ParkEasyNBP.Domain.dll": {}
+          "ParkEasyNBP.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "ParkEasyNBP.Infrastructure.Neo4j/1.0.0": {
@@ -1288,7 +1291,10 @@
           "ParkEasyNBP.Domain": "1.0.0"
         },
         "runtime": {
-          "ParkEasyNBP.Infrastructure.Neo4j.dll": {}
+          "ParkEasyNBP.Infrastructure.Neo4j.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "ParkEasyNBP.Infrastructure.SqlServer/1.0.0": {
@@ -1300,7 +1306,10 @@
           "ParkEasyNBP.Domain": "1.0.0"
         },
         "runtime": {
-          "ParkEasyNBP.Infrastructure.SqlServer.dll": {}
+          "ParkEasyNBP.Infrastructure.SqlServer.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

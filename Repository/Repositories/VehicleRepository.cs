@@ -36,7 +36,7 @@ namespace Repository.Repositories
         {
             //throw new NotImplementedException();
 
-            var v = await context.Vehicles.Include(v => v.Penalties).FirstOrDefaultAsync(v => v.Id == id);
+            var v = await context.Vehicles.Include(v => v.Penalties).Include(v => v.OneOffCards).Include(v => v.SubscriptionCards).FirstOrDefaultAsync(v => v.Id == id);
             return v;
         }
 
@@ -50,7 +50,9 @@ namespace Repository.Repositories
 
         public async Task<IEnumerable<Vehicle>> Search(string regNumber)
         {
-            return await context.Vehicles.Where(v => v.RegNumber.Equals(regNumber)).ToListAsync();
+            return await context.Vehicles
+                               .Where(v => v.RegNumber.Contains(regNumber)).Include(v => v.OneOffCards).Include(v => v.SubscriptionCards)
+                               .ToListAsync();
         }
     }
 }

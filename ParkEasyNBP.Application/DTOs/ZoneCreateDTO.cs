@@ -10,5 +10,6 @@ namespace ParkEasyNBP.Application.DTOs
     {
         public string Name { get; set; }
         public int NumberOfPlaces { get; set; }
+        public string Address { get; set; }
     }
 }

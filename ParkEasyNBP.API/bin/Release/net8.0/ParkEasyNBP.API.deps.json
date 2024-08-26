@@ -16,6 +16,9 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.6",
           "Microsoft.EntityFrameworkCore": "8.0.6",
           "Microsoft.EntityFrameworkCore.Design": "8.0.6",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.6",
+          "Microsoft.EntityFrameworkCore.Tools": "8.0.0",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.6",
           "Neo4jClient": "5.1.15",
           "ParkEasyNBP.Application": "1.0.0",
           "ParkEasyNBP.Domain": "1.0.0",
@@ -679,6 +682,11 @@
           }
         }
       },
+      "Microsoft.EntityFrameworkCore.Tools/8.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "8.0.6"
+        }
+      },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
       "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
         "dependencies": {
@@ -903,6 +911,7 @@
         }
       },
       "Microsoft.VisualBasic/10.3.0": {},
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.6": {},
       "Microsoft.Win32.Registry/5.0.0": {
         "dependencies": {
           "System.Security.AccessControl": "6.0.0",
@@ -1552,7 +1561,10 @@
           "ParkEasyNBP.Infrastructure.SqlServer": "1.0.0"
         },
         "runtime": {
-          "ParkEasyNBP.Application.dll": {}
+          "ParkEasyNBP.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "ParkEasyNBP.Domain/1.0.0": {
@@ -1562,7 +1574,10 @@
           "MongoDB.Driver": "2.27.0"
         },
         "runtime": {
-          "ParkEasyNBP.Domain.dll": {}
+          "ParkEasyNBP.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "ParkEasyNBP.Infrastructure.MongoDB/1.0.0": {
@@ -1570,7 +1585,10 @@
           "ParkEasyNBP.Domain": "1.0.0"
         },
         "runtime": {
-          "ParkEasyNBP.Infrastructure.MongoDB.dll": {}
+          "ParkEasyNBP.Infrastructure.MongoDB.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "ParkEasyNBP.Infrastructure.Neo4j/1.0.0": {
@@ -1579,7 +1597,10 @@
           "ParkEasyNBP.Domain": "1.0.0"
         },
         "runtime": {
-          "ParkEasyNBP.Infrastructure.Neo4j.dll": {}
+          "ParkEasyNBP.Infrastructure.Neo4j.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "ParkEasyNBP.Infrastructure.SqlServer/1.0.0": {
@@ -1591,7 +1612,10 @@
           "ParkEasyNBP.Domain": "1.0.0"
         },
         "runtime": {
-          "ParkEasyNBP.Infrastructure.SqlServer.dll": {}
+          "ParkEasyNBP.Infrastructure.SqlServer.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Repository/1.0.0": {
@@ -1601,7 +1625,10 @@
           "ParkEasyNBP.Infrastructure.SqlServer": "1.0.0"
         },
         "runtime": {
-          "Repository.dll": {}
+          "Repository.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -1941,6 +1968,13 @@
       "path": "microsoft.entityframeworkcore.sqlserver/8.0.6",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.8.0.6.nupkg.sha512"
     },
+    "Microsoft.EntityFrameworkCore.Tools/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zRdaXiiB1gEA0b+AJTd2+drh78gkEA4HyZ1vqNZrKq4xwW8WwavSiQsoeb1UsIMZkocLMBbhQYWClkZzuTKEgQ==",
+      "path": "microsoft.entityframeworkcore.tools/8.0.0",
+      "hashPath": "microsoft.entityframeworkcore.tools.8.0.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
       "type": "package",
       "serviceable": true,
@@ -2157,6 +2191,13 @@
       "sha512": "sha512-AvMDjmJHjz9bdlvxiSdEHHcWP+sZtp7zwule5ab6DaUbgoBnwCsd7nymj69vSz18ypXuEv3SI7ZUNwbIKrvtMA==",
       "path": "microsoft.visualbasic/10.3.0",
       "hashPath": "microsoft.visualbasic.10.3.0.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7GOQdMzQcH7o/bPFL/I2kQEgMnq2pYZ+exhGb9nNqs624K9w2jB2zieh4sOH9+a01i/G9iTWfeUI3IGMF7SKNg==",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.19.6",
+      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.19.6.nupkg.sha512"
     },
     "Microsoft.Win32.Registry/5.0.0": {
       "type": "package",

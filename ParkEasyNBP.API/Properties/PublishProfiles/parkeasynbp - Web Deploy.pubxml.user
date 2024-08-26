@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2gtD0EfjIESGNjqfAMxfcAAAAAACAAAAAAAQZgAAAAEAACAAAADquQxef3LX6T6FQxgBmeCeCIiSeg6bMwWhwXGa7jXEsAAAAAAOgAAAAAIAACAAAAAEP+5wmocq+6pt6Y6Ma7AqdnCxbNa4fQCnNrQVvZUwkSAAAADb2lmOwhhZPzZyzcKoBpDU4gcz/Q9dywWDwwYN2L2xUUAAAAAyTIL2fwxovP/5xSvNhhiuhCNW0GsMNYYUbmB90rGx8BZdlrOh8sNn1tZedpGr11ioovZ9hiNsOEDdmOmUaMBS</EncryptedPassword>
+    <History>False|2024-08-22T20:45:07.4988501Z;False|2024-08-22T20:23:39.5907335+02:00;False|2024-08-22T16:28:26.0328359+02:00;False|2024-08-22T16:22:45.8627507+02:00;False|2024-08-22T16:20:29.1790789+02:00;False|2024-08-22T16:14:25.3856868+02:00;False|2024-08-22T16:03:48.4603516+02:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="AzureContext">
+      <Value>Data Source=nbpapidbserver.database.windows.net,1433%3bInitial Catalog=ParkEasyNBP.API_db%3bUser ID=benjamindemo%3bPassword=NapredneBaze2024</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="ParkEasyNBP.Infrastructure.SqlServer.ParkDbContext">
+      <Value>Data Source=nbpapidbserver.database.windows.net,1433%3bInitial Catalog=ParkEasyNBP.API_db%3bUser ID=benjamindemo%3bPassword=NapredneBaze2024</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
