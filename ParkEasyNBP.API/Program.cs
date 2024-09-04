@@ -39,9 +39,10 @@ builder.Services.AddScoped<IZoneRepository, ZoneRepository>();
 //builder.Services.AddScoped<IZoneRepository, ZoneGraphRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ParkingPlaceService>();
-builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
+builder.Services.AddScoped<ZoneServiceM>();
+/*builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 builder.Services.AddScoped<IPenaltyRepository, PenaltyRepository>();
-builder.Services.AddScoped<IControlRepository, ControlRepository>();
+builder.Services.AddScoped<IControlRepository, ControlRepository>();*/
 builder.Services.AddScoped<IOneOffCardRepository, OneOffCardRepository>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -70,11 +71,13 @@ builder.Services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>)
 
 //Neo4J
 //var client = new GraphClient(new Uri("http://93f260b7.databases.neo4j.io:7687"), "neo4j", "LSH_QeDZwjMxAKBgnltZijCmFoGEL5ghJszj-peGjZ4");
-//var client = new BoltGraphClient(new Uri("bolt+s://93f260b7.databases.neo4j.io:7687"), "neo4j", "LSH_QeDZwjMxAKBgnltZijCmFoGEL5ghJszj-peGjZ4");
-//await client.ConnectAsync();
-//builder.Services.AddSingleton<IGraphClient>(client);
+var client = new BoltGraphClient(new Uri("neo4j+s://1dad7b8b.databases.neo4j.io"), "neo4j", "3pSb4jzx73bmo0oRMUew9G5rWOQ9dYDk4OyzpBJ3IJo");
+await client.ConnectAsync();
+builder.Services.AddSingleton<IGraphClient>(client);
 
-//builder.Services.AddSingleton<ZonesService>();
+builder.Services.AddSingleton<ZonesService>();
+builder.Services.AddSingleton<ParkingsPlacesServices>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",

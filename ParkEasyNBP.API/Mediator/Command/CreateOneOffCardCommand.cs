@@ -6,8 +6,8 @@ namespace ParkEasyNBP.API.Mediator.Command
 {
     public class CreateOneOffCardCommand : IRequest<Result<OneOffCard>>
     {
-        public string Code { get; set; }
-        public int VehicleId { get; set; }
+        public string Code { get;  }
+        public int VehicleId { get;  }
 
         public CreateOneOffCardCommand(string code, int vehicleId)
         {

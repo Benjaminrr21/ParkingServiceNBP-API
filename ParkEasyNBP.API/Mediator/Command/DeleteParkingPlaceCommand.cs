@@ -7,7 +7,7 @@ namespace ParkEasyNBP.API.Mediator.Command
 {
     public class DeleteParkingPlaceCommand : IRequest<Result<ParkingPlaceGetDTO>>
     {
-        public int Id { get; set; }
+        public int Id { get; }
         public DeleteParkingPlaceCommand(int id)
         {
             Id = id;

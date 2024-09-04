@@ -16,14 +16,14 @@ namespace ParkEasyNBP.API.Controllers
         private readonly IControlRepository control;
         private readonly IMapper mapper;
         private readonly IMongoRepository<MongoControl> mongo;
-        private readonly IUnitOfWork unitOfWork;
+        private readonly IUnitOfWork uow;
 
-        public ControlController(IUnitOfWork unitOfWork, IControlRepository control, IMapper mapper,IMongoRepository<MongoControl> mongo)
+        public ControlController(IUnitOfWork uow, IControlRepository control, IMapper mapper,IMongoRepository<MongoControl> mongo)
         {
             this.control = control;
             this.mapper = mapper;
             this.mongo = mongo;
-            this.unitOfWork = unitOfWork;
+            this.uow = uow;
         }
 
         [HttpPost]

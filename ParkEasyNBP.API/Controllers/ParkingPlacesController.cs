@@ -14,6 +14,7 @@ using ParkEasyNBP.API.Mediator.Command;
 using MediatR;
 using ParkEasyNBP.Domain.Models.Results;
 using ParkEasyNBP.Domain.Exceptions;
+using ParkEasyNBP.Infrastructure.Neo4j.Services;
 
 namespace ParkEasyNBP.API.Controllers
 {
@@ -22,53 +23,65 @@ namespace ParkEasyNBP.API.Controllers
     public class ParkingPlacesController : ControllerBase
     {
         private readonly IUnitOfWork unitOfWork;
+        private readonly ParkingsPlacesServices serviceNeo;
         private readonly IMongoRepository<MongoParkingPlace> mongo;
         private readonly IMediator mediator;
         private readonly IParkingPlaceRepository service;
         private readonly IMapper mapper;
 
-        public ParkingPlacesController(IUnitOfWork unitOfWork, IMongoRepository<MongoParkingPlace> mongo, IMediator mediator, IParkingPlaceRepository service, IMapper mapper)
+        public ParkingPlacesController(IUnitOfWork unitOfWork,IMongoRepository<MongoParkingPlace> mongo, ParkingsPlacesServices serviceNeo, IMediator mediator, IParkingPlaceRepository service, IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
+            this.serviceNeo = serviceNeo;
             this.mongo = mongo;
             this.mediator = mediator;
             this.service = service;
             this.mapper = mapper;
         }
         [HttpGet]
-        public async Task<IActionResult> GetParkingPlaces(/*[FromQuery]ParkingPlaceQueryObject queryObject*/)
+        public async Task<IActionResult> GetParkingPlaces(/*[FromQuery] ParkingPlaceQueryObject queryObject*/)
         {
-            Dictionary<string, Expression<Func<ParkingPlace, object>>> columnMaps = new Dictionary<string, Expression<Func<ParkingPlace, object>>>
-            {
+           /*  Dictionary<string, Expression<Func<ParkingPlace, object>>> columnMaps = new Dictionary<string, Expression<Func<ParkingPlace, object>>>
+             {
+                 ["Status"] = p => p.Status,
+                 ["ZoneId"] = p => p.ZoneId,
+                 ["Street"] = p => p.Street // Dodato za sortiranje po ulici
+             };
 
-                /*["Status"] = p => p.Status,
-                ["Street"] = p => p.Street,*/
-                //["PID"] = p => p.Id
-            };
+             var parkingSpaces = await service.GetAll();
+             var listq = parkingSpaces.AsQueryable();
 
-            //var parkingSpaces = await service.GetAll();
+             if (!string.IsNullOrEmpty(queryObject.Status))
+                 listq = listq.Where(p => p.Status == queryObject.Status);
 
-           /* if (!string.IsNullOrEmpty(queryObject.Status))
-                parkingSpaces = parkingSpaces.Where(p => p.Status == queryObject.Status).AsQueryable();*/
+             // Sortiranje
+             listq = listq.ApplySorting(queryObject, columnMaps);
+             listq = listq.ApplyPaging(queryObject);
 
-          /*  parkingSpaces = parkingSpaces.AsQueryable().ApplySorting(queryObject, columnMaps);
-            parkingSpaces = parkingSpaces.AsQueryable().ApplyPaging(queryObject);
+   
+             var result = new ResultQuery<ParkingPlaceGetDTO>
+             {
+                 Total = listq.Count(),
+                 Items = listq.Select(p => new ParkingPlaceGetDTO
+                 {
+                     Id = p.Id,
+                     Street = p.Street,
+                     ZoneId = p.ZoneId,
+                     Status = p.Status
+                 }).ToList()
+             };
+           */
+            var result = await service.GetAll();
 
-            var result = new ResultQuery<ParkingPlaceGetDTO>
-            {
-                Total = parkingSpaces.Count(),
-                Items = parkingSpaces.Select(p => new ParkingPlaceGetDTO
-                {
-                    Id = p.Id,
-                    Street = p.Street,
-                    ZoneId = p.ZoneId,
-                    Status = p.Status,
-                    //Id = p.Id
-                }).ToList()
-            };*/
+            //NEO4j
+            //var result = await serviceNeo.GetAll();
 
-            return Ok(await service.GetAll());
+            //MONGO
+            //var resultMongo = await mongo.GetAll();
+
+            return Ok(result);
         }
+
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
@@ -78,14 +91,19 @@ namespace ParkEasyNBP.API.Controllers
             var res = await mediator.Send(new ParkingPlaceIdQuery(id));
             if (!res.IsSuccess)
                 return BadRequest(res.Errors);
-            return Ok(res);
+            return Ok(res.Data);
+
+            //  MONGO
+            //var resMongo = await mongo.GetById(id)
         }
         [HttpPost]
-        public async Task<IActionResult> AddParkingPlace([FromBody] CreateParkingPlaceCommand parkingplace /*MongoParkingPlace parkingplace*/)
+        public async Task<IActionResult> AddParkingPlace([FromBody] ParkingPlaceCreateSimple place/*CreateParkingPlaceCommand parkingplace*/ /*MongoParkingPlace parkingplace*/)
         {
             //MONGO
             //return Ok(await mongo.Create(parkingplace));
-            var res = await mediator.Send(parkingplace);
+
+            //SQL
+            /*var res = await mediator.Send(parkingplace);
             if (!res.IsSuccess)
             {
                 return BadRequest(res.Errors);
@@ -93,7 +111,11 @@ namespace ParkEasyNBP.API.Controllers
             return Ok(res.Data);
             //var pp = mapper.Map<ParkingPlaceMongoDB>(CreatePa);
             //await unitOfWork.ParkingPlaceRepository.Create(pp);
-            //return Ok(await serviceMongoDB.Create(pp));
+            //return Ok(await serviceMongoDB.Create(pp));*/
+
+            //NEO4j
+            var p = await serviceNeo.Create(mapper.Map<ParkingPlace>(place));
+            return Ok(p);
         }
         [HttpPost("with-garage")]
         public async Task<IActionResult> AddParkingPlaceWithGarage([FromBody] ParkingPlaceCreateDTO parkingplace)
@@ -107,13 +129,13 @@ namespace ParkEasyNBP.API.Controllers
              return Ok(pp);
          }*/
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromRoute] int id/*[FromBody]DeleteParkingPlaceCommand command*/)
+        public async Task<IActionResult> Delete(/*[FromRoute] int id*/[FromBody]DeleteParkingPlaceCommand command)
         {
-            return Ok(await service.Delete(id));
-            /*var obj = await mediator.Send(command);
+            //SQL - MEDIATOR
+            var obj = await mediator.Send(command);
             if(!obj.IsSuccess) 
                 return BadRequest(obj.Errors);
-            return Ok(obj.Data);*/
+            return Ok(obj.Data);
         }
 
         [HttpPut("{id}")]
@@ -122,21 +144,7 @@ namespace ParkEasyNBP.API.Controllers
             var p = await mediator.Send(cmd);
             if(!p.IsSuccess) return BadRequest(p.Errors);
             return Ok(p.Data);
-         /*   var p = mapper.Map<ParkingPlace>(place);
-            p.Id = id;
-
-            if (p == null || p.Id != id)
-            {
-                return BadRequest();
-            }
-
-            var updatedZone = await service.Update(id, p);
-            if (updatedZone == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(updatedZone);*/
+         
         }
 
         [HttpPut("reserve/{vid}/{pid}")]

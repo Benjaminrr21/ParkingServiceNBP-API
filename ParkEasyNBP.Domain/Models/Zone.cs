@@ -12,7 +12,7 @@ namespace ParkEasyNBP.Domain.Models
         public string Name { get; set; }   
         public int NumberOfPlaces { get; set; }
         public string Address { get; set; }
-        public virtual ICollection<ParkingPlace> ParkingPlaces { get; set; } = new List<ParkingPlace>();
+       public virtual ICollection<ParkingPlace> ParkingPlaces { get; set; } = new List<ParkingPlace>();
         public ICollection<PublicGarage> PublicGarages { get; set; } = new List<PublicGarage>();
 
 

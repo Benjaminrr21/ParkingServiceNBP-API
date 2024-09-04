@@ -50,6 +50,11 @@ namespace Repository.Repositories
                 return p;
             
         }
+
+        public async Task<IQueryable<ParkingPlace>> GetALllQ()
+        {
+            return dbContext.ParkingPlaces.AsQueryable();
+        }
         /* public async Task<ParkingPlace> Update(int id, ParkingPlace entity)
 {
 var existingEntity = await dbContext.Set<ParkingPlace>()

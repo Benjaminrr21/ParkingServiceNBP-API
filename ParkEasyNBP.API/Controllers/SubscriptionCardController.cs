@@ -6,6 +6,7 @@ using ParkEasyNBP.Application.DTOs;
 using ParkEasyNBP.Application.DTOs.CardsDTO;
 using ParkEasyNBP.Domain.Interfaces;
 using ParkEasyNBP.Domain.Models;
+using ParkEasyNBP.Domain.Models.Results;
 using ParkEasyNBP.Domain.ModelsMongoDB;
 using ParkEasyNBP.Infrastructure.MongoDB;
 
@@ -44,9 +45,15 @@ namespace ParkEasyNBP.API.Controllers
             var card = await uow.SubscriptionCardRepository.Delete(id);
             if(card != null)
             {
-                return Ok(card);
+                return Ok(new Result<SubscriptionCard>
+                {
+                    Data = card
+                });
             }
-            return NotFound("Nepostojeci objekat.");
+            return NotFound(new Result<SubscriptionCard>
+            {
+                Errors = new List<string> { "Nepostojeci objekat."}
+            });
         }
 
     }

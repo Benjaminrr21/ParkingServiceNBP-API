@@ -11,16 +11,29 @@ namespace ParkEasyNBP.API.FilteringSortingPaging
         }
 
         public static IQueryable<T> ApplySorting<T>(this IQueryable<T> query,
-           IQueryObject queryObject, Dictionary<string, Expression<Func<T, object>>> columnMaps)
+            IQueryObject queryObject, Dictionary<string, Expression<Func<T, object>>> columnMaps)
         {
             if (!string.IsNullOrEmpty(queryObject.SortBy))
             {
-                query = queryObject.IsSortAscending
-                    ? query.OrderBy(columnMaps[queryObject.SortBy])
-                    : query.OrderByDescending(columnMaps[queryObject.SortBy]);
+                // Provera da li ključ postoji u mapi
+                if (columnMaps.ContainsKey(queryObject.SortBy))
+                {
+                    query = queryObject.IsSortAscending
+                        ? query.OrderBy(columnMaps[queryObject.SortBy])
+                        : query.OrderByDescending(columnMaps[queryObject.SortBy]);
+                }
+                else
+                {
+                    // Opcija 1: Vrati nesortirani upit (ili ignoriši grešku)
+                    // return query;
+
+                    // Opcija 2: Baci izuzetak ili vrati odgovor sa greškom
+                    throw new ArgumentException($"Invalid sort column: {queryObject.SortBy}");
+                }
             }
             return query;
         }
+
         public static IQueryable<T> ApplyPaging<T>(this IQueryable<T> query, IQueryObject queryObject)
         {
             if (queryObject.PageSize <= 0) queryObject.PageSize = 10; //koliko ima na jednoj strani 

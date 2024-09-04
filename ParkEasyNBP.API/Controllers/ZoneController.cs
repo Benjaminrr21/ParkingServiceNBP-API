@@ -17,6 +17,8 @@ using ParkEasyNBP.Application.Requests.Zones;
 using Repository.Neo4jRepositories;
 using ParkEasyNBP.Infrastructure.Neo4j.Services;
 using ParkEasyNBP.Domain.Exceptions;
+using ParkEasyNBP.API.Mediator.Command;
+using ParkEasyNBP.Domain.ModelsNeo4J;
 
 namespace ParkEasyNBP.API.Controllers
 {
@@ -29,98 +31,89 @@ namespace ParkEasyNBP.API.Controllers
         private readonly IMapper mapper;
         private readonly IMediator _mediator;
         private readonly IUnitOfWork unitOfWork;
+        private readonly ZonesService serviceNeo;
 
-
-
-        public ZoneController( IMongoRepository<MongoZone> mongo, IZoneRepository service, IMapper mapper, IMediator mediator, IUnitOfWork unitOfWork)
+        public ZoneController( IMongoRepository<MongoZone> mongo, IZoneRepository service, IMapper mapper, IMediator mediator, IUnitOfWork unitOfWork, ZonesService serviceNeo)
         {
             this.mongo = mongo;
             this.service = service;
             this.mapper = mapper;
             _mediator = mediator;
             this.unitOfWork = unitOfWork;
+            this.serviceNeo = serviceNeo;
         }
-
 
         [HttpGet]
         public async Task<IActionResult> GetAllZones(/*[FromQuery]ZoneQueryObject qo*/)
         {
             //SQL
-            var list = await service.GetAll();
+            //var list = mapper.Map<IEnumerable<ZonesDTO>>(await service.GetAll());
             //var list = await _mediator.Send(new GetAllZonesQuery());
-            var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
+            //var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
+            
             //MONGO
             //var listMongo = await mongo.GetAll();
 
-            return Ok(list2);
+            //NEO4J
+            var list3 = await serviceNeo.GetAll();
+            return Ok(mapper.Map<IEnumerable<Neo4jZone>>(list3));
+            // return Ok(list);
             //return Ok(listMongo);
-
-
-            /*var list = await service.GetAll();
-            var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
-            return Ok(list2);*/
-            //var list = await _mediator.Send(new GetAllZonesQuery());
-            // return Ok(mongoService.GetAll());
-            //return Ok(await zonesGraph.GetAll());
-
-            /*  var list = await service.GetAll();
-              var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
-
-              Dictionary<string, Expression<Func<ZonesDTO, object>>> columnMaps = new Dictionary<string, Expression<Func<ZonesDTO, object>>>
-              {
-                  ["Name"] = c => c.Name
-              };
-              if (!qo.Name.IsNullOrEmpty())
-                  list2 = list2.Where(c => c.Name == qo.Name).AsQueryable();*/
-
-            //list2 = list2.AsQueryable();/*ApplySorting<ZonesDTO>(qo, columnMaps).ApplyPaging(qo);*/
-            //return Ok(await mongo.GetAll());
-           // var list = await service.GetAll();
-            //var list2 = mapper.Map<IEnumerable<ZonesDTO>>(list);
-            //return Ok(list2);
-            
         }
+
+
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById([FromRoute] int id)
+        public async Task<IActionResult> GetById([FromRoute] GetZoneByIdQuery query /*int id*/)
         {
-            var obj = await service.Get(id);
+           /* var obj = await service.Get(id);
             if (obj == null)
             {
                 throw new EntityNullException();
             }
-            return Ok(mapper.Map<ZonesDTO>(obj));
-            /*var zone = await _mediator.Send(new GetZoneByIdQuery(id));
+            return Ok(mapper.Map<ZonesDTO>(obj));*/
+           
+            var zone = await _mediator.Send(query);
             if (zone == null)
             {
                 return NotFound("Nije pronađena zona.");
             }
-            return Ok(zone);*/
+            return Ok(zone);
         }
         [HttpPost]
-        public async Task<IActionResult> AddZone([FromBody] ZoneCreateDTO zone)
+        public async Task<IActionResult> AddZone([FromBody] ZoneCreateDTO/* CreateZoneCommand*/ zone)
         {
-            //throw new NotImplementedException();
             var z = mapper.Map<Zone>(zone);
-            return Ok(await unitOfWork.ZoneRepository.Create(z)/*await zonesGraph.Create(z)*/);
-            /*var zona = mapper.Map<Domain.Models.Zone>(zone);
-            await service.Create(zona);
-            return Ok(zona);*/
-           // var createdZone = await _mediator.Send(new AddZoneCommand(zone));
-            //return Ok(createdZone);
-            /*  var zona = mapper.Map<Domain.Models.Zone>(zone);
-              await service.Create(zona);*/
+
+            //NEO4j
+            return Ok(await serviceNeo.Create(z));
+
+
+            //SQL
+            //return Ok(await unitOfWork.ZoneRepository.Create(z));
+            /* var createdZone = await _mediator.Send(zone);
+            if (createdZone.IsSuccess)
+            {
+                return Ok(createdZone.Data);
+            }
+
+            return BadRequest(createdZone.Errors);*/
+           
+            //MONGO
             //var zona = await mongoService.Create(mapper.Map<ZoneMongoDB>(zone));
-          
             //return Ok(zona);
         }
         
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteZone([FromRoute]int id)
         {
+            //SQL
             var response = await service.Delete(id);
-            return Ok(response);
+            //return Ok(response);
             /*var response = await _mediator.Send(new DeleteZoneCommand(id));
             return Ok(response);*/
+
+            //NEO4j
+            return Ok(await serviceNeo.Delete(id));
         }
 
         [HttpPut("{id}")]
@@ -147,6 +140,14 @@ namespace ParkEasyNBP.API.Controllers
                 return NotFound();
             }
             return Ok(updatedZone);*/
+        }
+
+        //NEO4j
+        [HttpGet("{zid}/contains/{pid}")]
+        public async Task<IActionResult> ZoneContainsParkingPlace(int zid, int pid)
+        {
+            await serviceNeo.ZoneContainsParkingPlace(zid, pid);
+            return Ok();
         }
     }
 }

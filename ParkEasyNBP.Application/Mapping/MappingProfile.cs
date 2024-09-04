@@ -6,6 +6,7 @@ using ParkEasyNBP.Application.DTOs.MongoDB_DTOs;
 using ParkEasyNBP.Application.DTOs.Penalties;
 using ParkEasyNBP.Domain.Models;
 using ParkEasyNBP.Domain.ModelsMongoDB;
+using ParkEasyNBP.Domain.ModelsNeo4J;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +58,8 @@ namespace ParkEasyNBP.Application.Mapping
             CreateMap<NewParkingPlaceMongoDTO, MongoParkingPlace>();
             CreateMap<NewVehicleMongo, MongoVehicle>();
             CreateMap<NewOOCardMongoDTO, MongoOneOffCard>();
+
+            CreateMap<Zone, Neo4jZone>();
         }
     }
 }

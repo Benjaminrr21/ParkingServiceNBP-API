@@ -15,7 +15,6 @@ namespace Repository
         private readonly ParkDbContext context;
         //private readonly UserManager<ApplicationUser> userManager;
 
-        public IControlRepository ControlRepository { get; private set; }
         public IOneOffCardRepository OneOffCardRepository { get; private set; }
         public IParkingPlaceRepository ParkingPlaceRepository {  get; private set; }
         public IPenaltyRepository PenaltyRepository { get; private set; }
@@ -23,11 +22,11 @@ namespace Repository
         //public IUserRepository UserRepository { get; private set; }
         public IVehicleRepository VehicleRepository { get; private set; }
         public IZoneRepository ZoneRepository { get; private set; }
+        
 
         public UnitOfWork(ParkDbContext context)
         {
             this.context = context;
-            ControlRepository = new ControlRepository(context,PenaltyRepository);
             OneOffCardRepository = new OneOffCardRepository(context);
             ParkingPlaceRepository = new ParkingPlaceRepository(context);
             PenaltyRepository = new PenaltyRepository(context);

@@ -8,6 +8,7 @@ using ParkEasyNBP.Application.DTOs.CardsDTO;
 using ParkEasyNBP.Application.DTOs.MongoDB_DTOs;
 using ParkEasyNBP.Domain.Interfaces;
 using ParkEasyNBP.Domain.Models;
+using ParkEasyNBP.Domain.Models.Results;
 using ParkEasyNBP.Domain.ModelsMongoDB;
 using ParkEasyNBP.Infrastructure.MongoDB;
 
@@ -61,9 +62,15 @@ namespace ParkEasyNBP.API.Controllers
              var card = await uow.OneOffCardRepository.Delete(id);
              if (card != null)
              {
-                 return Ok(card);
+                 return Ok(new Result<OneOffCard>
+                 {
+                     Data = card,
+                 });
              }
-             return NotFound("Nepostojeci objekat.");
+             return NotFound(new Result<OneOffCard>
+             {
+                 Errors = new List<string> { "Nepostojeci objekat."}
+             });
 
             //MONGO
             //return Ok(await mongo.Delete(id));
